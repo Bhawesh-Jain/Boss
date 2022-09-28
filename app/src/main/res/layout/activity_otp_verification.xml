@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".view.activity.OtpVerificationActivity">
+
+
+
+    <LinearLayout
+        android:padding="@dimen/_15sdpq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_margin="@dimen/_15sdpq"
+            android:id="@+id/signinButton"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:tag="binding_14"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true">
+
+
+            <TextView
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="@dimen/_14sdpq"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don’t have an account?"/>
+
+            <TextView
+                android:id="@+id/tv_submit"
+                android:textSize="@dimen/_14sdpq"
+                android:textColor="@color/colorPrimaryDark"
+                android:gravity="center_vertical"
+                android:tag="binding_2"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="45.0dip"
+                android:layout_marginLeft="6.0dip"
+                android:text="Sign Up"
+                android:layout_marginStart="6.0dip"/>
+
+
+        </LinearLayout>
+
+
+       <ImageView
+            android:layout_width="@dimen/_200sdpq"
+            android:layout_height="@dimen/_200sdpq"
+            android:src="@drawable/ic__forgotpassword"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_30sdpq"/>
+
+        <LinearLayout
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Verify your mobile no"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="@dimen/_28sdpq"/>
+
+
+            <TextView
+                android:layout_marginTop="@dimen/_10sdpq"
+                android:layout_weight="1"
+                android:textFontWeight="400"
+                android:text="Please enter OTP sent on ********90"
+                android:textSize="@dimen/_14sdpq"
+                android:fontFamily="@font/roboto_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:gravity="center_horizontal" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/_50sdpq"
+            android:id="@+id/layout_otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_header"
+            android:orientation="horizontal">
+
+            <EditText
+                android:textAlignment="center"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:id="@+id/edt_one"
+                android:layout_width="@dimen/_60sdpq"
+                android:textColor="@color/black"
+                android:layout_height="@dimen/_60sdpq"
+                android:textColorHint="@color/white"
+                android:inputType="number"
+                android:textSize="@dimen/_18sdpq"
+                android:fontFamily="@font/roboto_bold"
+                android:background="@drawable/onsideboarder"
+                android:maxLength="1" />
+
+            <EditText
+                android:textSize="@dimen/_18sdpq"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/black"
+                android:id="@+id/edt_two"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_width="@dimen/_60sdpq"
+                android:layout_height="@dimen/_60sdpq"
+                android:inputType="number"
+                android:layout_marginLeft="@dimen/_15sdpq"
+                android:background="@drawable/onsideboarder"
+                android:maxLength="1"/>
+
+            <EditText
+                android:textSize="@dimen/_18sdpq"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/black"
+                android:id="@+id/edt_three"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_width="@dimen/_60sdpq"
+                android:layout_height="@dimen/_60sdpq"
+                android:inputType="number"
+                android:layout_marginLeft="@dimen/_15sdpq"
+                android:background="@drawable/onsideboarder"
+                android:maxLength="1"/>
+
+            <EditText
+                android:textSize="@dimen/_18sdpq"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/black"
+                android:id="@+id/edt_four"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_width="@dimen/_60sdpq"
+                android:layout_height="@dimen/_60sdpq"
+                android:inputType="number"
+                android:layout_marginLeft="@dimen/_15sdpq"
+                android:background="@drawable/onsideboarder"
+                android:maxLength="1"/>
+
+            <requestFocus />
+
+
+        </LinearLayout>
+
+
+
+        <soup.neumorphism.NeumorphCardView
+            android:id="@+id/signUpButton"
+            style="@style/Widget.Neumorph.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_70sdpq"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" >
+
+
+            <TextView
+                android:id="@+id/AG_OTPVERIFYE"
+                android:background="@drawable/button_responsive"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:text="@string/verify"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="@dimen/_16sdpq"/>
+
+
+
+        </soup.neumorphism.NeumorphCardView>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/_10sdpq"
+            android:id="@+id/otp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:tag="binding_14"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true">
+
+
+            <TextView
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="@dimen/_12sdpq"
+                android:textColor="#292D32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Did not get OTP?"/>
+
+            <TextView
+                android:id="@+id/txt_resend"
+                android:textSize="@dimen/_14sdpq"
+                android:textColor="@color/colorPrimaryDark"
+                android:gravity="center_vertical"
+                android:tag="binding_2"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="45.0dip"
+                android:layout_marginLeft="6.0dip"
+                android:text="Resend"
+                android:layout_marginStart="6.0dip"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/bottom_sheet_top"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Report"
+        android:fontFamily="@font/roboto_medium"
+        android:textSize="@dimen/_14sdpq"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_10sdpq"/>
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/_5sdpq"
+        android:background="@color/gray"/>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginLeft="@dimen/_10sdpq"
+        android:textStyle="bold"
+        android:text="Why are you reporting this post?"
+        android:textSize="@dimen/_12sdpq"
+        android:layout_marginTop="@dimen/_10sdpq"/>
+
+    <TextView
+        android:padding="@dimen/_10sdpq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="It's spam"
+        android:textSize="@dimen/_12sdpq"
+        android:layout_marginTop="@dimen/_15sdpq"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+     android:padding="@dimen/_10sdpq"
+        android:textColor="@color/black"
+        android:text="I just don't like it"
+        android:textSize="@dimen/_12sdpq"
+        android:layout_marginTop="@dimen/_10sdpq"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Hate speech or symbols"
+        android:textSize="@dimen/_12sdpq"
+     android:padding="@dimen/_10sdpq"
+        android:layout_marginTop="@dimen/_10sdpq"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Scam or fraud"
+     android:padding="@dimen/_10sdpq"
+        android:textSize="@dimen/_12sdpq"
+        android:layout_marginTop="@dimen/_10sdpq"/>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+     android:padding="@dimen/_10sdpq"
+        android:text="False information"
+        android:textSize="@dimen/_12sdpq"
+        android:layout_marginTop="@dimen/_10sdpq"/>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+     android:padding="@dimen/_10sdpq"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="Sale of illegal or regulated goods"
+        android:textSize="@dimen/_12sdpq"
+        android:layout_marginTop="@dimen/_10sdpq"/>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+     android:padding="@dimen/_10sdpq"
+        android:textColor="@color/black"
+
+        android:text="Eating Disordes"
+        android:textSize="@dimen/_12sdpq"
+        android:layout_marginTop="@dimen/_10sdpq"/>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+     android:padding="@dimen/_10sdpq"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginBottom="@dimen/_30sdpq"
+        android:text="Something else"
+        android:textSize="@dimen/_12sdpq"
+        android:layout_marginTop="@dimen/_10sdpq"/>
+
+
+
+
+
+
+</LinearLayout>

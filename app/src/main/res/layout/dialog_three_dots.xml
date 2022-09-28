@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+        <LinearLayout
+            android:padding="@dimen/_30sdpq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginHorizontal="@dimen/_15sdpq"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_14sdpq"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/report"
+                android:drawablePadding="20dp"
+                android:gravity="center_vertical"
+                app:drawableStartCompat="@drawable/ic_warning"
+                tools:ignore="SpUsage" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_14sdpq"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/block_user"
+                android:drawablePadding="20dp"
+                android:gravity="center_vertical"
+                android:layout_marginVertical="@dimen/_14sdpq"
+                app:drawableStartCompat="@drawable/ic_blocked"
+                tools:ignore="SpUsage" />
+
+        </LinearLayout>
+
+
+
+</LinearLayout>

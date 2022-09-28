@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".view.fragment.MusicFragments">
+    <!--    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvBanner"
+        android:layout_marginTop="@dimen/_10sdp"
+        />-->
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="@dimen/_300sdpq"
+                android:layout_height="@dimen/_200sdpq"
+                app:cardCornerRadius="@dimen/_10sdpq"
+                app:cardUseCompatPadding="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ganeshji2" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="@dimen/_300sdpq"
+                android:layout_height="@dimen/_200sdpq"
+                app:cardCornerRadius="@dimen/_10sdpq"
+                app:cardUseCompatPadding="true">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ganeshji2" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="@dimen/_300sdpq"
+                android:layout_height="@dimen/_200sdpq"
+                app:cardCornerRadius="@dimen/_10sdpq"
+                app:cardUseCompatPadding="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ganeshji2" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdpq"
+        android:layout_marginTop="@dimen/_12sdpq"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Boss Artist Spotlight "
+        android:textColor="@color/black"
+        android:textSize="@dimen/_18sdpq" />
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdpq"
+                android:layout_marginTop="@dimen/_12sdpq"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/_70sdpq"
+                    android:layout_height="@dimen/_70sdpq"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_2sdpq"
+                    android:layout_marginTop="@dimen/_10sdpq"
+                    app:cardCornerRadius="@dimen/_45sdpq"
+                    app:cardElevation="@dimen/_5sdpq">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/welcomescreen" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="@dimen/_5sdpq"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/mansi_bhardwaj"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdpq" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/_5sdpq"
+                    app:cardBackgroundColor="#eb4e61"
+                    app:cardCornerRadius="@dimen/_2sdpq"
+                    app:cardElevation="0dp"
+                    app:contentPadding="@dimen/_3sdpq">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdpq"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Follow"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdpq" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdpq"
+                android:layout_marginTop="@dimen/_12sdpq"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/_70sdpq"
+                    android:layout_height="@dimen/_70sdpq"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_2sdpq"
+                    android:layout_marginTop="@dimen/_10sdpq"
+                    app:cardCornerRadius="@dimen/_45sdpq"
+                    app:cardElevation="@dimen/_5sdpq">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/welcomescreen" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="@dimen/_5sdpq"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/mansi_bhardwaj"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdpq" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/_5sdpq"
+                    app:cardBackgroundColor="#eb4e61"
+                    app:cardCornerRadius="@dimen/_2sdpq"
+                    app:cardElevation="0dp"
+                    app:contentPadding="@dimen/_3sdpq">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdpq"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Follow"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdpq" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdpq"
+                android:layout_marginTop="@dimen/_12sdpq"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/_70sdpq"
+                    android:layout_height="@dimen/_70sdpq"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_2sdpq"
+                    android:layout_marginTop="@dimen/_10sdpq"
+                    app:cardCornerRadius="@dimen/_45sdpq"
+                    app:cardElevation="@dimen/_5sdpq">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/welcomescreen" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="@dimen/_5sdpq"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/mansi_bhardwaj"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdpq" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/_5sdpq"
+                    app:cardBackgroundColor="#eb4e61"
+                    app:cardCornerRadius="@dimen/_2sdpq"
+                    app:cardElevation="0dp"
+                    app:contentPadding="@dimen/_3sdpq">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdpq"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Follow"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdpq" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdpq"
+                android:layout_marginTop="@dimen/_12sdpq"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="@dimen/_70sdpq"
+                    android:layout_height="@dimen/_70sdpq"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_2sdpq"
+                    android:layout_marginTop="@dimen/_10sdpq"
+                    app:cardCornerRadius="@dimen/_45sdpq"
+                    app:cardElevation="@dimen/_5sdpq">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/welcomescreen" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="@dimen/_5sdpq"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/mansi_bhardwaj"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdpq" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/_5sdpq"
+                    app:cardBackgroundColor="#eb4e61"
+                    app:cardCornerRadius="@dimen/_2sdpq"
+                    app:cardElevation="0dp"
+                    app:contentPadding="@dimen/_3sdpq">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_5sdpq"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Follow"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdpq" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</LinearLayout>

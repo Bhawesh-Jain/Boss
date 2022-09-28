@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".view.fragment.VideoFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_data_not_found"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_10sdpq"
+        />
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/roboto_bold"
+        android:textSize="@dimen/_12sdpq"
+        android:layout_marginTop="@dimen/_15sdpq"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="There are no post, starta posting to see them here"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_5sdpq"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_16sdpq"
+        android:text="User has not been tagged any videos "
+        android:textColor="@color/grayyy"
+        android:textSize="@dimen/_14sdpq" />
+
+
+
+</LinearLayout>

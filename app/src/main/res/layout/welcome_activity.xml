@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/_15sdpq">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_300sdpq"
+            android:layout_marginTop="@dimen/_30sdpq"
+            android:src="@drawable/welcomescreen" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_25sdpq"
+            android:layout_marginTop="@dimen/_30sdpq"
+            android:layout_marginRight="@dimen/_25sdpq"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:text="Welcome to BOSS App"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_28sdpq" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_30sdpq"
+            android:layout_marginTop="@dimen/_10sdpq"
+            android:layout_marginRight="@dimen/_30sdpq"
+            android:layout_marginBottom="@dimen/_30sdpq"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:text="Enjoy your life around the world without hesitation"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18sdpq" />
+
+
+        <soup.neumorphism.NeumorphCardView
+            android:id="@+id/signUpButton"
+            style="@style/Widget.Neumorph.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_70sdpq"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <TextView
+                android:id="@+id/sing_up_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/button_responsive"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:text="@string/Login"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdpq" />
+        </soup.neumorphism.NeumorphCardView>
+
+
+        <soup.neumorphism.NeumorphCardView
+
+            style="@style/Widget.Neumorph.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_70sdpq"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <TextView
+                android:id="@+id/btn_sign_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/purple_responsive"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:text="Register"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdpq" />
+        </soup.neumorphism.NeumorphCardView>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

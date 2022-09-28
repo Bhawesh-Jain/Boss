@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".view.activity.SearchActivity">
+
+    <SearchView
+        android:id="@+id/searchViewId"
+        android:clickable="false"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdpq"
+        android:layout_marginHorizontal="@dimen/_15sdpq"
+        android:layout_marginTop="@dimen/_12sdpq"
+        android:background="@drawable/input_custom"
+        android:drawablePadding="@dimen/_10sdpq"
+        android:fontFamily="@font/roboto_medium"
+        android:iconifiedByDefault="false"
+        android:queryBackground="@null"
+        android:queryHint="Search Blogs Category"
+        android:singleLine="true"
+        android:textColorHint="@color/black" />
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_12sdpq"
+        android:layout_marginTop="@dimen/_15sdpq"
+        android:textAlignment="center"
+        app:tabBackground="@color/white"
+        app:tabIconTint="@color/red"
+        app:tabIndicatorColor="@color/red"
+        app:tabMode="scrollable"
+        app:tabRippleColor="@color/white"
+        app:tabSelectedTextColor="@color/red"
+        app:tabTextAppearance="@style/QuinaryTabTextStyle" />
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpLaunchId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tabLayout"
+        android:layout_marginHorizontal="@dimen/_12sdpq"
+        android:layout_marginTop="@dimen/_5sdpq">
+
+    </androidx.viewpager2.widget.ViewPager2>
+
+</LinearLayout>

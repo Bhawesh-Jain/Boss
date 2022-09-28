@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdpq"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="@dimen/_50sdpq"
+                android:layout_height="@dimen/_50sdpq"
+                android:layout_gravity="center"
+                android:src="@drawable/woman"
+                />
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdpq"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Anju Gupta"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sdpq" />
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/UserId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/username"
+                        android:textColor="@color/linee"
+                        android:textSize="@dimen/_16sdpq" />
+
+                    <TextView
+                        android:layout_marginLeft="@dimen/_5sdpq"
+                        android:id="@+id/desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Baby"
+                        android:textColor="@color/linee"
+                        android:textSize="@dimen/_16sdpq" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            app:cardBackgroundColor="@color/colorDark"
+            app:cardCornerRadius="@dimen/_5sdpq"
+            app:cardElevation="0dp"
+            app:contentPadding="@dimen/_3sdpq">
+
+            <TextView
+                android:id="@+id/mcvFollow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_5sdpq"
+                android:paddingRight="@dimen/_3sdpq"
+                android:paddingLeft="@dimen/_3sdpq"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Follow"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdpq" />
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="@dimen/_5sdpq"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1dpq"
+        android:background="@color/grey_600"/>
+
+
+</LinearLayout>

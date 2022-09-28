@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".view.fragment.SearchFragment">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdpq"
+        android:layout_marginTop="@dimen/_12sdpq"
+        app:cardBackgroundColor="#eeeeee"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="@dimen/_2sdpq"
+        app:contentPadding="@dimen/_10sdpq">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/_10sdpq"
+            android:fontFamily="@font/roboto_medium"
+            android:hint="@string/search_blogs_category"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdpq"
+            app:drawableStartCompat="@drawable/ic_s"
+            tools:ignore="SpUsage" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdpq">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdpq"
+            android:layout_marginTop="@dimen/_15sdpq"
+            android:textAlignment="center"
+            app:tabBackground="@color/white"
+            app:tabIconTint="@color/colorDark"
+            app:tabIndicatorColor="@color/colorDark"
+            app:tabMode="scrollable"
+            app:tabRippleColor="@color/white"
+            app:tabSelectedTextColor="@color/colorDark"
+            app:tabTextAppearance="@style/QuinaryTabTextStyle" />
+
+        <ImageView
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_wishlist" />
+    </RelativeLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpLaunchId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tabLayout"
+        android:layout_marginHorizontal="@dimen/_12sdpq"
+        android:layout_marginTop="@dimen/_5sdpq">
+
+    </androidx.viewpager2.widget.ViewPager2>
+
+    <!-- <androidx.viewpager2.widget.ViewPager2
+         android:id="@+id/vpBanner"
+         android:layout_width="match_parent"
+         android:layout_height="@dimen/_120sdp"
+         android:background="@color/white"
+         android:paddingHorizontal="@dimen/_12sdp"
+         android:paddingVertical="@dimen/_5sdp" />
+     <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+         android:id="@+id/dot2"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginVertical="@dimen/_8sdp"
+         app:dotsSize="@dimen/_8sdp"
+         app:dotsSpacing="@dimen/_2sdp"
+         app:dotsStrokeColor="#E8EEF6"
+         app:progressMode="true"
+         app:selectedDotColor="@color/red"
+         app:stiffness="300" />
+ -->
+</LinearLayout>

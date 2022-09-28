@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#b3eb50</color>
+    <color name="colorPrimaryDark">#429321</color>
+    <color name="colorAccent">#ECA405</color>
+    <color name="deepblack">#333333</color>
+    <color name="blue600">#cfecfe</color>
+    <color name="greeeen">#04B200
+    </color>
+    <color name="colorDark">#6c63fe</color>
+    <color name="colorgrey">#616469</color>
+    <color name="yellow_card">#FCDA28</color>
+
+    <color name="grayyy">#7C7C7C</color>
+    <color name="hotred">#F90F0F</color>
+    <color name="darkgreeeen">#44533C</color>
+    <color name="transparent1">#4D1DA1F2</color>
+
+    <color name="green">#37b27b</color>
+    <color name="mygay">#8C8C8C</color>
+    <color name="darkgreen">#3ab19b</color>
+    <color name="colorPrimary1">#3ab19b</color>
+
+    <color name="textcolor">#44533C</color>
+    <color name="lighttextcolor">#1E241B</color>
+    <color name="textheadercolor">#0D3662</color>
+    <color name="textheadercolorfiv">#8D0D3662</color>
+    <color name="sky">#009ee7</color>
+    <color name="selectedcolor">#f5f5f5</color>
+    <color name="red">#f74b81</color>
+    <color name="dred">#DA0000</color>
+    <color name="yellow">#DFFCDA28</color>
+    <color name="greentransparent">#3385A633</color>
+    <color name="blue">#2c3d99</color>
+    <color name="black">#1A2223</color>
+    <color name="darktextcolor">#070707</color>
+    <color name="white">#FCFDFF</color>
+    <color name="whitte">#ffffff</color>
+    <color name="linee">#4C4C4C</color>
+    <color name="ggrreey">#8C8C8C</color>
+    <color name="mylines">#8C8C8C</color>
+    <color name="gray">#6F7070</color>
+    <color name="darkgrey">#9D9FA1</color>
+    <color name="textgray">#9D9FA1</color>
+    <color name="colortransparent">#16007DBA</color>
+    <color name="ggerren">#85A633</color>
+    <color name="lightprimery">#e8f6ef</color>
+    <color name="lightgray">#ECECEC</color>
+    <color name="orange">#FFDF36</color>
+    <color name="lightgreen">#00cf0b</color>
+    <color name="lightblue">#AFC3FB</color>
+    <color name="auth_profile_divider_grey">#ff636363</color>
+    <color name="grey">#adadad</color>
+    <color name="grey_400">#BDBDBD</color>
+    <color name="grey_600">#F3F1F1</color>
+    <color name="album_title">#4c4c4c</color>
+    <color name="pink_600">#FFF6D4</color>
+    <color name="pink12">#F6F6F6</color>
+    <color name="light_white">#F1F0F0</color>
+    <color name="pink_500">#fbd96d</color>
+    <color name="blackk">#000000</color>
+    <color name="pink_400">#F4F4F4</color>
+    <color name="lightred">#F8F8F8</color>
+    <color name="lightsky">#FBFEFF</color>
+    <color name="whitetransparent">#4AFFFFFF</color>
+    <color name="whitecolorr">#FFFFFF</color>
+    <color name="whitetransparent2">#90FFFFFF</color>
+    <color name="blacktransparent">#48000000</color>
+    <color name="transparent">#1B000000</color>
+    <color name="profilelock">#E83C3C3C</color>
+    <color name="black_semi_transparent">#B2000000</color>
+    <color name="background">#74E5E5E5</color>
+    <color name="background1">#f3f2f8</color>
+    <color name="backgroundnew">#F3F1F1</color>
+    <color name="half_black">#808080</color>
+    <color name="white_pressed">#f1f1f1</color>
+    <color name="pink">#e91e63</color>
+    <color name="pink_pressed">#ec407a</color>
+    <color name="ightblue">#646FFB</color>
+    <color name="verifyedcolor">#28a1a4</color>
+    <color name="slider_indicator_selected">#fd8700</color>
+    <color name="slider_indicator_unselected">#535252</color>
+    <color name="itembackgrounds">#f2f5fc</color>
+    <color name="light_black">#F34E4D4D</color>
+    <color name="trans">#00000000</color>
+    <color name="darkorange">#fe9901</color>
+    <color name="redop">#F8213D</color>
+    <color name="whiteop">#E5E5E5</color>
+
+    <color name="my_spinner_text_color">#9D9FA1</color>
+
+
+    <string-array name="red_wine">
+        <item>#ff670729</item>
+        <item>#ff7a0c2d</item>
+        <item>#ff96092d</item>
+        <item>#ffa10a37</item>
+        <item>#ffbf013b</item>
+    </string-array>
+
+    <string-array name="polluted_waves">
+        <item>#394948</item>
+        <item>#5a7874</item>
+        <item>#499092</item>
+        <item>#43abae</item>
+        <item>#6ecfd2</item>
+    </string-array>
+
+    <string-array name="medical_express">
+        <item>#a3a3a3</item>
+        <item>#bbbbbb</item>
+        <item>#cccccc</item>
+        <item>#dddddd</item>
+        <item>#eeeeee</item>
+    </string-array>
+
+    <string-array name="vertical_ntb">
+        <item>#df5a55</item>
+        <item>#f9bb72</item>
+        <item>#76afcf</item>
+        <item>#dd6495</item>
+        <item>#72d3b4</item>
+        <item>#563d91</item>
+        <item>#56342e</item>
+        <item>#8c9f58</item>
+    </string-array>
+
+    <color name="quantum_orange200">#ffcc80</color>
+    <color name="quantum_orange300">#ffb74d</color>
+    <color name="quantum_orange400">#ffa726</color>
+    <color name="quantum_orange50">#fff3e0</color>
+    <color name="quantum_orange500">#ff9800</color>
+    <color name="quantum_orange600">#fb8c00</color>
+    <color name="quantum_orange700">#f57c00</color>
+    <color name="quantum_orange800">#ef6c00</color>
+    <color name="quantum_orange900">#e65100</color>
+    <color name="quantum_orangeA100">#ffd180</color>
+    <color name="quantum_orangeA200">#ffab40</color>
+    <color name="quantum_orangeA400">#ff9100</color>
+    <color name="quantum_orangeA700">#ff6d00</color>
+    <color name="quantum_orange">@color/quantum_orange500</color>
+    <color name="quantum_orange100">#ffe0b2</color>
+</resources>

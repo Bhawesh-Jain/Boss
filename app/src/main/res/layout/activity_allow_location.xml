@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_15sdpq"
+    tools:context=".view.activity.AllowLocationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_marginTop="@dimen/_30sdpq"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_300sdpq"
+            android:src="@drawable/ic_allowlocation"
+            />
+
+
+        <TextView
+            android:layout_marginTop="@dimen/_30sdpq"
+            android:layout_marginLeft="@dimen/_25sdpq"
+            android:layout_marginRight="@dimen/_25sdpq"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Allow location"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="@dimen/_28sdpq"/>
+
+
+        <TextView
+            android:layout_marginRight="@dimen/_30sdpq"
+            android:layout_marginBottom="@dimen/_30sdpq"
+            android:layout_marginTop="@dimen/_10sdpq"
+            android:layout_marginLeft="@dimen/_30sdpq"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:fontFamily="@font/roboto_regular"
+            android:layout_height="wrap_content"
+            android:text="Enjoy your life around the world without hesitation"
+            android:textSize="@dimen/_18sdpq"
+            android:textColor="@color/black"/>
+
+
+        <soup.neumorphism.NeumorphCardView
+            android:layout_marginTop="20dp"
+            android:id="@+id/signUpButton"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            style="@style/Widget.Neumorph.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_70sdpq"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" >
+
+
+            <TextView
+                android:id="@+id/AG_allowlocation"
+                android:background="@drawable/button_responsive"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:text="Allow"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="@dimen/_16sdpq"/>
+        </soup.neumorphism.NeumorphCardView>
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

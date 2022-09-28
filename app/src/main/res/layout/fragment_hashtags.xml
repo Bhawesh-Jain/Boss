@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="@dimen/_12sdpq"
+    android:background="@color/white"
+    android:layout_marginVertical="@dimen/_12sdpq"
+    tools:context=".view.fragment.HashtagsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="#Comedy"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14sdpq"
+        android:fontFamily="@font/roboto_medium"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="21.1B Views"
+        android:textColor="@color/grayyy"
+        android:textSize="@dimen/_14sdpq"
+        android:layout_marginTop="@dimen/_5sdpq"
+        android:fontFamily="@font/roboto_medium"
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_12sdpq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="#Comedy"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdpq"
+            android:fontFamily="@font/roboto_medium"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="21.1B Views"
+            android:textColor="@color/grayyy"
+            android:textSize="@dimen/_14sdpq"
+            android:layout_marginTop="@dimen/_5sdpq"
+            android:fontFamily="@font/roboto_medium"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_12sdpq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="#Comedy"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdpq"
+            android:fontFamily="@font/roboto_medium"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="21.1B Views"
+            android:textColor="@color/grayyy"
+            android:textSize="@dimen/_14sdpq"
+            android:layout_marginTop="@dimen/_5sdpq"
+            android:fontFamily="@font/roboto_medium"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_12sdpq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="#Comedy"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdpq"
+            android:fontFamily="@font/roboto_medium"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="21.1B Views"
+            android:textColor="@color/grayyy"
+            android:textSize="@dimen/_14sdpq"
+            android:layout_marginTop="@dimen/_5sdpq"
+            android:fontFamily="@font/roboto_medium"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_12sdpq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="#Comedy"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdpq"
+            android:fontFamily="@font/roboto_medium"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="21.1B Views"
+            android:textColor="@color/grayyy"
+            android:textSize="@dimen/_14sdpq"
+            android:layout_marginTop="@dimen/_5sdpq"
+            android:fontFamily="@font/roboto_medium"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_12sdpq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="#Comedy"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdpq"
+            android:fontFamily="@font/roboto_medium"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="21.1B Views"
+            android:textColor="@color/grayyy"
+            android:textSize="@dimen/_14sdpq"
+            android:layout_marginTop="@dimen/_5sdpq"
+            android:fontFamily="@font/roboto_medium"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_12sdpq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="#Comedy"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdpq"
+            android:fontFamily="@font/roboto_medium"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="21.1B Views"
+            android:textColor="@color/grayyy"
+            android:textSize="@dimen/_14sdpq"
+            android:layout_marginTop="@dimen/_5sdpq"
+            android:fontFamily="@font/roboto_medium"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_12sdpq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="#Comedy"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdpq"
+            android:fontFamily="@font/roboto_medium"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="21.1B Views"
+            android:textColor="@color/grayyy"
+            android:textSize="@dimen/_14sdpq"
+            android:layout_marginTop="@dimen/_5sdpq"
+            android:fontFamily="@font/roboto_medium"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_12sdpq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="#Comedy"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdpq"
+            android:fontFamily="@font/roboto_medium"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="21.1B Views"
+            android:textColor="@color/grayyy"
+            android:textSize="@dimen/_14sdpq"
+            android:layout_marginTop="@dimen/_5sdpq"
+            android:fontFamily="@font/roboto_medium"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_12sdpq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="#Comedy"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdpq"
+            android:fontFamily="@font/roboto_medium"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="21.1B Views"
+            android:textColor="@color/grayyy"
+            android:textSize="@dimen/_14sdpq"
+            android:layout_marginTop="@dimen/_5sdpq"
+            android:fontFamily="@font/roboto_medium"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>
