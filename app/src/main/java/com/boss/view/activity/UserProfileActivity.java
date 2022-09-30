@@ -136,8 +136,8 @@ public class UserProfileActivity extends AppCompatActivity implements View.OnCli
                             if (data.getImage().length() != 0) {
                                 Glide.with(activity)
                                         .load(response.body().getPath() + data.getImage())
-                                        .error(R.drawable.user)
-                                        .placeholder(R.drawable.user)
+                                        .error(R.drawable.ic_user)
+                                        .placeholder(R.drawable.ic_user)
                                         .into(binding.icProfileImg);
                             }
                         } else

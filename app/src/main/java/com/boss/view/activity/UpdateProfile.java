@@ -69,8 +69,8 @@ public class UpdateProfile extends AppCompatActivity implements View.OnClickList
         if (profileImg.length() != 0)
             Glide.with(activity)
                     .load(profileImg)
-                    .error(R.drawable.user)
-                    .placeholder(R.drawable.user)
+                    .error(R.drawable.ic_user)
+                    .placeholder(R.drawable.ic_user)
                     .into(binding.icUserImage);
 
         binding.icBack.setOnClickListener(this);
@@ -147,8 +147,8 @@ public class UpdateProfile extends AppCompatActivity implements View.OnClickList
                                 session.setValue(Constants.Key.user_img, response.body().getPath() + data.getImage());
                                 Glide.with(activity)
                                         .load(response.body().getPath() + data.getImage())
-                                        .error(R.drawable.user)
-                                        .placeholder(R.drawable.user)
+                                        .error(R.drawable.ic_user)
+                                        .placeholder(R.drawable.ic_user)
                                         .into(binding.icUserImage);
                             }
 

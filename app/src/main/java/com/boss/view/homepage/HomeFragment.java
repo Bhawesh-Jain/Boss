@@ -1,11 +1,13 @@
 package com.boss.view.homepage;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -50,6 +52,7 @@ public class HomeFragment extends Fragment {
         progressDialog.show();
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
+
         session = new Session(getActivity());
         getReels();
 
@@ -89,5 +92,6 @@ public class HomeFragment extends Fragment {
             }
         });
     }
+
 
 }

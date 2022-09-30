@@ -164,7 +164,7 @@
                     android:layout_width="@dimen/_80sdpq"
                     android:layout_height="@dimen/_80sdpq"
                     android:layout_gravity="center"
-                    android:src="@drawable/user"
+                    android:src="@drawable/ic_user"
                     />
 
 
@@ -264,7 +264,7 @@
                     android:layout_width="@dimen/_80sdpq"
                     android:layout_height="@dimen/_80sdpq"
                     android:layout_gravity="center"
-                    android:src="@drawable/user"
+                    android:src="@drawable/ic_user"
                     />
 
 

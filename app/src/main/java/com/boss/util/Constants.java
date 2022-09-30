@@ -61,5 +61,6 @@ public class Constants {
         String user_company = "user_company";
         String user_about = "user_about";
         String user_img = "user_img";
+        String reel_id = "reel_id";
     }
 }

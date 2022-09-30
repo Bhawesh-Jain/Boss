@@ -144,7 +144,7 @@
                         android:layout_width="@dimen/_50sdpq"
                         android:layout_height="@dimen/_50sdpq"
                         android:layout_marginLeft="@dimen/_10sdpq"
-                        android:src="@drawable/user"
+                        android:src="@drawable/ic_user"
                         app:civ_border_color="@color/grey_600"
                         app:civ_border_width="@dimen/_1sdpq" />
 

@@ -61,8 +61,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         if (profileImg.length() != 0)
             Glide.with(activity)
                     .load(profileImg)
-                    .error(R.drawable.user)
-                    .placeholder(R.drawable.user)
+                    .error(R.drawable.ic_user)
+                    .placeholder(R.drawable.ic_user)
                     .into(binding.icProfileImg);
 
         binding.editProfileTv.setOnClickListener(this);
@@ -108,8 +108,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                                 session.setValue(Constants.Key.user_img, response.body().getPath() + data.getImage());
                                 Glide.with(activity)
                                         .load(response.body().getPath() + data.getImage())
-                                        .error(R.drawable.user)
-                                        .placeholder(R.drawable.user)
+                                        .error(R.drawable.ic_user)
+                                        .placeholder(R.drawable.ic_user)
                                         .into(binding.icProfileImg);
                             }
                         } else

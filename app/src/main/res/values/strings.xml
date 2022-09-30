@@ -92,5 +92,10 @@
     <string name="text">Text</string>
     <string name="photo">Photo</string>
     <string name="relations">Relations</string>
+    <string name="comments">Comments</string>
+    <string name="comment_here">Comment here</string>
+    <string name="post">Post</string>
+    <string name="_0_views">0 Views</string>
+    <string name="like_amp_unlike"><![CDATA[Like & Unlike]]></string>
     <color name="gray_light">#BDB9B9</color>
 </resources>

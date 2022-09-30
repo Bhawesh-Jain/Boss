@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/transparent"
-        android:paddingBottom="@dimen/_30sdpq">
+        android:paddingBottom="@dimen/_5sdp">
 
         <LinearLayout
             android:layout_marginStart="@dimen/_10sdp"
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="@dimen/_20sdpq"
+            android:layout_marginBottom="@dimen/_10sdp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -94,7 +94,7 @@
                     android:layout_width="@dimen/_50sdpq"
                     android:layout_height="@dimen/_50sdpq"
                     android:layout_marginStart="@dimen/_10sdpq"
-                    android:src="@drawable/user"
+                    android:src="@drawable/ic_user"
                     app:civ_border_color="@color/grey_600"
                     app:civ_border_width="@dimen/_1sdpq" />
 
@@ -134,20 +134,20 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:gravity="end"
             android:layout_marginStart="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_5sdp"
-            android:layout_marginBottom="@dimen/_18sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="end"
             android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/like_lay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginBottom="@dimen/_5sdp"
                 android:gravity="center_horizontal"
-                android:layout_gravity="center_horizontal"
                 android:orientation="vertical">
 
                 <ImageView

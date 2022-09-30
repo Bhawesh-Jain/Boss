@@ -26,7 +26,6 @@ import com.bumptech.glide.Glide;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -58,7 +57,7 @@ public class FollowingListAdapter extends RecyclerView.Adapter<FollowingListAdap
             holder.txtname.setText(followersListModels.get(position).getName());
             Glide.with(context).load(User_image_Url + followersListModels.get(position).getImage())
                     .placeholder(R.drawable.loading)
-                    .error(R.drawable.user)
+                    .error(R.drawable.ic_user)
                     .into(holder.user_img);
 
             holder.unfollow_tv.setOnClickListener(view -> dialog(followersListModels.get(position).getName(), followersListModels.get(position).getId(), holder.unfollow_tv));

@@ -44,7 +44,7 @@
                 android:layout_width="@dimen/_130sdpq"
                 android:paddingHorizontal="@dimen/_20sdpq"
                 android:layout_height="@dimen/_90sdpq"
-                android:src="@drawable/user"
+                android:src="@drawable/ic_user"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.05"
                 app:layout_constraintStart_toStartOf="parent"

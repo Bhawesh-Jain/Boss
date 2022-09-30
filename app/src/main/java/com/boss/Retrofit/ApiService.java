@@ -8,6 +8,7 @@ import com.boss.model.Response_Models.LoginModel;
 import com.boss.model.Response_Models.OtpResModel;
 import com.boss.model.Response_Models.PrivacyPolModel;
 import com.boss.model.Response_Models.ProfileModel;
+import com.boss.model.Response_Models.ReelCommentModel;
 import com.boss.model.Response_Models.RelationUserModel;
 import com.boss.model.Response_Models.ResendOtpResModel;
 import com.boss.model.TermsConditionModel;
@@ -16,9 +17,7 @@ import com.boss.util.BaseUrl;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.Multipart;
 import retrofit2.http.POST;
-import retrofit2.http.Part;
 
 public interface ApiService {
 
@@ -40,9 +39,19 @@ public interface ApiService {
     Call<ResendOtpResModel> resend_otp(@Field("mobile") String mobile);
 
     @FormUrlEncoded
+    @POST(BaseUrl.load_reel_comments)
+    Call<ReelCommentModel> loadReelComments(@Field("reel_id") String reel_id);
+
+    @FormUrlEncoded
     @POST(BaseUrl.followUnfollow)
     Call<CommonResModel> follow_Unfollow(@Field("user_id") String user_id,
-                                 @Field("to_user_id") String to_user_id);
+                                         @Field("to_user_id") String to_user_id);
+
+    @FormUrlEncoded
+    @POST(BaseUrl.comment_on_reel)
+    Call<CommonResModel> addComment(@Field("user_id") String user_id,
+                                    @Field("reel_id") String reel_id,
+                                    @Field("comment") String comment);
 
     @FormUrlEncoded
     @POST(BaseUrl.get_folloing_userslist)

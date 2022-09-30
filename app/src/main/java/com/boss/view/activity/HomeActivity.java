@@ -1,5 +1,6 @@
 package com.boss.view.activity;
 
+import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -117,5 +118,6 @@ public class HomeActivity extends AppCompatActivity {
 
         mBottomSheetDialog.show();
     }
+
 
 }

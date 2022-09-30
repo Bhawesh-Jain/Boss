@@ -37,6 +37,8 @@ public class BaseUrl {
     public static final String treel_report = "treel_report";
     public static final String get_category = "get_category";
     public static final String get_reel_categories = "get_reel_categories";
+    public static final String comment_on_reel = "comment_on_reel";
+    public static final String load_reel_comments = "load_reel_comments";
     public static final String logout = "logout";
     public static final String get_faq = "get_faq";
     public static final String get_about_us = "get_about_us";

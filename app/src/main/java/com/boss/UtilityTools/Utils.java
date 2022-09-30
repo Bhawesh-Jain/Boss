@@ -43,6 +43,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Random;
 
 
 public class Utils {
@@ -62,6 +63,11 @@ public class Utils {
         cx.startActivity(i);
     }
 
+
+    public static int getRandomColor() {
+        Random rnd = new Random();
+        return Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+    }
 
     public static void UnAuthorizationToken(Context cx) {
         UserDataHelper.getInstance().deleteAll();
