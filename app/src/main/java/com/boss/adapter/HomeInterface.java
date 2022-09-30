@@ -1,6 +1,6 @@
 package com.boss.adapter;
 
-public interface On_Click {
+public interface HomeInterface {
 
     void onClick(String value);
 

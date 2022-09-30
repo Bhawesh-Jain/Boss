@@ -2,11 +2,11 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/white"
     android:clickable="true"
     android:focusable="true"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     tools:context=".view.fragment.ProfileFragment">
 
     <RelativeLayout
@@ -20,9 +20,9 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_100sdpq"
+                android:contentDescription="@string/profile"
                 android:scaleType="fitXY"
-                android:src="@drawable/profile_background"
-                android:contentDescription="@string/profile" />
+                android:src="@drawable/profile_background" />
 
             <ImageView
                 android:id="@+id/ic_more_option"
@@ -48,12 +48,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:layout_marginTop="@dimen/_70sdpq"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/user_image"
+                    android:id="@+id/ic_profile_img"
                     android:layout_width="@dimen/_100sdpq"
                     android:layout_height="@dimen/_100sdpq"
                     android:layout_marginStart="@dimen/_10sdpq"
@@ -67,7 +67,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/user_name"
+                        android:id="@+id/tv_user_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_1sdpq"
@@ -78,7 +78,7 @@
                         android:textSize="@dimen/_14sdp" />
 
                     <TextView
-                        android:id="@+id/company_name"
+                        android:id="@+id/tv_company_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_regular"
@@ -107,20 +107,20 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/_10sdpq"
                     android:layout_marginTop="@dimen/_10sdpq"
-                    android:padding="@dimen/_8sdpq"
+                    android:layout_marginBottom="@dimen/_10sdpq"
+                    android:baselineAligned="false"
                     android:orientation="horizontal"
-                    android:weightSum="3"
-                    android:baselineAligned="false">
+                    android:padding="@dimen/_8sdpq"
+                    android:weightSum="3">
 
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:id="@+id/following_lays"
+                        android:id="@+id/posts_lay"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/posts"
@@ -146,15 +146,15 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:orientation="vertical"
                         android:id="@+id/following_lay"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/following"
+                            android:id="@+id/tv_following"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_medium"
@@ -165,7 +165,7 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:id="@+id/post_tv"
+                            android:id="@+id/tv_label_following"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_regular"
@@ -177,15 +177,15 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:id="@+id/my_followers_lay"
+                        android:id="@+id/followers_lay"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/followers"
+                            android:id="@+id/tv_followers"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_medium"
@@ -228,7 +228,7 @@
                     app:contentPadding="@dimen/_3sdpq">
 
                     <TextView
-                        android:id="@+id/follow"
+                        android:id="@+id/tv_follow"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"

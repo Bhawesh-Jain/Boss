@@ -39,7 +39,6 @@ import com.boss.util.Constants;
 import com.boss.util.ImageShortCut;
 import com.boss.util.ProgressDialog;
 import com.boss.util.Session;
-import com.github.dhaval2404.imagepicker.ImagePicker;
 
 import org.json.JSONException;
 import org.json.JSONObject;

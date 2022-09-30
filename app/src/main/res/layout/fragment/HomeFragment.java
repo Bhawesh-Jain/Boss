@@ -28,7 +28,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.boss.R;
 import com.boss.adapter.HomePostAdapter;
-import com.boss.adapter.On_Click;
+import com.boss.adapter.HomeInterface;
 import com.boss.adapter.VideoViewAdapter;
 import com.boss.model.HomePostModel;
 import com.boss.util.Session;
@@ -66,7 +66,7 @@ public class HomeFragment extends Fragment {
        RecyclerView home_post_list;
        ArrayList<HomePostModel> homePostModels = new ArrayList<>();
        HomePostAdapter homePostAdapter;
-       On_Click click ;
+       HomeInterface click ;
        public HomeFragment() {
            // Required empty public constructor
        }
@@ -103,7 +103,7 @@ public class HomeFragment extends Fragment {
                                 Bundle savedInstanceState) {
            // Inflate the layout for this fragment
            View root = inflater.inflate(R.layout.fragment_home, container, false);
-           videoview_pager = root.findViewById(R.id.videoview_pager);
+           videoview_pager = root.findViewById(R.id.video_view_pager);
 
            /*bookmark = root.findViewById(R.id.bookmark_img);*/
            user_image = root.findViewById(R.id.user_image);

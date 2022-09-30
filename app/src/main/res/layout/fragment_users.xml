@@ -30,7 +30,7 @@
                     android:id="@+id/ivUserImage"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/welcomescreen"
+                    android:background="@drawable/welcome_screen"
                     />
             </com.google.android.material.card.MaterialCardView>
 
@@ -55,7 +55,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_medium"
                     android:text="8745088"
-                    android:textColor="@color/grayyy"
+                    android:textColor="@color/dark_gray"
                     android:textSize="@dimen/_16sdpq" />
 
 
@@ -69,7 +69,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
                         android:text="From contacts :"
-                        android:textColor="@color/grayyy"
+                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/_16sdpq" />
 
                     <TextView
@@ -78,7 +78,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
                         android:text="Baby"
-                        android:textColor="@color/grayyy"
+                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/_18sdpq" />
                 </LinearLayout>
 
@@ -129,7 +129,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/welcomescreen"
+                    android:background="@drawable/welcome_screen"
                     />
             </com.google.android.material.card.MaterialCardView>
 
@@ -152,7 +152,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_medium"
                     android:text="8745088"
-                    android:textColor="@color/grayyy"
+                    android:textColor="@color/dark_gray"
                     android:textSize="@dimen/_16sdpq" />
 
 
@@ -166,7 +166,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
                         android:text="From contacts :"
-                        android:textColor="@color/grayyy"
+                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/_16sdpq" />
 
                     <TextView
@@ -174,7 +174,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
                         android:text="Baby"
-                        android:textColor="@color/grayyy"
+                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/_18sdpq" />
                 </LinearLayout>
 
@@ -223,7 +223,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/welcomescreen"
+                    android:background="@drawable/welcome_screen"
                     />
             </com.google.android.material.card.MaterialCardView>
 
@@ -246,7 +246,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_medium"
                     android:text="8745088"
-                    android:textColor="@color/grayyy"
+                    android:textColor="@color/dark_gray"
                     android:textSize="@dimen/_16sdpq" />
 
 
@@ -260,7 +260,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
                         android:text="From contacts :"
-                        android:textColor="@color/grayyy"
+                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/_16sdpq" />
 
                     <TextView
@@ -268,7 +268,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
                         android:text="Baby"
-                        android:textColor="@color/grayyy"
+                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/_18sdpq" />
                 </LinearLayout>
 
@@ -317,7 +317,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/welcomescreen"
+                    android:background="@drawable/welcome_screen"
                     />
             </com.google.android.material.card.MaterialCardView>
 
@@ -340,7 +340,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_medium"
                     android:text="8745088"
-                    android:textColor="@color/grayyy"
+                    android:textColor="@color/dark_gray"
                     android:textSize="@dimen/_16sdpq" />
 
 
@@ -354,7 +354,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
                         android:text="From contacts :"
-                        android:textColor="@color/grayyy"
+                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/_16sdpq" />
 
                     <TextView
@@ -362,7 +362,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
                         android:text="Baby"
-                        android:textColor="@color/grayyy"
+                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/_18sdpq" />
                 </LinearLayout>
 
@@ -411,7 +411,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/welcomescreen"
+                    android:background="@drawable/welcome_screen"
                     />
             </com.google.android.material.card.MaterialCardView>
 
@@ -434,7 +434,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_medium"
                     android:text="8745088"
-                    android:textColor="@color/grayyy"
+                    android:textColor="@color/dark_gray"
                     android:textSize="@dimen/_16sdpq" />
 
 
@@ -448,7 +448,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
                         android:text="From contacts :"
-                        android:textColor="@color/grayyy"
+                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/_16sdpq" />
 
                     <TextView
@@ -456,7 +456,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
                         android:text="Baby"
-                        android:textColor="@color/grayyy"
+                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/_18sdpq" />
                 </LinearLayout>
 
@@ -505,7 +505,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/welcomescreen"
+                    android:background="@drawable/welcome_screen"
                     />
             </com.google.android.material.card.MaterialCardView>
 
@@ -528,7 +528,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_medium"
                     android:text="8745088"
-                    android:textColor="@color/grayyy"
+                    android:textColor="@color/dark_gray"
                     android:textSize="@dimen/_16sdpq" />
 
 
@@ -542,7 +542,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
                         android:text="From contacts :"
-                        android:textColor="@color/grayyy"
+                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/_16sdpq" />
 
                     <TextView
@@ -550,7 +550,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
                         android:text="Baby"
-                        android:textColor="@color/grayyy"
+                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/_18sdpq" />
                 </LinearLayout>
 
@@ -599,7 +599,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/welcomescreen"
+                    android:background="@drawable/welcome_screen"
                     />
             </com.google.android.material.card.MaterialCardView>
 
@@ -622,7 +622,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_medium"
                     android:text="8745088"
-                    android:textColor="@color/grayyy"
+                    android:textColor="@color/dark_gray"
                     android:textSize="@dimen/_16sdpq" />
 
 
@@ -636,7 +636,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
                         android:text="From contacts :"
-                        android:textColor="@color/grayyy"
+                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/_16sdpq" />
 
                     <TextView
@@ -644,7 +644,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
                         android:text="Baby"
-                        android:textColor="@color/grayyy"
+                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/_18sdpq" />
                 </LinearLayout>
 
@@ -693,7 +693,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/welcomescreen"
+                    android:background="@drawable/welcome_screen"
                     />
             </com.google.android.material.card.MaterialCardView>
 
@@ -716,7 +716,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_medium"
                     android:text="8745088"
-                    android:textColor="@color/grayyy"
+                    android:textColor="@color/dark_gray"
                     android:textSize="@dimen/_16sdpq" />
 
 
@@ -730,7 +730,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
                         android:text="From contacts :"
-                        android:textColor="@color/grayyy"
+                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/_16sdpq" />
 
                     <TextView
@@ -738,7 +738,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
                         android:text="Baby"
-                        android:textColor="@color/grayyy"
+                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/_18sdpq" />
                 </LinearLayout>
 
@@ -787,7 +787,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/welcomescreen"
+                    android:background="@drawable/welcome_screen"
                     />
             </com.google.android.material.card.MaterialCardView>
 
@@ -810,7 +810,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_medium"
                     android:text="8745088"
-                    android:textColor="@color/grayyy"
+                    android:textColor="@color/dark_gray"
                     android:textSize="@dimen/_16sdpq" />
 
 
@@ -824,7 +824,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
                         android:text="From contacts :"
-                        android:textColor="@color/grayyy"
+                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/_16sdpq" />
 
                     <TextView
@@ -832,7 +832,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
                         android:text="Baby"
-                        android:textColor="@color/grayyy"
+                        android:textColor="@color/dark_gray"
                         android:textSize="@dimen/_18sdpq" />
                 </LinearLayout>
 

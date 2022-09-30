@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_300sdpq"
             android:layout_marginTop="@dimen/_30sdpq"
-            android:src="@drawable/welcomescreen" />
+            android:src="@drawable/welcome_screen" />
 
 
         <TextView

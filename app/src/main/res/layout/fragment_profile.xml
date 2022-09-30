@@ -133,7 +133,7 @@
                 android:weightSum="3">
 
                 <LinearLayout
-                    android:id="@+id/following_lays"
+                    android:id="@+id/posts_lay"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_vertical"
@@ -173,7 +173,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/following"
+                        android:id="@+id/tv_following"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"
@@ -185,7 +185,7 @@
                         android:textSize="16sp" />
 
                     <TextView
-                        android:id="@+id/post_tv"
+                        android:id="@+id/tv_label_following"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_regular"
@@ -197,7 +197,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/my_followers_lay"
+                    android:id="@+id/followers_lay"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_vertical"
@@ -205,7 +205,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/followers"
+                        android:id="@+id/tv_followers"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_medium"

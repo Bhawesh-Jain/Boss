@@ -12,7 +12,7 @@
     <color name="colorgrey">#616469</color>
     <color name="yellow_card">#FCDA28</color>
 
-    <color name="grayyy">#7C7C7C</color>
+    <color name="dark_gray">#7C7C7C</color>
     <color name="hotred">#F90F0F</color>
     <color name="darkgreeeen">#44533C</color>
     <color name="transparent1">#4D1DA1F2</color>
@@ -29,7 +29,7 @@
     <color name="sky">#009ee7</color>
     <color name="selectedcolor">#f5f5f5</color>
     <color name="red">#f74b81</color>
-    <color name="dred">#DA0000</color>
+    <color name="dark_red">#DA0000</color>
     <color name="yellow">#DFFCDA28</color>
     <color name="greentransparent">#3385A633</color>
     <color name="blue">#2c3d99</color>
@@ -67,7 +67,6 @@
     <color name="whitecolorr">#FFFFFF</color>
     <color name="whitetransparent2">#90FFFFFF</color>
     <color name="blacktransparent">#48000000</color>
-    <color name="transparent">#1B000000</color>
     <color name="profilelock">#E83C3C3C</color>
     <color name="black_semi_transparent">#B2000000</color>
     <color name="background">#74E5E5E5</color>
@@ -141,4 +140,12 @@
     <color name="quantum_orangeA700">#ff6d00</color>
     <color name="quantum_orange">@color/quantum_orange500</color>
     <color name="quantum_orange100">#ffe0b2</color>
+
+
+    <color name="light_blue_ap">#DF74DEEC</color>
+    <color name="purple_blue_ap">#7B8BDA</color>
+    <color name="purple_ap">#DCA3EC</color>
+    <color name="red_ap">#EF5350</color>
+    <color name="yellow_ap">#FFDD75</color>
+    <color name="green_ap">#9CCC65</color>
 </resources>

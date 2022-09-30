@@ -17,7 +17,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.boss.R;
 import com.boss.UtilityTools.Utils;
 import com.boss.view.activity.UserProfileActivity;
-import com.boss.view.fragment.HomeFragment;
+import com.boss.view.homepage.HomeFragment;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.jarvanmo.exoplayerview.media.SimpleMediaSource;
 import com.jarvanmo.exoplayerview.ui.ExoVideoView;
@@ -26,7 +26,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
-public class VideoViewAdapter extends RecyclerView.Adapter<VideoViewAdapter.MyViewHolder>  implements On_Click {
+public class VideoViewAdapter extends RecyclerView.Adapter<VideoViewAdapter.MyViewHolder> implements HomeInterface {
 
     Context context;
     ArrayList<String> video_url;
@@ -36,17 +36,15 @@ public class VideoViewAdapter extends RecyclerView.Adapter<VideoViewAdapter.MyVi
         this.context = context;
         this.video_url = video_url;
     }
+
     @NotNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
         return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.tiktok_layout, parent, false));
-
     }
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull MyViewHolder holder, int position) {
-
-
         holder.progress_bar.setVisibility(View.GONE);
         SimpleMediaSource mediaSource = new SimpleMediaSource(video_url.get(position));
 
@@ -58,7 +56,7 @@ public class VideoViewAdapter extends RecyclerView.Adapter<VideoViewAdapter.MyVi
         holder.userImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Utils.I(context, UserProfileActivity.class,null);
+                Utils.I(context, UserProfileActivity.class, null);
             }
         });
 
@@ -79,37 +77,32 @@ public class VideoViewAdapter extends RecyclerView.Adapter<VideoViewAdapter.MyVi
         });
 
 
-
-
         int adapter_pos = position;
 
 
-        HomeFragment.videoview_pager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                super.onPageScrolled(position, positionOffset, positionOffsetPixels);
-
-
-
-                if(adapter_pos==position) {
-                    if (videoView!=null){
-                        videoView.stop();
-                    }
-
-                    videoView.play(mediaSource);
-                    videoView.resume();
-                }else {
-                    videoView.pause();
-                    videoView.stop();
-                }
-
-                Log.e(" ", "onPageScrolled: "+position );
-
-
-
-            }
-        });
-
+//        HomeFragment.videoview_pager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+//            @Override
+//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+//                super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+//
+//
+//                if (adapter_pos == position) {
+//                    if (videoView != null) {
+//                        videoView.stop();
+//                    }
+//
+//                    videoView.play(mediaSource);
+//                    videoView.resume();
+//                } else {
+//                    videoView.pause();
+//                    videoView.stop();
+//                }
+//
+//                Log.e(" ", "onPageScrolled: " + position);
+//
+//
+//            }
+//        });
 
 
     }
@@ -130,7 +123,8 @@ public class VideoViewAdapter extends RecyclerView.Adapter<VideoViewAdapter.MyVi
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         ProgressBar progress_bar;
-        ImageView report_abuse_img,userImage;
+        ImageView report_abuse_img, userImage;
+
         public MyViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             videoView = itemView.findViewById(R.id.fullscreenVideoView);

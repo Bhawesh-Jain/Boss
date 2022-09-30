@@ -1,6 +1,7 @@
 package com.boss.view.fragment;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,8 +19,8 @@ import com.boss.adapter.ProfileViewPagerAdapter;
 import com.boss.databinding.FragmentProfileBinding;
 import com.boss.model.Response_Models.ProfileModel;
 import com.boss.util.Constants;
-import com.boss.util.ProgressDialog;
 import com.boss.util.Session;
+import com.boss.view.activity.RelationsActivity;
 import com.boss.view.activity.SettingActivity;
 import com.boss.view.activity.UpdateProfile;
 import com.bumptech.glide.Glide;
@@ -67,6 +68,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         binding.editProfileTv.setOnClickListener(this);
         binding.icProfileImg.setOnClickListener(this);
         binding.icSettings.setOnClickListener(this);
+        binding.followersLay.setOnClickListener(this);
+        binding.followingLay.setOnClickListener(this);
 
         ProfileViewPagerAdapter profileViewPagerAdapter = new ProfileViewPagerAdapter(getActivity());
         binding.ViewPager.setAdapter(profileViewPagerAdapter);
@@ -83,7 +86,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     private void getProfile() {
         ApiService apiService = RetrofitClient.getClient(activity);
 
-        apiService.getProfile(session.getUser_Id()).enqueue(new Callback<ProfileModel>() {
+        apiService.getProfile(session.getUser_Id(), session.getUser_Id()).enqueue(new Callback<ProfileModel>() {
             @Override
             public void onResponse(@NonNull Call<ProfileModel> call, @NonNull Response<ProfileModel> response) {
                 if (response.code() == 200) {
@@ -98,8 +101,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                             binding.tvUserName.setText(data.getName());
                             binding.tvCompanyName.setText(data.getCompany());
                             binding.tvAboutBusiness.setText(data.getAbout());
+                            binding.tvFollowers.setText(String.valueOf(data.getTotalFollower()));
+                            binding.tvFollowing.setText(String.valueOf(data.getTotalFollowing()));
 
-                            if (data.getImage().length() != 0){
+                            if (data.getImage().length() != 0) {
                                 session.setValue(Constants.Key.user_img, response.body().getPath() + data.getImage());
                                 Glide.with(activity)
                                         .load(response.body().getPath() + data.getImage())
@@ -107,8 +112,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                                         .placeholder(R.drawable.user)
                                         .into(binding.icProfileImg);
                             }
-
-                        } else Toast.makeText(activity, "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                        } else
+                            Toast.makeText(activity, "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -122,12 +127,11 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        if (view == binding.editProfileTv) {
-            Utils.I(activity, UpdateProfile.class, null);
-        } else if (view == binding.icProfileImg) {
-            Utils.I(activity, UpdateProfile.class, null);
-        } else if (view == binding.icSettings) {
-            Utils.I(activity, SettingActivity.class, null);
-        }
+        if (view == binding.editProfileTv) Utils.I(activity, UpdateProfile.class, null);
+        else if (view == binding.icProfileImg) Utils.I(activity, UpdateProfile.class, null);
+        else if (view == binding.icSettings) Utils.I(activity, SettingActivity.class, null);
+        else if (view == binding.followersLay) startActivity(new Intent(activity, RelationsActivity.class).putExtra("type", 1).putExtra("user_id", session.getUser_Id()));
+        else if (view == binding.followingLay) startActivity(new Intent(activity, RelationsActivity.class).putExtra("type", 0).putExtra("user_id", session.getUser_Id()));
+
     }
 }

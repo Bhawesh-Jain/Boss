@@ -4,14 +4,16 @@ public class BaseUrl {
 
     public static final String Development = "Debug";
 
-    //Base Url
 //    public static String Base_Url = "http://logicaltest.in/Exim_papa/Api/";
+//    public static String Post_image_Url = "http://logicaltest.in/Exim_papa/assets/images/gallery/";
+//    public static String Post_Video_Url = "http://logicaltest.in/Exim_papa/assets/video/";
+
+
+    //Base Url
     public static String Base_Url = "https://logicaltest.website/praveen/boss/Api/";
 
-    //Image and Video Base Url
-    public static String User_image_Url = "http://logicaltest.in/Exim_papa/assets/images/users/";
-    public static String Post_image_Url = "http://logicaltest.in/Exim_papa/assets/images/gallery/";
-    public static String Post_Video_Url = "http://logicaltest.in/Exim_papa/assets/video/";
+    //Image Base Url
+    public static String User_image_Url = "https://logicaltest.website/praveen/boss/assets/images/users/";
 
 
     public static String get_user_post_home = "get_user_post_home";

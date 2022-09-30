@@ -33,7 +33,7 @@
         android:gravity="center_horizontal"
         android:layout_marginTop="@dimen/_16sdpq"
         android:text="User has not been tagged any videos "
-        android:textColor="@color/grayyy"
+        android:textColor="@color/dark_gray"
         android:textSize="@dimen/_14sdpq" />
 
 

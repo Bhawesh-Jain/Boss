@@ -74,9 +74,6 @@
                 android:orientation="vertical">
 
 
-
-
-
                 <LinearLayout
                     android:layout_width="@dimen/_250sdpq"
                     android:layout_height="wrap_content"
@@ -158,7 +155,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="@dimen/_10sdpq"
                         android:layout_toRightOf="@+id/user_images"
-                        app:cardBackgroundColor="@color/dred"
+                        app:cardBackgroundColor="@color/dark_red"
                         app:cardCornerRadius="@dimen/_3sdpq"
                         app:cardElevation="@dimen/_3sdpq">
 
@@ -166,12 +163,12 @@
                             android:id="@+id/send_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
                             android:paddingLeft="@dimen/_10sdpq"
                             android:paddingTop="@dimen/_3sdpq"
                             android:paddingRight="@dimen/_10sdpq"
                             android:paddingBottom="@dimen/_3sdpq"
                             android:text="FOLLOW"
-                            android:fontFamily="@font/roboto_medium"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_14sdpq" />
 
@@ -269,7 +266,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginRight="@dimen/_10sdpq"
-                    android:src="@drawable/ic_deslike"
+                    android:src="@drawable/ic_dislike"
                     app:tint="@color/white" />
 
                 <TextView

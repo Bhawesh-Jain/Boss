@@ -59,7 +59,7 @@
             android:layout_toEndOf="@id/ivDiscover"
             android:fontFamily="@font/roboto_medium"
             android:text="@string/discover_people"
-            android:textColor="@color/grayyy"
+            android:textColor="@color/dark_gray"
             android:textSize="@dimen/_16sdpq"
             tools:ignore="SpUsage" />
 
@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
-            android:src="@drawable/arroww" />
+            android:src="@drawable/ic_arrow_right" />
 
     </RelativeLayout>
 
@@ -94,7 +94,7 @@
             android:layout_toEndOf="@id/ivBlocked"
             android:fontFamily="@font/roboto_medium"
             android:text="@string/blocked"
-            android:textColor="@color/grayyy"
+            android:textColor="@color/dark_gray"
             android:textSize="@dimen/_16sdpq"
             tools:ignore="SpUsage" />
 
@@ -103,7 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
-            android:src="@drawable/arroww" />
+            android:src="@drawable/ic_arrow_right" />
 
 
     </RelativeLayout>
@@ -131,7 +131,7 @@
             android:layout_toEndOf="@id/ivFeed"
             android:fontFamily="@font/roboto_medium"
             android:text="@string/FeedBack"
-            android:textColor="@color/grayyy"
+            android:textColor="@color/dark_gray"
             android:textSize="@dimen/settings_text"
             tools:ignore="SpUsage" />
 
@@ -140,7 +140,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
-            android:src="@drawable/arroww" />
+            android:src="@drawable/ic_arrow_right" />
 
 
     </RelativeLayout>
@@ -167,7 +167,7 @@
             android:layout_toEndOf="@id/ivRate"
             android:fontFamily="@font/roboto_medium"
             android:text="@string/RateBoss"
-            android:textColor="@color/grayyy"
+            android:textColor="@color/dark_gray"
             android:textSize="@dimen/settings_text"
             tools:ignore="SpUsage" />
 
@@ -176,7 +176,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
-            android:src="@drawable/arroww" />
+            android:src="@drawable/ic_arrow_right" />
 
 
     </RelativeLayout>
@@ -204,7 +204,7 @@
             android:layout_toEndOf="@id/ivShare"
             android:fontFamily="@font/roboto_medium"
             android:text="@string/ShareBoss"
-            android:textColor="@color/grayyy"
+            android:textColor="@color/dark_gray"
             android:textSize="@dimen/settings_text"
             tools:ignore="SpUsage" />
 
@@ -213,7 +213,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
-            android:src="@drawable/arroww" />
+            android:src="@drawable/ic_arrow_right" />
 
 
     </RelativeLayout>
@@ -241,7 +241,7 @@
             android:layout_toEndOf="@id/ivFaq"
             android:fontFamily="@font/roboto_medium"
             android:text="@string/Faq"
-            android:textColor="@color/grayyy"
+            android:textColor="@color/dark_gray"
             android:textSize="@dimen/settings_text"
             tools:ignore="SpUsage" />
 
@@ -250,7 +250,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
-            android:src="@drawable/arroww" />
+            android:src="@drawable/ic_arrow_right" />
 
     </RelativeLayout>
 
@@ -278,7 +278,7 @@
             android:layout_toEndOf="@id/ivAboutUs"
             android:fontFamily="@font/roboto_medium"
             android:text="@string/AboutUs"
-            android:textColor="@color/grayyy"
+            android:textColor="@color/dark_gray"
             android:textSize="@dimen/settings_text"
             tools:ignore="SpUsage" />
 
@@ -287,7 +287,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
-            android:src="@drawable/arroww" />
+            android:src="@drawable/ic_arrow_right" />
 
 
     </RelativeLayout>
@@ -314,7 +314,7 @@
             android:layout_toEndOf="@id/ivPrivacyPolicy"
             android:fontFamily="@font/roboto_medium"
             android:text="@string/privacy_policy"
-            android:textColor="@color/grayyy"
+            android:textColor="@color/dark_gray"
             android:textSize="@dimen/settings_text"
             tools:ignore="SpUsage" />
 
@@ -323,7 +323,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
-            android:src="@drawable/arroww" />
+            android:src="@drawable/ic_arrow_right" />
 
 
     </RelativeLayout>
@@ -351,7 +351,7 @@
             android:layout_toEndOf="@id/ivTermsCondition"
             android:fontFamily="@font/roboto_medium"
             android:text="@string/terms_amp_conditions"
-            android:textColor="@color/grayyy"
+            android:textColor="@color/dark_gray"
             android:textSize="@dimen/settings_text"
             tools:ignore="SpUsage" />
 
@@ -360,7 +360,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
-            android:src="@drawable/arroww" />
+            android:src="@drawable/ic_arrow_right" />
 
 
     </RelativeLayout>
@@ -388,7 +388,7 @@
             android:layout_toEndOf="@id/ivDelete"
             android:fontFamily="@font/roboto_medium"
             android:text="@string/DeleteAccount"
-            android:textColor="@color/grayyy"
+            android:textColor="@color/dark_gray"
             android:textSize="@dimen/settings_text"
             tools:ignore="SpUsage" />
 
@@ -397,7 +397,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
-            android:src="@drawable/arroww" />
+            android:src="@drawable/ic_arrow_right" />
 
     </RelativeLayout>
 
@@ -425,7 +425,7 @@
             android:layout_toEndOf="@id/ivLogout"
             android:fontFamily="@font/roboto_medium"
             android:text="@string/LogOut"
-            android:textColor="@color/grayyy"
+            android:textColor="@color/dark_gray"
             android:textSize="@dimen/settings_text"
             tools:ignore="SpUsage" />
 
@@ -434,7 +434,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
-            android:src="@drawable/arroww" />
+            android:src="@drawable/ic_arrow_right" />
 
 
     </RelativeLayout>

@@ -2,8 +2,6 @@ package com.boss.adapter;
 
 
 import static com.boss.util.BaseUrl.Base_Url;
-import static com.boss.util.BaseUrl.Post_Video_Url;
-import static com.boss.util.BaseUrl.Post_image_Url;
 import static com.boss.util.BaseUrl.References_unRef;
 import static com.boss.util.BaseUrl.User_image_Url;
 import static com.boss.util.BaseUrl.count_like;
@@ -149,14 +147,14 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
                 holder.user_text_message.setText(homePostModel.getText_message());
                 holder.post_image.setVisibility(View.GONE);
 
-                SimpleMediaSource mediaSource = new SimpleMediaSource(Post_Video_Url + homePostModel.getPost_video());
+//                SimpleMediaSource mediaSource = new SimpleMediaSource(Post_Video_Url + homePostModel.getPost_video());
 
                 holder.post_video_view.hideController();
                 holder.post_video_view.setControllerAutoShow(false);
                 holder.post_video_view.setUseController(false);
                 holder.post_video_view.changeWidgetVisibility(R.id.exo_player_controller_back, View.INVISIBLE);
 
-                holder.post_video_view.play(mediaSource);
+//                holder.post_video_view.play(mediaSource);
 
 
 //                holder.post_video_view.play(mediaSource,true,position);
@@ -176,7 +174,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
                 holder.only_text_message.setVisibility(View.GONE);
                 holder.user_text_message.setText(homePostModel.getText_message());
 
-                Glide.with(context).load(Post_image_Url + homePostModel.getPost_img()).into(holder.post_image);
+//                Glide.with(context).load(Post_image_Url + homePostModel.getPost_img()).into(holder.post_image);
 
             } else if (!homePostModel.getPost_img().equals("") && homePostModel.getText_message().equals("")) {
 
@@ -187,7 +185,7 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
                 holder.user_text_message.setVisibility(View.GONE);
                 holder.only_text_message.setVisibility(View.GONE);
                 holder.more.setVisibility(View.GONE);
-                Glide.with(context).load(Post_image_Url + homePostModel.getPost_img()).into(holder.post_image);
+//                Glide.with(context).load(Post_image_Url + homePostModel.getPost_img()).into(holder.post_image);
 
 
             } else if (!homePostModel.getPost_video().equals("") && homePostModel.getText_message().equals("")) {
@@ -206,14 +204,14 @@ public class HomePostAdapter extends RecyclerView.Adapter<HomePostAdapter.MyView
                 holder.user_text_message.setText(homePostModel.getText_message());
 
 
-                SimpleMediaSource mediaSource = new SimpleMediaSource(Post_Video_Url + homePostModel.getPost_video());
+//                SimpleMediaSource mediaSource = new SimpleMediaSource(Post_Video_Url + homePostModel.getPost_video());
 
                 holder.post_video_view.hideController();
                 holder.post_video_view.setControllerAutoShow(false);
                 holder.post_video_view.setUseController(false);
                 holder.post_video_view.changeWidgetVisibility(R.id.exo_player_controller_back, View.INVISIBLE);
 
-                holder.post_video_view.play(mediaSource);
+//                holder.post_video_view.play(mediaSource);
 
 
 //                Glide.with(context).load(Post_image_Url+homePostModel.getPost_video()).into(holder.post_image);

@@ -177,6 +177,15 @@ public class ProfileModel {
         @SerializedName("updated_date")
         @Expose
         private String updatedDate;
+        @SerializedName("total_following")
+        @Expose
+        private int totalFollowing;
+        @SerializedName("total_follower")
+        @Expose
+        private int totalFollower;
+        @SerializedName("i_followed")
+        @Expose
+        private int iFollowed;
 
         public String getId() {
             return id;
@@ -387,8 +396,6 @@ public class ProfileModel {
         }
 
         public String getCompany() {
-            if (company.length() == 0)
-                return "Self-Employed";
             return company;
         }
 
@@ -516,5 +523,28 @@ public class ProfileModel {
             this.updatedDate = updatedDate;
         }
 
-    }
-}
+        public int getTotalFollowing() {
+            return totalFollowing;
+        }
+
+        public void setTotalFollowing(int totalFollowing) {
+            this.totalFollowing = totalFollowing;
+        }
+
+        public int getTotalFollower() {
+            return totalFollower;
+        }
+
+        public void setTotalFollower(int totalFollower) {
+            this.totalFollower = totalFollower;
+        }
+
+        public int getiFollowed() {
+            return iFollowed;
+        }
+
+        public void setiFollowed(int iFollowed) {
+            this.iFollowed = iFollowed;
+        }
+
+    }}

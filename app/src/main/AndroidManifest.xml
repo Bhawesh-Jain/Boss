@@ -17,6 +17,9 @@
         android:theme="@style/Theme.Boss"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".view.activity.RelationsActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.activity.FaqActivity"
             android:exported="false" />
         <activity

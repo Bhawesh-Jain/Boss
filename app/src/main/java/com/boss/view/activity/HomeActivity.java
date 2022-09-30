@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 
 import com.boss.R;
 import com.boss.databinding.ActivityHomeBinding;
-import com.boss.view.fragment.HomeFragment;
+import com.boss.view.homepage.HomeFragment;
 import com.boss.view.fragment.NotificationsFragment;
 import com.boss.view.fragment.ProfileFragment;
 import com.boss.view.fragment.SearchFragment;

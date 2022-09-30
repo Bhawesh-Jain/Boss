@@ -44,7 +44,6 @@
     <string name="report">Report</string>
     <string name="block_user">Block User</string>
     <string name="search_blogs_category">Search Blogs Category</string>
-    <string name="username">\@gd_xyzsjs</string>
     <string name="options">Options</string>
     <string name="follow">Follow</string>
     <string name="user_unknown">User Unknown</string>
@@ -76,5 +75,22 @@
     <string name="frequently_asked_questions">Frequently Asked Questions</string>
     <string name="arrow">Arrow</string>
     <string name="logo">Logo</string>
+    <string name="save">Save</string>
+    <string name="profile_photo">Profile Photo</string>
+    <string name="username">Username</string>
+    <string name="bio">Bio</string>
+    <string name="gender">Gender</string>
+    <string name="calendar">Calendar</string>
+    <string name="dd_mm_yyyy">DD/MM/YYYY</string>
+    <string name="link">Link</string>
+    <string name="we_provide_architecture_drawing_plumbing_online_service">...#we provide architechure drowing / plumbing/onlineservice</string>
+    <string name="like">Like</string>
+    <string name="_5_lakh">5 lakh</string>
+    <string name="comment">Comment</string>
+    <string name="share">Share</string>
+    <string name="dislike">Dislike</string>
+    <string name="text">Text</string>
+    <string name="photo">Photo</string>
+    <string name="relations">Relations</string>
     <color name="gray_light">#BDB9B9</color>
 </resources>
