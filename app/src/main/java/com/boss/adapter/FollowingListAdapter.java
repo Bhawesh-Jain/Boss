@@ -1,10 +1,12 @@
 package com.boss.adapter;
 
 import static com.boss.util.BaseUrl.User_image_Url;
+import static com.google.android.exoplayer2.ExoPlayerLibraryInfo.TAG;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,6 +70,12 @@ public class FollowingListAdapter extends RecyclerView.Adapter<FollowingListAdap
 
                 context.startActivity(intent);
             });
+            holder.user_img.setOnClickListener(v -> {
+                Intent intent = new Intent(context, UserProfileActivity.class);
+                intent.putExtra("id", followersListModels.get(position).getId());
+
+                context.startActivity(intent);
+            });
 
         }
     }
@@ -108,7 +116,7 @@ public class FollowingListAdapter extends RecyclerView.Adapter<FollowingListAdap
 
             @Override
             public void onFailure(@NonNull Call<CommonResModel> call, @NonNull Throwable t) {
-                Toast.makeText(context, "" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "" + t.getLocalizedMessage());
             }
         });
     }

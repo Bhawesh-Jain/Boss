@@ -1,11 +1,14 @@
 package com.boss.view.activity;
 
+import static com.google.android.exoplayer2.ExoPlayerLibraryInfo.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.boss.Retrofit.ApiService;
@@ -55,7 +58,7 @@ public class FaqActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(@NonNull Call<FaqModel> call, @NonNull Throwable t) {
-                Toast.makeText(activity, "" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "" + t.getLocalizedMessage());
             }
         });
     }

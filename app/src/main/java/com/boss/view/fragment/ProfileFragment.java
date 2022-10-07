@@ -1,8 +1,11 @@
 package com.boss.view.fragment;
 
+import static com.google.android.exoplayer2.ExoPlayerLibraryInfo.TAG;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -120,7 +123,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
             @Override
             public void onFailure(@NonNull Call<ProfileModel> call, @NonNull Throwable t) {
-                Toast.makeText(activity, "" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "" + t.getLocalizedMessage());
             }
         });
     }

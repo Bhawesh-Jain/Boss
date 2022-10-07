@@ -1,11 +1,12 @@
 package com.boss.view.activity;
 
+import static com.google.android.exoplayer2.ExoPlayerLibraryInfo.TAG;
+
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,8 +16,6 @@ import com.boss.Retrofit.ApiService;
 import com.boss.Retrofit.RetrofitClient;
 import com.boss.databinding.ActivitySettingBinding;
 import com.boss.model.Response_Models.CommonResModel;
-import com.boss.model.Response_Models.LoginModel;
-import com.boss.util.Constants;
 import com.boss.util.ProgressDialog;
 import com.boss.util.Session;
 
@@ -74,7 +73,7 @@ public class SettingActivity extends AppCompatActivity {
                         @Override
                         public void onFailure(@NonNull Call<CommonResModel> call, @NonNull Throwable t) {
                             progressDialog.dismiss();
-                            Toast.makeText(activity, ""+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                            Log.e(TAG, "" + t.getLocalizedMessage());
                         }
                     });
                 })

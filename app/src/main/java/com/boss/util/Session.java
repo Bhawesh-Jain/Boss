@@ -27,10 +27,9 @@ public class Session {
         userData = _context.getSharedPreferences(UserData, Context.MODE_PRIVATE);
         editor = userData.edit();
         editor.apply();
-
     }
 
-    public  void setUser_Id( String user_id) {
+    public  void setUser_Id(String user_id) {
         SharedPreferences.Editor editor = userData.edit();
         editor.putString(User_Id, user_id);
         editor.apply();
@@ -51,12 +50,11 @@ public class Session {
 
     public  void setName( String Name) {
         SharedPreferences.Editor editor = userData.edit();
-        editor.putString(Name, Name);
+        editor.putString(Session.Name, Name);
         editor.apply();
     }
 
     public  String getName() {
-
         return userData.getString(Name, "");
     }
 
@@ -67,7 +65,6 @@ public class Session {
     }
 
     public  String getEmail() {
-
         return userData.getString(Email, "");
     }
 

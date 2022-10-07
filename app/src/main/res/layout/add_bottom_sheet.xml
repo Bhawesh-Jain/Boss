@@ -17,12 +17,11 @@
         android:textSize="@dimen/_18sdpq" />
 
 
-
     <LinearLayout
-        android:layout_marginTop="@dimen/_10sdpq"
         android:id="@+id/list_item_ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdpq"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -38,12 +37,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:contentDescription="create_a_project"
                 android:layout_margin="@dimen/_15sdpq"
+                android:contentDescription="create_a_project"
                 android:src="@drawable/ic_youtube_svgrepo" />
 
         </LinearLayout>
-
 
 
         <LinearLayout
@@ -68,9 +66,9 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="@dimen/_10sdpq"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdpq"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -86,19 +84,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:contentDescription="create_a_project"
                 android:layout_margin="@dimen/_18sdpq"
+                android:contentDescription="create_a_project"
                 android:src="@drawable/ic_upload_svgrepo" />
 
         </LinearLayout>
 
 
-
-
         <LinearLayout
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:orientation="vertical"
             android:padding="20dp"
             app:layout_constraintBottom_toBottomOf="@+id/cardView"
@@ -118,9 +114,9 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="@dimen/_10sdpq"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdpq"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -128,7 +124,7 @@
             android:id="@+id/cardView2"
             android:layout_width="@dimen/_50sdpq"
             android:layout_height="@dimen/_50sdpq"
-           android:background="@drawable/graycircle"
+            android:background="@drawable/graycircle"
             app:cardCornerRadius="@dimen/_40sdpq"
             app:cardUseCompatPadding="true"
             app:layout_constraintStart_toStartOf="parent"
@@ -138,20 +134,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:contentDescription="create_a_project"
                 android:layout_margin="@dimen/_15sdpq"
+                android:contentDescription="create_a_project"
                 android:src="@drawable/ic_stream_svgrepo" />
 
         </LinearLayout>
 
 
-
-
         <LinearLayout
-            android:layout_gravity="center"
             android:id="@+id/create_project_ll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:orientation="vertical"
             android:padding="20dp"
             app:layout_constraintBottom_toBottomOf="@+id/cardView"
@@ -169,7 +163,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
 
 </LinearLayout>

@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -43,6 +44,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
@@ -57,18 +59,44 @@ dependencies {
     implementation 'com.nineoldandroids:library:2.4.0'
     implementation 'com.github.mehrtarh:CircleButtonBar:v1.1.3'
     implementation 'androidx.multidex:multidex:2.0.1'
-    implementation 'com.mahc.custombottomsheetbehavior:googlemaps-like:0.9.1'
-    implementation 'com.github.skydoves:elasticviews:2.1.0'
     implementation 'devlight.io:navigationtabbar:1.2.5'
     implementation 'com.android.volley:volley:1.2.1'
     implementation "me.majiajie:pager-bottom-tab-strip:2.4.0"
     implementation 'com.github.jama5262:CarouselView:1.2.2'
 
+
+    // Elastic View
+    implementation 'com.github.skydoves:elasticviews:2.1.0'
+
+
+    // Firebase
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-auth:20.0.1'
+    implementation 'com.google.firebase:firebase-database:19.6.0'
+    implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.google.firebase:firebase-core:17.2.2'
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-messaging:21.0.1'
+
+
+    // Google and Facebook Dependency
+    implementation 'com.google.android.gms:play-services-auth:20.3.0'
+    implementation 'com.facebook.android:facebook-login:14.1.0'
+    implementation 'com.facebook.android:facebook-android-sdk:14.1.0'
+
+    //Bottom Sheet
+    implementation 'com.mahc.custombottomsheetbehavior:googlemaps-like:0.9.1'
+    implementation 'com.github.Deishelon:RoundedBottomSheet:1.0.1'
+
+
+    // Lottie
     def lottieVersion = "3.4.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"
+
+
     implementation "com.mlsdev.animatedrv:library:2.0.0"
     implementation 'io.supercharge:shimmerlayout:2.1.0'
-    implementation 'com.github.Deishelon:RoundedBottomSheet:1.0.1'
     implementation 'com.github.florent37:glidepalette:2.1.2'
     implementation 'com.github.bumptech.glide:glide:4.12.0'
 
@@ -76,12 +104,13 @@ dependencies {
     implementation group: 'com.hovans.dynamicgrid', name: 'dynamicgrid', version: '1.0.0'
     implementation 'com.tbuonomo:dotsindicator:4.3'
     //video
-    implementation 'com.google.android.exoplayer:exoplayer:2.7.3'
+
 
     implementation "ss.anoop:awesome-textinput-layout:1.0.3"
 
     //Video View
-    implementation 'com.github.JarvanMo:ExoVideoView:2.1.6'
+//    implementation 'com.github.JarvanMo:ExoVideoView:2.1.6'
+    implementation 'com.github.JarvanMo:ExoVideoView:2.1.2'
     implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
     implementation 'bg.devlabs.fullscreenvideoview:library:1.1.6'
     implementation 'com.github.blackfizz:eazegraph:1.2.5l@aar'
@@ -101,6 +130,13 @@ dependencies {
     // ImagePicker
     implementation 'com.github.jrvansuita:PickImage:2.5.2'
     implementation 'com.nononsenseapps:filepicker:3.0.0'
+    implementation 'com.karumi:dexter:6.2.3'
+
 
 //    implementation 'com.github.dhaval2404:imagepicker-support:1.7.1'
+
+    // VideoPicker
+    implementation 'com.github.MasayukiSuda:GPUVideo-android:v0.1.2'
+    // if apply video filter on ExoPlayer video
+//    implementation 'com.google.android.exoplayer:exoplayer-core:2.15.1'
 }

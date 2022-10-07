@@ -1,16 +1,19 @@
 package com.boss.Retrofit;
 
 import com.boss.model.Response_Models.AboutUsModel;
+import com.boss.model.Response_Models.BannerResModel;
 import com.boss.model.Response_Models.CommonResModel;
 import com.boss.model.Response_Models.FaqModel;
 import com.boss.model.Response_Models.HomeReelModel;
 import com.boss.model.Response_Models.LoginModel;
 import com.boss.model.Response_Models.OtpResModel;
+import com.boss.model.Response_Models.PopularCreatorResModel;
 import com.boss.model.Response_Models.PrivacyPolModel;
 import com.boss.model.Response_Models.ProfileModel;
 import com.boss.model.Response_Models.ReelCommentModel;
 import com.boss.model.Response_Models.RelationUserModel;
 import com.boss.model.Response_Models.ResendOtpResModel;
+import com.boss.model.SocialLoginResModel;
 import com.boss.model.TermsConditionModel;
 import com.boss.util.BaseUrl;
 
@@ -30,9 +33,40 @@ public interface ApiService {
     Call<CommonResModel> logout(@Field("user_id") String user_id);
 
     @FormUrlEncoded
+    @POST(BaseUrl.get_popular_creator)
+    Call<PopularCreatorResModel> getPopularCreator(@Field("user_id") String user_id);
+
+    @FormUrlEncoded
     @POST(BaseUrl.verify_otp)
     Call<OtpResModel> verify_otp(@Field("user_id") String user_id,
                                  @Field("otp") String otp);
+
+
+    @FormUrlEncoded
+    @POST(BaseUrl.share_reel)
+    Call<CommonResModel> shareReel(@Field("user_id") String user_id,
+                                 @Field("reel_id") String reel_id);
+
+
+    @FormUrlEncoded
+    @POST(BaseUrl.view_reel)
+    Call<CommonResModel> viewReel(@Field("user_id") String user_id,
+                                 @Field("reel_id") String reel_id);
+
+
+    @FormUrlEncoded
+    @POST(BaseUrl.google_login)
+    Call<SocialLoginResModel> googleLogin(@Field("name") String name,
+                                          @Field("email") String email,
+
+                                          @Field("fcm_id") String fcm_id,
+                                          @Field("google_id") String google_id);
+
+    @FormUrlEncoded
+    @POST(BaseUrl.facebook_login)
+    Call<SocialLoginResModel> facebookLogin(@Field("name") String name,
+                                            @Field("fcm_id") String fcm_id,
+                                            @Field("facebook_id") String facebook_id);
 
     @FormUrlEncoded
     @POST(BaseUrl.resend_otp)
@@ -66,8 +100,16 @@ public interface ApiService {
     Call<ProfileModel> getProfile(@Field("user_id") String user_id, @Field("own_id") String own_id);
 
     @FormUrlEncoded
+    @POST(BaseUrl.like_reel)
+    Call<CommonResModel> likeReel(@Field("user_id") String user_id, @Field("reel_id") String reel_id);
+
+    @FormUrlEncoded
     @POST(BaseUrl.get_reels)
     Call<HomeReelModel> getReels(@Field("user_id") String user_id);
+
+
+    @POST(BaseUrl.get_banner)
+    Call<BannerResModel> getBanner();
 
 
     @POST(BaseUrl.get_about_us)

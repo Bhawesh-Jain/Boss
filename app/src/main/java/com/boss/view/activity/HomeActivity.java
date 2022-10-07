@@ -1,6 +1,9 @@
 package com.boss.view.activity;
 
-import android.app.Dialog;
+import android.Manifest;
+import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -8,16 +11,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.LinearLayout;
 
-import com.boss.R;
-import com.boss.databinding.ActivityHomeBinding;
-import com.boss.view.homepage.HomeFragment;
-import com.boss.view.fragment.NotificationsFragment;
-import com.boss.view.fragment.ProfileFragment;
-import com.boss.view.fragment.SearchFragment;
-import com.deishelon.roundedbottomsheet.RoundedBottomSheetDialog;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
@@ -25,9 +20,27 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.boss.R;
+import com.boss.adapter.HomeInterface;
+import com.boss.databinding.ActivityHomeBinding;
+import com.boss.view.fragment.NotificationsFragment;
+import com.boss.view.fragment.ProfileFragment;
+import com.boss.view.fragment.SearchFragment;
+import com.boss.view.homepage.HomeFragment;
+import com.deishelon.roundedbottomsheet.RoundedBottomSheetDialog;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.MultiplePermissionsReport;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 
-public class HomeActivity extends AppCompatActivity {
+import java.util.List;
 
+
+public class HomeActivity extends AppCompatActivity implements HomeInterface {
+
+    private final Activity activity = HomeActivity.this;
     private ActivityHomeBinding binding;
 
     @Override
@@ -89,11 +102,11 @@ public class HomeActivity extends AppCompatActivity {
             }
             return false;
         });
-        
-        
-        
+
+
     }
-    public void addBottomSheet () {
+
+    public void addBottomSheet() {
         RoundedBottomSheetDialog mBottomSheetDialog = new RoundedBottomSheetDialog(this);
         View sheetView = mBottomSheetDialog.getLayoutInflater().inflate(R.layout.add_bottom_sheet, null);
 
@@ -109,15 +122,65 @@ public class HomeActivity extends AppCompatActivity {
 
         if (create != null) create.setOnClickListener(view -> {
             mBottomSheetDialog.dismiss();
-          //  startActivity(new Intent(this, CreateProjectActivity.class));
+
+            if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED &&
+                    ActivityCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED &&
+                    ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED &&
+                    ActivityCompat.checkSelfPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                startActivity(new Intent(HomeActivity.this, PostVideoActivity.class));
+            } else
+                Dexter.withContext(this)
+                        .withPermissions(
+                                Manifest.permission.CAMERA,
+                                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                Manifest.permission.READ_EXTERNAL_STORAGE,
+                                Manifest.permission.RECORD_AUDIO
+                        ).withListener(new MultiplePermissionsListener() {
+                            @Override
+                            public void onPermissionsChecked(MultiplePermissionsReport report) {
+                                startActivity(new Intent(HomeActivity.this, PostVideoActivity.class));
+                            }
+
+                            @Override
+                            public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
+                            }
+                        }).check();
+
         });
         if (list != null) list.setOnClickListener(view -> {
             mBottomSheetDialog.dismiss();
-         //   startActivity(new Intent(this, CreateProjectActivity.class));
+
+            if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED &&
+                    ActivityCompat.checkSelfPermission(activity, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED &&
+                    ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED &&
+                    ActivityCompat.checkSelfPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                startActivity(new Intent(HomeActivity.this, PostVideoActivity.class));
+            } else
+                Dexter.withContext(this)
+                        .withPermissions(
+                                Manifest.permission.CAMERA,
+                                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                Manifest.permission.READ_EXTERNAL_STORAGE,
+                                Manifest.permission.RECORD_AUDIO
+                        ).withListener(new MultiplePermissionsListener() {
+                            @Override
+                            public void onPermissionsChecked(MultiplePermissionsReport report) {
+                                startActivity(new Intent(HomeActivity.this, PostVideoActivity.class));
+                            }
+
+                            @Override
+                            public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
+
+                            }
+                        }).check();
         });
 
         mBottomSheetDialog.show();
     }
 
 
+    @Override
+    public void onClick(String value) {
+
+    }
 }

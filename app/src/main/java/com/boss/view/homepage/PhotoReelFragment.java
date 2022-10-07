@@ -1,17 +1,20 @@
 package com.boss.view.homepage;
 
+import static com.google.android.exoplayer2.ExoPlayerLibraryInfo.TAG;
+
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import com.boss.R;
 import com.boss.Retrofit.ApiService;
@@ -32,15 +35,19 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+
 public class PhotoReelFragment extends Fragment {
 
-    private FragmentPhotoReelBinding binding;
     private final HomeReelModel.Datum reelModel;
+    private FragmentPhotoReelBinding binding;
     private Session session;
+    private boolean isLiked;
+    private int likeCount;
 
     public PhotoReelFragment(HomeReelModel.Datum model) {
         this.reelModel = model;
     }
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,7 +58,9 @@ public class PhotoReelFragment extends Fragment {
         binding.tvCommentCount.setText(String.valueOf(reelModel.getCommentCount()));
         binding.tvLikeCount.setText(String.valueOf(reelModel.getLikeCount()));
         binding.tvDesc.setText(reelModel.getDescription());
-        binding.tvViews.setText("0 Views");
+        String text = reelModel.getTotal_views()+ " Views";
+        binding.tvViews.setText(text);
+
         if (!reelModel.getUserImage().isEmpty())
             Glide.with(getContext())
                     .load(reelModel.getUserPath() + reelModel.getUserImage())
@@ -63,6 +72,29 @@ public class PhotoReelFragment extends Fragment {
         binding.tvUserName.setOnClickListener(view -> startActivity(new Intent(getContext(), UserProfileActivity.class).putExtra("id", reelModel.getUserId())));
         binding.icUserImages.setOnClickListener(view -> startActivity(new Intent(getContext(), UserProfileActivity.class).putExtra("id", reelModel.getUserId())));
         binding.commentLay.setOnClickListener(view -> startActivity(new Intent(getContext(), ReelCommentActivity.class).putExtra("reel_id", reelModel.getId())));
+
+
+        isLiked = reelModel.getiLiked() != 0;
+        likeCount = reelModel.getLikeCount();
+        binding.likeLay.setOnClickListener(view -> {
+            likeReel();
+            if (!isLiked) {
+                binding.likeImg.setImageResource(R.drawable.ic_likes_selected);
+                binding.tvLikeCount.setText(String.valueOf((likeCount) + 1));
+                isLiked = true;
+                likeCount++;
+            } else {
+                binding.likeImg.setImageResource(R.drawable.ic_likes);
+                binding.tvLikeCount.setText(String.valueOf((likeCount) - 1));
+                isLiked = false;
+                likeCount--;
+            }
+        });
+        if (reelModel.getiLiked() == 1)
+            binding.likeImg.setImageResource(R.drawable.ic_likes_selected);
+        else binding.likeImg.setImageResource(R.drawable.ic_likes);
+
+        binding.shareLay.setOnClickListener(view -> shareReel());
 
         ArrayList<SlideModel> slideModels = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
@@ -100,6 +132,7 @@ public class PhotoReelFragment extends Fragment {
             binding.postImageSlider.setVisibility(View.GONE);
             Glide.with(getContext()).load(reelModel.getReelPath() + reelModel.getFile()).into(binding.postImage);
         }
+        viewReel();
 
         return binding.getRoot();
     }
@@ -114,10 +147,11 @@ public class PhotoReelFragment extends Fragment {
                     if (response.body() != null) {
                         try {
                             if (response.body().getResult().equalsIgnoreCase("true")) {
-                                if (response.body().getMsg().equalsIgnoreCase("Followed")){
-                                    binding.tvFollow.setText("Following");
-                                }else binding.tvFollow.setText("Follow");
-                            } else Toast.makeText(getContext(), "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                                if (response.body().getMsg().equalsIgnoreCase("Followed")) {
+                                    binding.tvFollow.setText(R.string.following);
+                                } else binding.tvFollow.setText(R.string.follow);
+                            } else
+                                Toast.makeText(getContext(), "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -127,10 +161,103 @@ public class PhotoReelFragment extends Fragment {
 
             @Override
             public void onFailure(@NonNull Call<CommonResModel> call, @NonNull Throwable t) {
-                Toast.makeText(getContext(), "" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "" + t.getLocalizedMessage());
             }
         });
     }
+
+    private void shareReel() {
+        ApiService apiService = RetrofitClient.getClient(getContext());
+
+        apiService.shareReel(session.getUser_Id(), reelModel.getId()).enqueue(new Callback<CommonResModel>() {
+            @Override
+            public void onResponse(@NonNull Call<CommonResModel> call, @NonNull Response<CommonResModel> response) {
+                if (response.code() == 200) {
+                    if (response.body() != null) {
+                        try {
+                            Toast.makeText(getContext(), "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<CommonResModel> call, @NonNull Throwable t) {
+                Log.e(TAG, "" + t.getLocalizedMessage());
+            }
+        });
+    }
+
+    private void viewReel() {
+        ApiService apiService = RetrofitClient.getClient(getContext());
+
+        apiService.viewReel(session.getUser_Id(), reelModel.getId()).enqueue(new Callback<CommonResModel>() {
+            @Override
+            public void onResponse(@NonNull Call<CommonResModel> call, @NonNull Response<CommonResModel> response) {
+                if (response.code() == 200) {
+                    if (response.body() != null) {
+                        try {
+                            if (response.body().getMsg().equalsIgnoreCase("view successfuly")){
+                                String text = reelModel.getTotal_views() + 1 + " Views";
+                                binding.tvViews.setText(text);
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<CommonResModel> call, @NonNull Throwable t) {
+                Log.e(TAG, "" + t.getLocalizedMessage());
+            }
+        });
+    }
+    private void likeReel() {
+        ApiService apiService = RetrofitClient.getClient(getContext());
+
+        apiService.likeReel(session.getUser_Id(), reelModel.getId()).enqueue(new Callback<CommonResModel>() {
+            @Override
+            public void onResponse(@NonNull Call<CommonResModel> call, @NonNull Response<CommonResModel> response) {
+                if (response.code() == 200) {
+                    if (response.body() != null) {
+                        try {
+                            if (response.body().getResult().equalsIgnoreCase("true")) {
+                                if (response.body().getMsg().equalsIgnoreCase("Liked")) {
+                                    reelModel.setiLiked(1);
+                                    reelModel.setLikeCount(reelModel.getLikeCount() + 1);
+                                } else {
+                                    reelModel.setiLiked(0);
+                                    reelModel.setLikeCount(reelModel.getLikeCount() - 1);
+                                }
+                            } else
+                                Toast.makeText(getContext(), "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<CommonResModel> call, @NonNull Throwable t) {
+                Log.e(TAG, "" + t.getLocalizedMessage());
+
+                binding.tvLikeCount.setText(String.valueOf(reelModel.getLikeCount()));
+                if (reelModel.getiLiked() == 1) {
+                    binding.likeImg.setImageResource(R.drawable.ic_likes_selected);
+                } else {
+                    binding.likeImg.setImageResource(R.drawable.ic_likes);
+                }
+                binding.tvLikeCount.setText(binding.tvLikeCount.getText().toString());
+                reelModel.setLikeCount(Integer.parseInt(binding.tvLikeCount.getText().toString()));
+            }
+        });
+    }
+
     private void dialogThreeDots() {
         Dialog dialog = new Dialog(getContext());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);

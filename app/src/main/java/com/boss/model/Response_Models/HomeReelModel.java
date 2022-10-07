@@ -154,6 +154,17 @@ public class HomeReelModel {
         @SerializedName("i_liked")
         @Expose
         private int iLiked;
+        @SerializedName("total_views")
+        @Expose
+        private int total_views;
+
+        public int getTotal_views() {
+            return total_views;
+        }
+
+        public void setTotal_views(int total_views) {
+            this.total_views = total_views;
+        }
 
         public String getId() {
             return id;

@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".view.fragment.TrendsFragment">
 
-    <!--<androidx.recyclerview.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/banner_recycler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/rvBanner"
-        android:layout_marginTop="@dimen/_10sdp"
-        />-->
+        android:layout_marginTop="@dimen/_10sdp" />
+
     <HorizontalScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scrollbars="none"
-
+        android:visibility="gone"
         >
 
         <LinearLayout
@@ -29,38 +29,37 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="@dimen/_300sdpq"
                 android:layout_height="@dimen/_200sdpq"
-                app:cardUseCompatPadding="true"
                 app:cardCornerRadius="@dimen/_10sdpq"
-                >
+                app:cardUseCompatPadding="true">
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ganeshji3"
-                    />
+                    android:background="@drawable/ganeshji3" />
             </com.google.android.material.card.MaterialCardView>
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="@dimen/_300sdpq"
                 android:layout_height="@dimen/_200sdpq"
-                app:cardUseCompatPadding="true"
                 app:cardCornerRadius="@dimen/_10sdpq"
-                >
+                app:cardUseCompatPadding="true">
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ganeshji3"
-                    />
+                    android:background="@drawable/ganeshji3" />
             </com.google.android.material.card.MaterialCardView>
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="@dimen/_300sdpq"
                 android:layout_height="@dimen/_200sdpq"
-                app:cardUseCompatPadding="true"
                 app:cardCornerRadius="@dimen/_10sdpq"
-                >
+                app:cardUseCompatPadding="true">
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ganeshji3"
-                    />
+                    android:background="@drawable/ganeshji3" />
             </com.google.android.material.card.MaterialCardView>
 
 
@@ -70,177 +69,162 @@
     <HorizontalScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scrollbars="none"
-        >
+        android:scrollbars="none">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_marginTop="@dimen/_12sdpq"
                 android:layout_width="@dimen/_100sdpq"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginStart="@dimen/_12sdpq"
-                >
+                android:layout_marginTop="@dimen/_12sdpq"
+                android:orientation="vertical">
 
 
                 <LinearLayout
-                    android:gravity="center"
+                    android:layout_width="@dimen/_80sdpq"
+                    android:layout_height="@dimen/_80sdpq"
                     android:layout_gravity="center"
                     android:background="@drawable/cirbackground"
-                    android:layout_width="@dimen/_80sdpq"
-                    android:layout_height="@dimen/_80sdpq">
+                    android:gravity="center">
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="@dimen/_50sdpq"
                         android:layout_height="@dimen/_50sdpq"
                         android:layout_gravity="center"
-                        app:civ_border_color="@color/grey_400"
                         android:src="@drawable/music"
-                        />
-
+                        app:civ_border_color="@color/grey_400" />
 
 
                 </LinearLayout>
 
 
-
                 <TextView
-                    android:layout_marginVertical="@dimen/_5sdpq"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="@dimen/_5sdpq"
                     android:fontFamily="@font/roboto_regular"
                     android:text="Anju Gupta"
-                    android:layout_gravity="center_horizontal"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdpq" />
-
 
 
             </LinearLayout>
+
             <LinearLayout
-                android:layout_marginTop="@dimen/_12sdpq"
                 android:layout_width="@dimen/_100sdpq"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginStart="@dimen/_12sdpq"
-                >
+                android:layout_marginTop="@dimen/_12sdpq"
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:gravity="center"
+                    android:layout_width="@dimen/_80sdpq"
+                    android:layout_height="@dimen/_80sdpq"
                     android:layout_gravity="center"
                     android:background="@drawable/cirbackground"
-                    android:layout_width="@dimen/_80sdpq"
-                    android:layout_height="@dimen/_80sdpq">
+                    android:gravity="center">
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="@dimen/_50sdpq"
                         android:layout_height="@dimen/_50sdpq"
                         android:layout_gravity="center"
-                        app:civ_border_color="@color/grey_400"
                         android:src="@drawable/music"
-                        />
-
+                        app:civ_border_color="@color/grey_400" />
 
 
                 </LinearLayout>
 
 
                 <TextView
-                    android:layout_marginVertical="@dimen/_5sdpq"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="@dimen/_5sdpq"
                     android:fontFamily="@font/roboto_regular"
                     android:text="Anju Gupta"
-                    android:layout_gravity="center_horizontal"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdpq" />
-
 
 
             </LinearLayout>
+
             <LinearLayout
-                android:layout_marginTop="@dimen/_12sdpq"
                 android:layout_width="@dimen/_100sdpq"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginStart="@dimen/_12sdpq"
-                >
+                android:layout_marginTop="@dimen/_12sdpq"
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:gravity="center"
+                    android:layout_width="@dimen/_80sdpq"
+                    android:layout_height="@dimen/_80sdpq"
                     android:layout_gravity="center"
                     android:background="@drawable/cirbackground"
-                    android:layout_width="@dimen/_80sdpq"
-                    android:layout_height="@dimen/_80sdpq">
+                    android:gravity="center">
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="@dimen/_50sdpq"
                         android:layout_height="@dimen/_50sdpq"
                         android:layout_gravity="center"
-                        app:civ_border_color="@color/grey_400"
                         android:src="@drawable/music"
-                        />
-
+                        app:civ_border_color="@color/grey_400" />
 
 
                 </LinearLayout>
 
 
                 <TextView
-                    android:layout_marginVertical="@dimen/_5sdpq"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="@dimen/_5sdpq"
                     android:fontFamily="@font/roboto_regular"
                     android:text="Anju Gupta"
-                    android:layout_gravity="center_horizontal"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdpq" />
-
 
 
             </LinearLayout>
+
             <LinearLayout
-                android:layout_marginTop="@dimen/_12sdpq"
                 android:layout_width="@dimen/_100sdpq"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginStart="@dimen/_12sdpq"
-                >
+                android:layout_marginTop="@dimen/_12sdpq"
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:gravity="center"
+                    android:layout_width="@dimen/_80sdpq"
+                    android:layout_height="@dimen/_80sdpq"
                     android:layout_gravity="center"
                     android:background="@drawable/cirbackground"
-                    android:layout_width="@dimen/_80sdpq"
-                    android:layout_height="@dimen/_80sdpq">
+                    android:gravity="center">
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="@dimen/_50sdpq"
                         android:layout_height="@dimen/_50sdpq"
                         android:layout_gravity="center"
-                        app:civ_border_color="@color/grey_400"
                         android:src="@drawable/music"
-                        />
-
+                        app:civ_border_color="@color/grey_400" />
 
 
                 </LinearLayout>
 
 
                 <TextView
-                    android:layout_marginVertical="@dimen/_5sdpq"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="@dimen/_5sdpq"
                     android:fontFamily="@font/roboto_regular"
                     android:text="Anju Gupta"
-                    android:layout_gravity="center_horizontal"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_14sdpq" />
-
 
 
             </LinearLayout>

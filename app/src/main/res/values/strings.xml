@@ -9,7 +9,6 @@
     <string name="title_search">Search</string>
     <string name="title_live">Live</string>
     <string name="title_profile">Profile</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="notification">Notifications</string>
     <string name="profile">Profile</string>
@@ -97,5 +96,12 @@
     <string name="post">Post</string>
     <string name="_0_views">0 Views</string>
     <string name="like_amp_unlike"><![CDATA[Like & Unlike]]></string>
+    <string name="banner_image">Banner Image</string>
     <color name="gray_light">#BDB9B9</color>
+    <string name="facebook_app_id">1168267117070490</string>
+    <string name="facebook_client_token">d3196831f19fd045f55ba9faecd9c99b</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="app_record">Start</string>
+    <string name="view_count">%1$i Views</string>
 </resources>

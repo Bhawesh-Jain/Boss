@@ -76,7 +76,7 @@
     <color name="white_pressed">#f1f1f1</color>
     <color name="pink">#e91e63</color>
     <color name="pink_pressed">#ec407a</color>
-    <color name="ightblue">#646FFB</color>
+    <color name="blue_regular">#646FFB</color>
     <color name="verifyedcolor">#28a1a4</color>
     <color name="slider_indicator_selected">#fd8700</color>
     <color name="slider_indicator_unselected">#535252</color>

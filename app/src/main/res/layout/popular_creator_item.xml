@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_100sdpq"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="@dimen/_12sdpq"
+    android:layout_marginTop="@dimen/_12sdpq"
+    android:orientation="vertical">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="@dimen/_80sdpq"
+        android:layout_height="@dimen/_80sdpq"
+        android:layout_gravity="center"
+        android:id="@+id/image_user_profile"
+        android:src="@drawable/ic_user" />
+
+    <TextView
+        android:layout_width="@dimen/_80sdpq"
+        android:layout_height="@dimen/_80sdpq"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_20sdp"
+        android:id="@+id/text_user_profile"
+        android:background="@drawable/graycircle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginVertical="@dimen/_5sdpq"
+        android:fontFamily="@font/roboto_regular"
+        android:textColor="@color/black"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:id="@+id/text_user_name"
+        android:textSize="14sp" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="@dimen/_5sdpq"
+        app:cardBackgroundColor="@color/colorDark"
+        app:cardCornerRadius="@dimen/_5sdpq"
+        app:cardElevation="0dp"
+        app:contentPadding="@dimen/_3sdpq">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdpq"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/follow"
+            android:id="@+id/text_follow_unfollow"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
+

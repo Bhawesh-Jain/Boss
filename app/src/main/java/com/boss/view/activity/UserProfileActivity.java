@@ -1,9 +1,12 @@
 package com.boss.view.activity;
 
+import static com.google.android.exoplayer2.ExoPlayerLibraryInfo.TAG;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
@@ -108,7 +111,7 @@ public class UserProfileActivity extends AppCompatActivity implements View.OnCli
 
             @Override
             public void onFailure(@NonNull Call<CommonResModel> call, @NonNull Throwable t) {
-                Toast.makeText(activity, "" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "" + t.getLocalizedMessage());
             }
         });
     }
@@ -148,7 +151,7 @@ public class UserProfileActivity extends AppCompatActivity implements View.OnCli
 
             @Override
             public void onFailure(@NonNull Call<ProfileModel> call, @NonNull Throwable t) {
-                Toast.makeText(activity, "" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "" + t.getLocalizedMessage());
             }
         });
     }

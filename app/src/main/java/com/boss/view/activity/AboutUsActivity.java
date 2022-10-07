@@ -1,5 +1,7 @@
 package com.boss.view.activity;
 
+import static com.google.android.exoplayer2.ExoPlayerLibraryInfo.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +10,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.boss.R;
@@ -56,7 +59,7 @@ public class AboutUsActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(@NonNull Call<AboutUsModel> call, @NonNull Throwable t) {
-                Toast.makeText(activity, "" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "" + t.getLocalizedMessage());
             }
         });
     }

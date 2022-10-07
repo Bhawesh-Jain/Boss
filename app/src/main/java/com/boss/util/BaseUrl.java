@@ -29,6 +29,7 @@ public class BaseUrl {
     public static final String get_profile = "get_profile";
     public static final String update_profile = "update_profile";
     public static final String resend_otp = "resend_otp";
+    public static final String like_reel = "like_reel";
     public static final String add_reels = "add_reels";
     public static final String get_reels = "get_reels";
     public static final String followUnfollow = "followUnfollow";
@@ -44,5 +45,11 @@ public class BaseUrl {
     public static final String get_about_us = "get_about_us";
     public static final String get_privacy_policy = "get_privacy_policy";
     public static final String get_terms_condition = "get_terms_condition";
+    public static final String get_banner = "get_banner";
+    public static final String get_popular_creator = "get_popular_creator";
+    public static final String google_login = "google_login";
+    public static final String facebook_login = "facebook_login";
+    public static final String share_reel = "share_reel";
+    public static final String view_reel = "view_reel";
 
 }

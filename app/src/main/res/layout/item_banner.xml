@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
+
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="@dimen/_300sdpq"
-        android:layout_height="@dimen/_200sdpq"
-        app:cardUseCompatPadding="true"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_150sdp"
         app:cardCornerRadius="@dimen/_10sdpq"
-        >
+        app:cardUseCompatPadding="true">
+
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ganeshji"
-            />
+            android:layout_height="match_parent"
+            android:id="@+id/image_banner"
+            android:contentDescription="@string/banner_image" />
+
     </com.google.android.material.card.MaterialCardView>
 
 

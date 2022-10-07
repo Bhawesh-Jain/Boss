@@ -73,7 +73,6 @@
                         android:layout_marginStart="@dimen/_1sdpq"
                         android:layout_marginTop="@dimen/_3sdpq"
                         android:fontFamily="@font/roboto_regular"
-                        android:text="@string/user_unknown"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp" />
 
@@ -82,7 +81,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_regular"
-                        android:text="@string/self_employed"
                         android:textColor="@color/gray_light"
                         android:textSize="@dimen/_11sdp" />
 
@@ -160,7 +158,6 @@
                             android:fontFamily="@font/roboto_medium"
                             android:gravity="center"
                             android:singleLine="true"
-                            android:text="@string/_0"
                             android:textColor="@color/black"
                             android:textSize="16sp" />
 
@@ -191,7 +188,6 @@
                             android:fontFamily="@font/roboto_medium"
                             android:gravity="center"
                             android:singleLine="true"
-                            android:text="@string/_0"
                             android:textColor="@color/black"
                             android:textSize="16sp" />
 

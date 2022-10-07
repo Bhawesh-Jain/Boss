@@ -3,6 +3,7 @@ package com.boss.view.activity;
 import static com.boss.util.BaseUrl.Base_Url;
 import static com.boss.util.BaseUrl.update_profile;
 import static com.boss.util.ImageShortCut.bitmapToFile;
+import static com.google.android.exoplayer2.ExoPlayerLibraryInfo.TAG;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -160,7 +161,7 @@ public class UpdateProfile extends AppCompatActivity implements View.OnClickList
 
             @Override
             public void onFailure(@NonNull Call<ProfileModel> call, @NonNull Throwable t) {
-                Toast.makeText(activity, "" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "" + t.getLocalizedMessage());
             }
         });
     }

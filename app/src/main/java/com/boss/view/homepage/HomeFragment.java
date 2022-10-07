@@ -1,9 +1,12 @@
 package com.boss.view.homepage;
 
+import static com.google.android.exoplayer2.ExoPlayerLibraryInfo.TAG;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -88,7 +91,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onFailure(@NonNull Call<HomeReelModel> call, @NonNull Throwable t) {
                 progressDialog.dismiss();
-                Toast.makeText(activity, "" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "" + t.getLocalizedMessage());
             }
         });
     }

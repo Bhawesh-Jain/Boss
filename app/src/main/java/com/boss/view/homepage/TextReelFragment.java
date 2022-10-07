@@ -1,5 +1,7 @@
 package com.boss.view.homepage;
 
+import static com.google.android.exoplayer2.ExoPlayerLibraryInfo.TAG;
+
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +36,8 @@ public class TextReelFragment extends Fragment {
     private FragmentTextReelBinding binding;
     private final HomeReelModel.Datum model;
     private Session session;
+    private boolean isLiked;
+    private int likeCount;
 
     public TextReelFragment(HomeReelModel.Datum model) {
         this.model = model;
@@ -63,11 +68,36 @@ public class TextReelFragment extends Fragment {
         binding.commentLay.setOnClickListener(view -> startActivity(new Intent(getContext(), ReelCommentActivity.class).putExtra("reel_id", model.getId())));
         binding.reportAbuseImg.setOnClickListener(view -> dialogThreeDots());
 
+        
+        isLiked = model.getiLiked() != 0;
+        likeCount = model.getLikeCount();
+        binding.likeLay.setOnClickListener(view -> {
+            likeReel();
+            if (!isLiked) {
+                binding.likeImg.setImageResource(R.drawable.ic_likes_selected);
+                binding.tvLikeCount.setText(String.valueOf((likeCount) + 1));
+                isLiked = true;
+                likeCount++;
+            } else {
+                binding.likeImg.setImageResource(R.drawable.ic_likes);
+                binding.tvLikeCount.setText(String.valueOf((likeCount) - 1));
+                isLiked = false;
+                likeCount--;
+            }
+        });
+        if (model.getiLiked() == 1) binding.likeImg.setImageResource(R.drawable.ic_likes_selected);
+        else binding.likeImg.setImageResource(R.drawable.ic_likes);
+
+        binding.shareLay.setOnClickListener(view -> shareReel());
+
         binding.tvUserName.setText(model.getName());
         binding.tvCommentCount.setText(String.valueOf(model.getCommentCount()));
         binding.tvLikeCount.setText(String.valueOf(model.getLikeCount()));
         binding.tvDesc.setText(model.getDescription());
-        binding.tvViews.setText(R.string._0_views);
+        String text = model.getTotal_views()+ " Views";
+        binding.tvViews.setText(text);
+
+
         if (!model.getUserImage().isEmpty())
             if (getContext() != null)
             Glide.with(getContext())
@@ -76,8 +106,36 @@ public class TextReelFragment extends Fragment {
                     .placeholder(R.drawable.ic_user)
                     .into(binding.icUserImages)
                     .onLoadFailed(AppCompatResources.getDrawable(getContext(), R.drawable.ic_user));
+        viewReel();
 
         return binding.getRoot();
+    }
+
+    private void viewReel() {
+        ApiService apiService = RetrofitClient.getClient(getContext());
+
+        apiService.viewReel(session.getUser_Id(), model.getId()).enqueue(new Callback<CommonResModel>() {
+            @Override
+            public void onResponse(@NonNull Call<CommonResModel> call, @NonNull Response<CommonResModel> response) {
+                if (response.code() == 200) {
+                    if (response.body() != null) {
+                        try {
+                            if (response.body().getMsg().equalsIgnoreCase("view successfuly")){
+                                String text = model.getTotal_views() + 1 + " Views";
+                                binding.tvViews.setText(text);
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<CommonResModel> call, @NonNull Throwable t) {
+                Log.e(TAG, "" + t.getLocalizedMessage());
+            }
+        });
     }
 
     private void followUnfollow(String toUserId) {
@@ -103,7 +161,72 @@ public class TextReelFragment extends Fragment {
 
             @Override
             public void onFailure(@NonNull Call<CommonResModel> call, @NonNull Throwable t) {
-                Toast.makeText(getContext(), "" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "" + t.getLocalizedMessage());
+            }
+        });
+    }
+    private void shareReel() {
+        ApiService apiService = RetrofitClient.getClient(getContext());
+
+        apiService.shareReel(session.getUser_Id(), model.getId()).enqueue(new Callback<CommonResModel>() {
+            @Override
+            public void onResponse(@NonNull Call<CommonResModel> call, @NonNull Response<CommonResModel> response) {
+                if (response.code() == 200) {
+                    if (response.body() != null) {
+                        try {
+                            Toast.makeText(getContext(), "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<CommonResModel> call, @NonNull Throwable t) {
+                Log.e(TAG, "" + t.getLocalizedMessage());
+            }
+        });
+    }
+
+    private void likeReel() {
+        ApiService apiService = RetrofitClient.getClient(getContext());
+
+        apiService.likeReel(session.getUser_Id(), model.getId()).enqueue(new Callback<CommonResModel>() {
+            @Override
+            public void onResponse(@NonNull Call<CommonResModel> call, @NonNull Response<CommonResModel> response) {
+                if (response.code() == 200) {
+                    if (response.body() != null) {
+                        try {
+                            if (response.body().getResult().equalsIgnoreCase("true")) {
+                                if (response.body().getMsg().equalsIgnoreCase("Liked")) {
+                                    model.setiLiked(1);
+                                    model.setLikeCount(model.getLikeCount() + 1);
+                                } else {
+                                    model.setiLiked(0);
+                                    model.setLikeCount(model.getLikeCount() - 1);
+                                }
+                            } else
+                                Toast.makeText(getContext(), "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<CommonResModel> call, @NonNull Throwable t) {
+                Log.e(TAG, "" + t.getLocalizedMessage());
+
+                binding.tvLikeCount.setText(String.valueOf(model.getLikeCount()));
+                if (model.getiLiked() == 1) {
+                    binding.likeImg.setImageResource(R.drawable.ic_likes_selected);
+                } else {
+                    binding.likeImg.setImageResource(R.drawable.ic_likes);
+                }
+                binding.tvLikeCount.setText(binding.tvLikeCount.getText().toString());
+                model.setLikeCount(Integer.parseInt(binding.tvLikeCount.getText().toString()));
             }
         });
     }

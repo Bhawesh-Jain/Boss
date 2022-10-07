@@ -1,7 +1,10 @@
 package com.boss.view.activity;
 
+import static com.google.android.exoplayer2.ExoPlayerLibraryInfo.TAG;
+
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -53,7 +56,7 @@ public class TermsConditionActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(@NonNull Call<TermsConditionModel> call, @NonNull Throwable t) {
-                Toast.makeText(activity, "" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "" + t.getLocalizedMessage());
             }
         });
     }

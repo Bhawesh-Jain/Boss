@@ -1,6 +1,9 @@
 package com.boss.view.fragment;
 
+import static com.google.android.exoplayer2.ExoPlayerLibraryInfo.TAG;
+
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,7 +72,7 @@ public class AllFollowingFragment extends Fragment {
 
             @Override
             public void onFailure(@NonNull Call<RelationUserModel> call, @NonNull Throwable t) {
-                Toast.makeText(getContext(), "" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "" + t.getLocalizedMessage());
             }
         });
     }

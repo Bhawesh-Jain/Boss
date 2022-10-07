@@ -1,5 +1,7 @@
 package com.boss.view.activity;
 
+import static com.google.android.exoplayer2.ExoPlayerLibraryInfo.TAG;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -137,7 +139,7 @@ public class OtpVerificationActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Call<OtpResModel> call, @NonNull Throwable t) {
                 progressDialog.dismiss();
-                Toast.makeText(activity, ""+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "" + t.getLocalizedMessage());
             }
         });
     }
@@ -161,7 +163,7 @@ public class OtpVerificationActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Call<ResendOtpResModel> call, @NonNull Throwable t) {
                 progressDialog.dismiss();
-                Toast.makeText(activity, ""+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "" + t.getLocalizedMessage());
             }
         });
     }
