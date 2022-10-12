@@ -103,8 +103,6 @@ public enum FilterType {
 
     public static GlFilter createGlFilter(FilterType filterType, Context context) {
         switch (filterType) {
-            case DEFAULT:
-                return new GlFilter();
             case BILATERAL_BLUR:
                 return new GlBilateralFilter();
             case BOX_BLUR:
@@ -217,170 +215,63 @@ public enum FilterType {
     public static FilterAdjuster createFilterAdjuster(FilterType filterType) {
         switch (filterType) {
             case BILATERAL_BLUR:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlBilateralFilter) filter).setBlurSize(range(percentage, 0.0f, 1.0f));
-                    }
-                };
+                return (filter, percentage) -> ((GlBilateralFilter) filter).setBlurSize(range(percentage, 0.0f, 1.0f));
             case BOX_BLUR:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlBoxBlurFilter) filter).setBlurSize(range(percentage, 0.0f, 1.0f));
-                    }
-                };
+                return (filter, percentage) -> ((GlBoxBlurFilter) filter).setBlurSize(range(percentage, 0.0f, 1.0f));
             case BRIGHTNESS:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlBrightnessFilter) filter).setBrightness(range(percentage, -1.0f, 1.0f));
-                    }
-                };
+                return (filter, percentage) -> ((GlBrightnessFilter) filter).setBrightness(range(percentage, -1.0f, 1.0f));
             case CONTRAST:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlContrastFilter) filter).setContrast(range(percentage, 0.0f, 2.0f));
-                    }
-                };
+                return (filter, percentage) -> ((GlContrastFilter) filter).setContrast(range(percentage, 0.0f, 2.0f));
             case CROSSHATCH:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlCrosshatchFilter) filter).setCrossHatchSpacing(range(percentage, 0.0f, 0.06f));
-                        ((GlCrosshatchFilter) filter).setLineWidth(range(percentage, 0.0f, 0.006f));
-                    }
+                return (filter, percentage) -> {
+                    ((GlCrosshatchFilter) filter).setCrossHatchSpacing(range(percentage, 0.0f, 0.06f));
+                    ((GlCrosshatchFilter) filter).setLineWidth(range(percentage, 0.0f, 0.006f));
                 };
             case EXPOSURE:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlExposureFilter) filter).setExposure(range(percentage, -10.0f, 10.0f));
-                    }
-                };
+                return (filter, percentage) -> ((GlExposureFilter) filter).setExposure(range(percentage, -10.0f, 10.0f));
             case GAMMA:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlGammaFilter) filter).setGamma(range(percentage, 0.0f, 3.0f));
-                    }
-                };
+                return (filter, percentage) -> ((GlGammaFilter) filter).setGamma(range(percentage, 0.0f, 3.0f));
             case HAZE:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlHazeFilter) filter).setDistance(range(percentage, -0.3f, 0.3f));
-                        ((GlHazeFilter) filter).setSlope(range(percentage, -0.3f, 0.3f));
-                    }
+                return (filter, percentage) -> {
+                    ((GlHazeFilter) filter).setDistance(range(percentage, -0.3f, 0.3f));
+                    ((GlHazeFilter) filter).setSlope(range(percentage, -0.3f, 0.3f));
                 };
             case HIGHLIGHT_SHADOW:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlHighlightShadowFilter) filter).setShadows(range(percentage, 0.0f, 1.0f));
-                        ((GlHighlightShadowFilter) filter).setHighlights(range(percentage, 0.0f, 1.0f));
-                    }
+                return (filter, percentage) -> {
+                    ((GlHighlightShadowFilter) filter).setShadows(range(percentage, 0.0f, 1.0f));
+                    ((GlHighlightShadowFilter) filter).setHighlights(range(percentage, 0.0f, 1.0f));
                 };
             case HUE:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlHueFilter) filter).setHue(range(percentage, 0.0f, 360.0f));
-                    }
-                };
+                return (filter, percentage) -> ((GlHueFilter) filter).setHue(range(percentage, 0.0f, 360.0f));
             case LUMINANCE_THRESHOLD:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlLuminanceThresholdFilter) filter).setThreshold(range(percentage, 0.0f, 1.0f));
-                    }
-                };
+                return (filter, percentage) -> ((GlLuminanceThresholdFilter) filter).setThreshold(range(percentage, 0.0f, 1.0f));
             case MONOCHROME:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlMonochromeFilter) filter).setIntensity(range(percentage, 0.0f, 1.0f));
-                    }
-                };
+                return (filter, percentage) -> ((GlMonochromeFilter) filter).setIntensity(range(percentage, 0.0f, 1.0f));
             case OPACITY:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlOpacityFilter) filter).setOpacity(range(percentage, 0.0f, 1.0f));
-                    }
-                };
+                return (filter, percentage) -> ((GlOpacityFilter) filter).setOpacity(range(percentage, 0.0f, 1.0f));
             case PIXELATION:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlPixelationFilter) filter).setPixel(range(percentage, 1.0f, 100.0f));
-                    }
-                };
+                return (filter, percentage) -> ((GlPixelationFilter) filter).setPixel(range(percentage, 1.0f, 100.0f));
             case POSTERIZE:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        // In theorie to 256, but only first 50 are interesting
-                        ((GlPosterizeFilter) filter).setColorLevels((int) range(percentage, 1, 50));
-                    }
+                return (filter, percentage) -> {
+                    // In theory to 256, but only first 50 are interesting
+                    ((GlPosterizeFilter) filter).setColorLevels((int) range(percentage, 1, 50));
                 };
             case RGB:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlRGBFilter) filter).setRed(range(percentage, 0.0f, 1.0f));
-                    }
-                };
+                return (filter, percentage) -> ((GlRGBFilter) filter).setRed(range(percentage, 0.0f, 1.0f));
             case SATURATION:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlSaturationFilter) filter).setSaturation(range(percentage, 0.0f, 2.0f));
-                    }
-                };
+                return (filter, percentage) -> ((GlSaturationFilter) filter).setSaturation(range(percentage, 0.0f, 2.0f));
             case SHARP:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlSharpenFilter) filter).setSharpness(range(percentage, -4.0f, 4.0f));
-                    }
-                };
+                return (filter, percentage) -> ((GlSharpenFilter) filter).setSharpness(range(percentage, -4.0f, 4.0f));
             case SOLARIZE:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlSolarizeFilter) filter).setThreshold(range(percentage, 0.0f, 1.0f));
-                    }
-                };
+                return (filter, percentage) -> ((GlSolarizeFilter) filter).setThreshold(range(percentage, 0.0f, 1.0f));
             case SWIRL:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlSwirlFilter) filter).setAngle(range(percentage, 0.0f, 2.0f));
-                    }
-                };
+                return (filter, percentage) -> ((GlSwirlFilter) filter).setAngle(range(percentage, 0.0f, 2.0f));
             case VIBRANCE:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlVibranceFilter) filter).setVibrance(range(percentage, -1.2f, 1.2f));
-                    }
-                };
+                return (filter, percentage) -> ((GlVibranceFilter) filter).setVibrance(range(percentage, -1.2f, 1.2f));
             case VIGNETTE:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlVignetteFilter) filter).setVignetteStart(range(percentage, 0.0f, 1.0f));
-                    }
-                };
+                return (filter, percentage) -> ((GlVignetteFilter) filter).setVignetteStart(range(percentage, 0.0f, 1.0f));
             case WHITE_BALANCE:
-                return new FilterAdjuster() {
-                    @Override
-                    public void adjust(GlFilter filter, int percentage) {
-                        ((GlWhiteBalanceFilter) filter).setTemperature(range(percentage, 2000.0f, 8000.0f));
-                    }
-                };
+                return (filter, percentage) -> ((GlWhiteBalanceFilter) filter).setTemperature(range(percentage, 2000.0f, 8000.0f));
             default:
                 return null;
         }

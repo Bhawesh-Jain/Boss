@@ -30,7 +30,6 @@ import com.daasuu.gpuv.camerarecorder.GPUCameraRecorderBuilder;
 import com.daasuu.gpuv.camerarecorder.LensFacing;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.IntBuffer;
@@ -43,7 +42,6 @@ import javax.microedition.khronos.egl.EGLContext;
 import javax.microedition.khronos.opengles.GL10;
 
 public class BaseCameraActivity extends AppCompatActivity {
-
     protected GPUCameraRecorder GPUCameraRecorder;
     protected LensFacing lensFacing = LensFacing.BACK;
     protected int cameraWidth = 1280;
@@ -82,6 +80,7 @@ public class BaseCameraActivity extends AppCompatActivity {
         context.sendBroadcast(mediaScanIntent);
     }
 
+    @SuppressLint("SimpleDateFormat")
     public static String getImageFilePath() {
         return getAndroidImageFolder().getAbsolutePath() + "/" + new SimpleDateFormat("yyyyMM_dd-HHmmss").format(new Date()) + "GPUCameraRecorder.png";
     }
@@ -90,15 +89,9 @@ public class BaseCameraActivity extends AppCompatActivity {
         return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
     }
 
-//    private void changeFilter(Filters filters) {
-//        GPUCameraRecorder.setFilter(Filters.getFilterInstance(filters, getApplicationContext()));
-//    }
-
     protected void onCreateActivity() {
-//        getSupportActionBar().hide();
         recordBtn = findViewById(R.id.btn_record);
         recordBtn.setOnClickListener(v -> {
-
             if (recordBtn.getText().equals(getString(R.string.app_record))) {
                 filepath = getVideoFilePath();
                 GPUCameraRecorder.start(filepath);
@@ -109,8 +102,8 @@ public class BaseCameraActivity extends AppCompatActivity {
                 recordBtn.setText(getString(R.string.app_record));
                 lv.setVisibility(View.VISIBLE);
             }
-
         });
+
         findViewById(R.id.btn_flash).setOnClickListener(v -> {
             if (GPUCameraRecorder != null && GPUCameraRecorder.isFlashSupport()) {
                 GPUCameraRecorder.switchFlashMode();
@@ -128,7 +121,6 @@ public class BaseCameraActivity extends AppCompatActivity {
             toggleClick = true;
         });
 
-
         findViewById(R.id.btn_image_capture).setOnClickListener(v ->
                 captureBitmap(bitmap -> new Handler().post(() -> {
                     String imagePath = getImageFilePath();
@@ -140,17 +132,12 @@ public class BaseCameraActivity extends AppCompatActivity {
 
         final List<FilterType> filterTypes = FilterType.createFilterList();
         lv.setAdapter(new FilterAdapter(this, R.layout.row_white_text, filterTypes).whiteMode());
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (GPUCameraRecorder != null) {
-                    GPUCameraRecorder.setFilter(FilterType.createGlFilter(filterTypes.get(position), getApplicationContext()));
-                }
+        lv.setOnItemClickListener((parent, view, position, id) -> {
+            if (GPUCameraRecorder != null) {
+                GPUCameraRecorder.setFilter(FilterType.createGlFilter(filterTypes.get(position), getApplicationContext()));
             }
         });
-
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
     }
 
     @Override
@@ -254,7 +241,6 @@ public class BaseCameraActivity extends AppCompatActivity {
     }
 
     private Bitmap createBitmapFromGLSurface(int w, int h, GL10 gl) {
-
         int[] bitmapBuffer = new int[w * h];
         int[] bitmapSource = new int[w * h];
         IntBuffer intBuffer = IntBuffer.wrap(bitmapBuffer);
@@ -278,7 +264,6 @@ public class BaseCameraActivity extends AppCompatActivity {
             Log.e("CreateBitmap", "createBitmapFromGLSurface: " + e.getMessage(), e);
             return null;
         }
-
         return Bitmap.createBitmap(bitmapSource, w, h, Bitmap.Config.ARGB_8888);
     }
 
@@ -288,9 +273,6 @@ public class BaseCameraActivity extends AppCompatActivity {
             FileOutputStream outStream = new FileOutputStream(file);
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream);
             outStream.close();
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -299,5 +281,4 @@ public class BaseCameraActivity extends AppCompatActivity {
     private interface BitmapReadyCallbacks {
         void onBitmapReady(Bitmap bitmap);
     }
-
 }
