@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/background"
+    style="@style/Widget.Design.BottomNavigationView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/_15sdpq">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:fontFamily="@font/texgyreadventor_bold"
+            android:text="@string/description"
+            android:textColor="#0C0E14"
+            android:textSize="@dimen/_24sdpq" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edt_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:background="@drawable/custom_bg_login_input"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="top|start"
+                android:lines="6"
+                android:padding="@dimen/_20sdpq"
+                android:textColor="@color/black"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/_18sdpq" />
+
+            <requestFocus />
+
+        </LinearLayout>
+
+        <soup.neumorphism.NeumorphCardView
+            style="@style/Widget.Neumorph.Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_55sdp"
+            android:layout_marginTop="@dimen/_5sdp">
+
+            <TextView
+                android:id="@+id/text_add_reel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/gradient_background"
+                android:fontFamily="@font/texgyreadventor_regular"
+                android:gravity="center"
+                android:text="Add Reel"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16sdpq"
+                android:textStyle="bold" />
+
+
+        </soup.neumorphism.NeumorphCardView>
+
+    </LinearLayout>
+
+</ScrollView>

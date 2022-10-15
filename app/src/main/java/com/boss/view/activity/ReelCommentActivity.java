@@ -90,7 +90,7 @@ public class ReelCommentActivity extends AppCompatActivity {
     private void loadComments() {
         ApiService apiService = RetrofitClient.getClient(this);
 
-        apiService.loadReelComments(reelId).enqueue(new Callback<ReelCommentModel>() {
+        apiService.loadReelComments(reelId, session.getUser_Id()).enqueue(new Callback<ReelCommentModel>() {
             @Override
             public void onResponse(@NonNull Call<ReelCommentModel> call, @NonNull Response<ReelCommentModel> response) {
                 if (response.code() == 200) {
@@ -118,7 +118,7 @@ public class ReelCommentActivity extends AppCompatActivity {
     private void loadCommentData() {
         ApiService apiService = RetrofitClient.getClient(this);
 
-        apiService.loadReelComments(reelId).enqueue(new Callback<ReelCommentModel>() {
+        apiService.loadReelComments(reelId, session.getUser_Id()).enqueue(new Callback<ReelCommentModel>() {
             @Override
             public void onResponse(@NonNull Call<ReelCommentModel> call, @NonNull Response<ReelCommentModel> response) {
                 if (response.code() == 200) {

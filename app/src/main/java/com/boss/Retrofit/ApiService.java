@@ -74,7 +74,8 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST(BaseUrl.load_reel_comments)
-    Call<ReelCommentModel> loadReelComments(@Field("reel_id") String reel_id);
+    Call<ReelCommentModel> loadReelComments(@Field("reel_id") String reel_id,
+                                            @Field("user_id") String to_user_id);
 
     @FormUrlEncoded
     @POST(BaseUrl.followUnfollow)

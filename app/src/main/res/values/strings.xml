@@ -104,4 +104,6 @@
     <string name="stop">Stop</string>
     <string name="app_record">Start</string>
     <string name="view_count">%1$i Views</string>
+    <string name="upload_fab">Upload Fab</string>
+    <string name="description">Description</string>
 </resources>

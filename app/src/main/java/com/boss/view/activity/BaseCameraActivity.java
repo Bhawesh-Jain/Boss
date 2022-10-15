@@ -7,13 +7,13 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.opengl.GLException;
+import android.os.CountDownTimer;
 import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -42,6 +42,7 @@ import javax.microedition.khronos.egl.EGLContext;
 import javax.microedition.khronos.opengles.GL10;
 
 public class BaseCameraActivity extends AppCompatActivity {
+    private static final String TAG = "BaseCameraActivity";
     protected GPUCameraRecorder GPUCameraRecorder;
     protected LensFacing lensFacing = LensFacing.BACK;
     protected int cameraWidth = 1280;
@@ -54,6 +55,7 @@ public class BaseCameraActivity extends AppCompatActivity {
     private boolean toggleClick = false;
 
     private ListView lv;
+    private CountDownTimer timer;
 
     public static void exportMp4ToGallery(Context context, String filePath) {
         final ContentValues values = new ContentValues(2);
@@ -101,6 +103,7 @@ public class BaseCameraActivity extends AppCompatActivity {
                 GPUCameraRecorder.stop();
                 recordBtn.setText(getString(R.string.app_record));
                 lv.setVisibility(View.VISIBLE);
+                timer.cancel();
             }
         });
 
@@ -167,6 +170,8 @@ public class BaseCameraActivity extends AppCompatActivity {
             ((FrameLayout) findViewById(R.id.wrap_view)).removeView(sampleGLView);
             sampleGLView = null;
         }
+
+        timer.cancel();
     }
 
     private void setUpCameraView() {
@@ -183,6 +188,22 @@ public class BaseCameraActivity extends AppCompatActivity {
         });
     }
 
+    private void setTimer() {
+        timer = new CountDownTimer(120000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                Log.e(TAG, "onTick: currentMillis --->"+millisUntilFinished);
+            }
+
+            @Override
+            public void onFinish() {
+                GPUCameraRecorder.stop();
+                recordBtn.setText(getString(R.string.app_record));
+                lv.setVisibility(View.VISIBLE);
+            }
+        }.start();
+    }
+
     private void setUpCamera() {
         setUpCameraView();
 
@@ -197,16 +218,20 @@ public class BaseCameraActivity extends AppCompatActivity {
                     @Override
                     public void onRecordComplete() {
                         exportMp4ToGallery(getApplicationContext(), filepath);
+                        startActivity(new Intent(BaseCameraActivity.this, VideoEditActivity.class).putExtra("VideoUri", filepath));
+                        finish();
                     }
 
                     @Override
                     public void onRecordStart() {
                         runOnUiThread(() -> lv.setVisibility(View.GONE));
+                        setTimer();
                     }
 
                     @Override
                     public void onError(Exception exception) {
                         Log.e("GPUCameraRecorder", exception.toString());
+                        timer.cancel();
                     }
 
                     @Override

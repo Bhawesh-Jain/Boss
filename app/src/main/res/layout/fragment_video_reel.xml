@@ -27,11 +27,11 @@
         android:paddingBottom="@dimen/_5sdp">
 
         <LinearLayout
-            android:layout_marginStart="@dimen/_10sdp"
             android:layout_width="@dimen/_250sdpq"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_10sdp"
             android:orientation="vertical">
 
@@ -151,6 +151,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:elevation="@dimen/_20sdp"
                     android:id="@+id/like_img"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -158,6 +159,7 @@
                     android:src="@drawable/ic_likes" />
 
                 <TextView
+                    android:elevation="@dimen/_20sdp"
                     android:id="@+id/tv_like_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -181,6 +183,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:elevation="@dimen/_20sdp"
                     android:id="@+id/comment_img"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -189,6 +192,7 @@
 
                 <TextView
                     android:id="@+id/tv_comment_count"
+                    android:elevation="@dimen/_20sdp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
