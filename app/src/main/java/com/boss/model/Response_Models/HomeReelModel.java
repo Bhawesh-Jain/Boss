@@ -61,7 +61,7 @@ public class HomeReelModel {
     public void setData(List<Datum> data) {
         this.data = data;
     }
-    public class Datum {
+    public static class Datum {
 
         private String reelPath;
         private String userPath;

@@ -5,6 +5,7 @@ import com.boss.model.Response_Models.BannerResModel;
 import com.boss.model.Response_Models.CommonResModel;
 import com.boss.model.Response_Models.FaqModel;
 import com.boss.model.Response_Models.HomeReelModel;
+import com.boss.model.Response_Models.LikeUnlikeResModel;
 import com.boss.model.Response_Models.LoginModel;
 import com.boss.model.Response_Models.OtpResModel;
 import com.boss.model.Response_Models.PopularCreatorResModel;
@@ -43,24 +44,41 @@ public interface ApiService {
 
 
     @FormUrlEncoded
+    @POST(BaseUrl.delete_reel_comment)
+    Call<CommonResModel> deleteReelComment(@Field("id") String id,
+                                           @Field("type") String type);
+
+
+    @FormUrlEncoded
     @POST(BaseUrl.share_reel)
     Call<CommonResModel> shareReel(@Field("user_id") String user_id,
-                                 @Field("reel_id") String reel_id);
+                                   @Field("reel_id") String reel_id);
+
+
+    @FormUrlEncoded
+    @POST(BaseUrl.like_unlike_reel_main_comment)
+    Call<LikeUnlikeResModel> likeUnlikeReelMainComment(@Field("user_id") String user_id,
+                                                       @Field("comment_id") String comment_id);
 
 
     @FormUrlEncoded
     @POST(BaseUrl.view_reel)
     Call<CommonResModel> viewReel(@Field("user_id") String user_id,
-                                 @Field("reel_id") String reel_id);
+                                  @Field("reel_id") String reel_id);
 
 
     @FormUrlEncoded
     @POST(BaseUrl.google_login)
     Call<SocialLoginResModel> googleLogin(@Field("name") String name,
                                           @Field("email") String email,
-
                                           @Field("fcm_id") String fcm_id,
                                           @Field("google_id") String google_id);
+
+    @FormUrlEncoded
+    @POST(BaseUrl.reply_on_reel_comment)
+    Call<CommonResModel> replyOnReelComment(@Field("user_id") String name,
+                                            @Field("comment_id") String email,
+                                            @Field("comment") String google_id);
 
     @FormUrlEncoded
     @POST(BaseUrl.facebook_login)
@@ -81,6 +99,13 @@ public interface ApiService {
     @POST(BaseUrl.followUnfollow)
     Call<CommonResModel> follow_Unfollow(@Field("user_id") String user_id,
                                          @Field("to_user_id") String to_user_id);
+
+
+    @FormUrlEncoded
+    @POST(BaseUrl.like_unlike_reel_reply_comment)
+    Call<LikeUnlikeResModel> likeUnlikeReelReplyComment(@Field("user_id") String user_id,
+                                                        @Field("comment_id") String comment_id);
+
 
     @FormUrlEncoded
     @POST(BaseUrl.comment_on_reel)

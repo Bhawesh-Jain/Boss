@@ -18,9 +18,11 @@ import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.boss.R;
+import com.boss.model.BaseCameraInterface;
 import com.boss.widget.FilterAdapter;
 import com.boss.widget.FilterType;
 import com.boss.widget.SampleCameraGLView;
@@ -41,7 +43,7 @@ import javax.microedition.khronos.egl.EGL10;
 import javax.microedition.khronos.egl.EGLContext;
 import javax.microedition.khronos.opengles.GL10;
 
-public class BaseCameraActivity extends AppCompatActivity {
+public class BaseCameraActivity extends AppCompatActivity implements BaseCameraInterface {
     private static final String TAG = "BaseCameraActivity";
     protected GPUCameraRecorder GPUCameraRecorder;
     protected LensFacing lensFacing = LensFacing.BACK;
@@ -57,17 +59,19 @@ public class BaseCameraActivity extends AppCompatActivity {
     private ListView lv;
     private CountDownTimer timer;
 
-    public static void exportMp4ToGallery(Context context, String filePath) {
+    public static void exportMp4ToGallery(Context context, String filePath, BaseCameraInterface baseCameraInterface) {
         final ContentValues values = new ContentValues(2);
         values.put(MediaStore.Video.Media.MIME_TYPE, "video/mp4");
         values.put(MediaStore.Video.Media.DATA, filePath);
         context.getContentResolver().insert(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, values);
         context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file://" + filePath)));
+
+        new Handler().postDelayed(baseCameraInterface::onFinish, 2000);
     }
 
     @SuppressLint("SimpleDateFormat")
     public static String getVideoFilePath() {
-        return getAndroidMoviesFolder().getAbsolutePath() + "/" + new SimpleDateFormat("yyyyMM_dd-HHmmss").format(new Date()) + "GPUCameraRecorder.mp4";
+        return getAndroidMoviesFolder().getAbsolutePath() + "/" + new SimpleDateFormat("yyyyMM_dd-HH:mm:ss").format(new Date()) + "GPUCameraRecorder.mp4";
     }
 
     public static File getAndroidMoviesFolder() {
@@ -84,7 +88,7 @@ public class BaseCameraActivity extends AppCompatActivity {
 
     @SuppressLint("SimpleDateFormat")
     public static String getImageFilePath() {
-        return getAndroidImageFolder().getAbsolutePath() + "/" + new SimpleDateFormat("yyyyMM_dd-HHmmss").format(new Date()) + "GPUCameraRecorder.png";
+        return getAndroidImageFolder().getAbsolutePath() + "/" + new SimpleDateFormat("yyyyMM_dd-HH:mm:ss").format(new Date()) + "GPUCameraRecorder.png";
     }
 
     public static File getAndroidImageFolder() {
@@ -208,7 +212,7 @@ public class BaseCameraActivity extends AppCompatActivity {
         setUpCameraView();
 
         GPUCameraRecorder = new GPUCameraRecorderBuilder(this, sampleGLView)
-                //.recordNoFilter(true)
+//                .recordNoFilter(true)
                 .cameraRecordListener(new CameraRecordListener() {
                     @Override
                     public void onGetFlashSupport(boolean flashSupport) {
@@ -217,9 +221,8 @@ public class BaseCameraActivity extends AppCompatActivity {
 
                     @Override
                     public void onRecordComplete() {
-                        exportMp4ToGallery(getApplicationContext(), filepath);
-                        startActivity(new Intent(BaseCameraActivity.this, VideoEditActivity.class).putExtra("VideoUri", filepath));
-                        finish();
+                        exportMp4ToGallery(getApplicationContext(), filepath, BaseCameraActivity.this);
+
                     }
 
                     @Override
@@ -251,8 +254,6 @@ public class BaseCameraActivity extends AppCompatActivity {
                 .cameraSize(cameraWidth, cameraHeight)
                 .lensFacing(lensFacing)
                 .build();
-
-
     }
 
     private void captureBitmap(final BitmapReadyCallbacks bitmapReadyCallbacks) {
@@ -292,7 +293,7 @@ public class BaseCameraActivity extends AppCompatActivity {
         return Bitmap.createBitmap(bitmapSource, w, h, Bitmap.Config.ARGB_8888);
     }
 
-    public void saveAsPngImage(Bitmap bitmap, String filePath) {
+    public void saveAsPngImage(@NonNull Bitmap bitmap, String filePath) {
         try {
             File file = new File(filePath);
             FileOutputStream outStream = new FileOutputStream(file);
@@ -301,6 +302,12 @@ public class BaseCameraActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void onFinish() {
+        startActivity(new Intent(BaseCameraActivity.this, VideoEditActivity.class).putExtra("VideoUri", filepath));
+        finish();
     }
 
     private interface BitmapReadyCallbacks {

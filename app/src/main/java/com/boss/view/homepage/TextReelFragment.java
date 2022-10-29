@@ -165,6 +165,7 @@ public class TextReelFragment extends Fragment {
             }
         });
     }
+
     private void shareReel() {
         ApiService apiService = RetrofitClient.getClient(getContext());
 
@@ -230,6 +231,7 @@ public class TextReelFragment extends Fragment {
             }
         });
     }
+
     private void dialogThreeDots() {
         Dialog dialog = new Dialog(getContext());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);

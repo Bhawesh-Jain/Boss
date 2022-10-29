@@ -1,15 +1,9 @@
 package com.boss.view.activity;
 
-import static com.boss.util.ImageShortCut.from;
-
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,7 +19,6 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.boss.R;
 import com.boss.databinding.ActivityVideoEditBinding;
-import com.boss.model.Response_Models.HomeReelModel;
 import com.boss.util.BaseUrl;
 import com.boss.util.ProgressDialog;
 import com.boss.util.Session;
@@ -35,16 +28,12 @@ import com.jarvanmo.exoplayerview.media.SimpleMediaSource;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 
 public class VideoEditActivity extends AppCompatActivity {
 
     private final String TAG = "VideoEditActivity";
-    File video_file;
+    File video_file, video_gif, thumbnail;
     private ActivityVideoEditBinding binding;
     private boolean isPlaying;
     private Activity activity;
@@ -84,18 +73,8 @@ public class VideoEditActivity extends AppCompatActivity {
                 }
             }
         });
-
         binding.fabUpload.setOnClickListener(view -> openBottomSheet());
 
-    }
-
-    public void convert_to_file(String videoUri, String description) throws IOException {
-//        Bitmap bitmap = BitmapFactory.decodeFile(Uri.parse(videoUri).getPath());
-//        video_file = bitmapToFile(VideoEditActivity.this, bitmap);
-        video_file = from(VideoEditActivity.this, Uri.parse(videoUri));
-        Log.d(TAG, "convert_to_file() called with: videoUri = [" + videoUri + "] And Video File = [ " + video_file + " ]");
-        if (video_file != null)
-            addReel(description);
     }
 
     private void openBottomSheet() {
@@ -128,9 +107,12 @@ public class VideoEditActivity extends AppCompatActivity {
         anAdd.addMultipartParameter("user_id", session.getUser_Id());
         anAdd.addMultipartParameter("type", "video");
         anAdd.addMultipartParameter("description", description);
-        anAdd.addMultipartFile("image", video_file);
-        anAdd.build()
-                .getAsJSONObject(new JSONObjectRequestListener() {
+
+        if (video_file != null) anAdd.addMultipartFile("image", video_file);
+        if (video_gif != null) anAdd.addMultipartFile("video_gif", video_gif);
+        if (thumbnail != null) anAdd.addMultipartFile("thumbnail", thumbnail);
+
+        anAdd.build().getAsJSONObject(new JSONObjectRequestListener() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
                         progressDialog.dismiss();
@@ -154,5 +136,4 @@ public class VideoEditActivity extends AppCompatActivity {
                     }
                 });
     }
-
 }

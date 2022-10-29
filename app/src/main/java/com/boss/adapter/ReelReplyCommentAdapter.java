@@ -5,6 +5,12 @@ import static com.google.android.exoplayer2.ExoPlayerLibraryInfo.TAG;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,13 +21,12 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.content.res.AppCompatResources;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.boss.R;
 import com.boss.Retrofit.ApiService;
 import com.boss.Retrofit.RetrofitClient;
-import com.boss.databinding.ItemCommentsBinding;
+import com.boss.databinding.ItemCommentsReplyBinding;
 import com.boss.model.CommentInterface;
 import com.boss.model.Response_Models.CommonResModel;
 import com.boss.model.Response_Models.LikeUnlikeResModel;
@@ -36,54 +41,60 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ReelCommentAdapter extends RecyclerView.Adapter<ReelCommentAdapter.ViewHolder> {
+public class ReelReplyCommentAdapter extends RecyclerView.Adapter<ReelReplyCommentAdapter.ViewHolder> {
     private final Context context;
-    private final List<ReelCommentModel.Datum> reelComments;
+    private final List<ReelCommentModel.Datum.Reply> list;
     private final String path;
     private final Session session;
     private final CommentInterface commentInterface;
+    private final String commentId;
 
-    public ReelCommentAdapter(Context context, List<ReelCommentModel.Datum> reelComments, CommentInterface commentInterface, String path) {
+    public ReelReplyCommentAdapter(Context context, List<ReelCommentModel.Datum.Reply> list, String path, CommentInterface commentInterface, String commentId) {
         this.context = context;
-        this.reelComments = reelComments;
-        this.commentInterface = commentInterface;
+        this.list = list;
         this.path = path;
-        session = new Session(context);
+        this.commentInterface = commentInterface;
+        this.commentId = commentId;
+        this.session = new Session(context);
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(ItemCommentsBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
+        return new ViewHolder(ItemCommentsReplyBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ReelCommentModel.Datum currentModel = reelComments.get(position);
+        ReelCommentModel.Datum.Reply currentModel = list.get(position);
 
-        Glide.with(context).load(path + reelComments.get(position).getUserImage())
-                .placeholder(AppCompatResources.getDrawable(context, R.drawable.ic_user))
-                .into(holder.binding.imageUserProfile);
+        Glide.with(context).load(path + currentModel.getUserImage())
+                .error(R.drawable.ic_user)
+                .into(holder.binding.imageUserProfile)
+                .onLoadFailed(AppCompatResources.getDrawable(context, R.drawable.ic_user));
 
-        if (currentModel.getiLikedMain() == 0) {
+        if (currentModel.getI_liked() == 0) {
             holder.binding.imageLike.setImageResource(R.drawable.ic_heart);
-        } else if (currentModel.getiLikedMain() == 1) {
+        } else if (currentModel.getI_liked() == 1) {
             holder.binding.imageLike.setImageResource(R.drawable.ic_heart_filled);
         }
 
-        if (session.getUser_Id().equalsIgnoreCase(currentModel.getUserId()))
+        if (session.getUser_Id().equalsIgnoreCase(currentModel.getUser_id()))
             holder.binding.imageDelete.setVisibility(View.VISIBLE);
 
-        holder.binding.imageDelete.setOnClickListener(view -> deleteComment(currentModel.getId(), holder.getAdapterPosition()));
-        holder.binding.textUserName.setOnClickListener(view -> context.startActivity(new Intent(context, UserProfileActivity.class).putExtra("id", currentModel.getUserId())));
-        holder.binding.imageUserProfile.setOnClickListener(view -> context.startActivity(new Intent(context, UserProfileActivity.class).putExtra("id", currentModel.getUserId())));
-
         holder.binding.textCommentTime.setText(currentModel.getAgoTime());
-        holder.binding.textComment.setText(currentModel.getComment());
-        holder.binding.textUserName.setText(currentModel.getUserName());
-        holder.binding.textCommentLikeCount.setText(String.valueOf(currentModel.getTotalLikeMain()));
 
-        holder.binding.textReply.setOnClickListener(view -> commentInterface.onReply(currentModel.getId(), currentModel.getUserName()));
+        //holder.binding.textComment.setText(currentModel.getComment());
+
+        setTags(holder.binding.textComment, currentModel.getComment(), commentId, currentModel.getUserName());
+
+        holder.binding.textUserName.setText(currentModel.getUserName());
+        holder.binding.textCommentLikeCount.setText(String.valueOf(currentModel.getTotal_like()));
+        holder.binding.imageDelete.setOnClickListener(view -> deleteComment(currentModel.getId(), holder.getAdapterPosition()));
+
+        holder.binding.textReply.setOnClickListener(view -> commentInterface.onReply(commentId, currentModel.getUserName()));
+        holder.binding.textUserName.setOnClickListener(view -> context.startActivity(new Intent(context, UserProfileActivity.class).putExtra("id", currentModel.getUser_id())));
+        holder.binding.imageUserProfile.setOnClickListener(view -> context.startActivity(new Intent(context, UserProfileActivity.class).putExtra("id", currentModel.getUser_id())));
 
         holder.binding.imageLike.setOnClickListener(view -> {
                     likeUnlikeComments(session.getUser_Id(), currentModel.getId(), holder.binding.imageLike, holder.binding.textCommentLikeCount);
@@ -94,18 +105,12 @@ public class ReelCommentAdapter extends RecyclerView.Adapter<ReelCommentAdapter.
                     }
                 }
         );
-
-        if (currentModel.getReply().size() != 0) {
-            ReelReplyCommentAdapter adapter = new ReelReplyCommentAdapter(context, currentModel.getReply(), path, commentInterface, currentModel.getId());
-            holder.binding.subCommentRecycler.setAdapter(adapter);
-            holder.binding.subCommentRecycler.setLayoutManager(new LinearLayoutManager(context));
-        }
     }
 
     private void likeUnlikeComments(String user_id, String like_id, ImageView imageLike, TextView textCommentLikeCount) {
         ApiService apiService = RetrofitClient.getClient(context);
 
-        apiService.likeUnlikeReelMainComment(user_id, like_id).enqueue(new Callback<LikeUnlikeResModel>() {
+        apiService.likeUnlikeReelReplyComment(user_id, like_id).enqueue(new Callback<LikeUnlikeResModel>() {
             @Override
             public void onResponse(@NonNull Call<LikeUnlikeResModel> call, @NonNull Response<LikeUnlikeResModel> response) {
                 if (response.code() == 200) {
@@ -139,8 +144,9 @@ public class ReelCommentAdapter extends RecyclerView.Adapter<ReelCommentAdapter.
                 .setNegativeButton("Cancel", null)
                 .setPositiveButton("Yes", (dialogInterface, i) -> {
                     notifyItemRemoved(position);
-                    notifyItemChanged(reelComments.size() - 1);
-                    reelComments.remove(position);
+                    notifyItemChanged(list.size() - 1);
+                    list.remove(position);
+
                     ApiService apiService = RetrofitClient.getClient(context);
 
                     apiService.deleteReelComment(id, "main").enqueue(new Callback<CommonResModel>() {
@@ -169,18 +175,55 @@ public class ReelCommentAdapter extends RecyclerView.Adapter<ReelCommentAdapter.
                 }).show();
     }
 
+    private void setTags(TextView pTextView, String pTagString, String commentId, String userName) {
+        SpannableString string = new SpannableString(pTagString);
+
+        int start = -1;
+        for (int i = 0; i < pTagString.length(); i++) {
+            if (pTagString.charAt(i) == '@') {
+                start = i;
+            } else if (pTagString.charAt(i) == ' ' || pTagString.charAt(i) == '\n' || (i == pTagString.length() - 1 && start != -1)) {
+                if (start != -1) {
+                    if (i == pTagString.length() - 1) {
+                        i++; // case for if hash is last word and there is no
+                        // space after word
+                    }
+
+                    string.setSpan(new ClickableSpan() {
+
+                        @Override
+                        public void onClick(View widget) {
+                            commentInterface.onReply(commentId, userName);
+                        }
+
+                        @Override
+                        public void updateDrawState(TextPaint ds) {
+                            // link color
+                            ds.setColor(Color.parseColor("#33b5e5"));
+                            ds.setUnderlineText(false);
+                        }
+                    }, start, i, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    start = -1;
+                }
+            }
+        }
+
+        pTextView.setMovementMethod(LinkMovementMethod.getInstance());
+        pTextView.setText(string);
+    }
+
+
     @Override
     public int getItemCount() {
-        if (reelComments != null)
-            return reelComments.size();
-        return 0;
+        return list.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public final ItemCommentsBinding binding;
+        ItemCommentsReplyBinding binding;
 
-        public ViewHolder(@NonNull ItemCommentsBinding binding) {
+        public ViewHolder(ItemCommentsReplyBinding binding) {
             super(binding.getRoot());
+
             this.binding = binding;
         }
     }

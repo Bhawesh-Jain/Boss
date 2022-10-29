@@ -4,9 +4,11 @@ import static com.boss.UtilityTools.Utils.getRandomColor;
 import static com.google.android.exoplayer2.ExoPlayerLibraryInfo.TAG;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,6 +21,7 @@ import com.boss.Retrofit.ApiService;
 import com.boss.Retrofit.RetrofitClient;
 import com.boss.adapter.ReelCommentAdapter;
 import com.boss.databinding.ActivityReelCommentBinding;
+import com.boss.model.CommentInterface;
 import com.boss.model.Response_Models.CommonResModel;
 import com.boss.model.Response_Models.ReelCommentModel;
 import com.boss.util.Constants;
@@ -30,12 +33,13 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ReelCommentActivity extends AppCompatActivity {
+public class ReelCommentActivity extends AppCompatActivity implements CommentInterface {
 
     private final Activity activity = ReelCommentActivity.this;
     private ActivityReelCommentBinding binding;
     private String reelId;
     private Session session;
+    private String commentType = "main";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +48,10 @@ public class ReelCommentActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         session = new Session(activity);
 
-        binding.commentPost.setOnClickListener(view -> addComment(binding.commentEdt.getText().toString()));
+        binding.commentPost.setOnClickListener(view -> {
+            if (commentType.equalsIgnoreCase("main"))
+                addComment(binding.commentEdt.getText().toString());
+        });
         reelId = getIntent().getStringExtra(Constants.Key.reel_id);
     }
 
@@ -87,6 +94,40 @@ public class ReelCommentActivity extends AppCompatActivity {
 
     }
 
+    private void replyOnReelComment(String commentId, String comment) {
+        ProgressDialog progressDialog = new ProgressDialog(activity);
+        progressDialog.show();
+        ApiService apiService = RetrofitClient.getClient(this);
+
+        apiService.replyOnReelComment(session.getUser_Id(), commentId, comment).enqueue(new Callback<CommonResModel>() {
+            @Override
+            public void onResponse(@NonNull Call<CommonResModel> call, @NonNull Response<CommonResModel> response) {
+                progressDialog.dismiss();
+                if (response.code() == 200) {
+                    if (response.body() != null) {
+                        try {
+                            if (response.body().getResult().equalsIgnoreCase("true")) {
+                                loadComments();
+                                binding.commentEdt.setText("");
+                                commentType = "main";
+                            } else
+                                Toast.makeText(activity, "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<CommonResModel> call, @NonNull Throwable t) {
+                Log.e(TAG, "" + t.getLocalizedMessage());
+                progressDialog.dismiss();
+            }
+        });
+
+    }
+
     private void loadComments() {
         ApiService apiService = RetrofitClient.getClient(this);
 
@@ -98,9 +139,8 @@ public class ReelCommentActivity extends AppCompatActivity {
                         try {
                             if (response.body().getResult().equalsIgnoreCase("true")) {
                                 binding.commentsRecyclerView.setLayoutManager(new LinearLayoutManager(activity));
-                                binding.commentsRecyclerView.setAdapter(new ReelCommentAdapter(activity, response.body().getData()));
-                            } else
-                                Toast.makeText(activity, "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                                binding.commentsRecyclerView.setAdapter(new ReelCommentAdapter(activity, response.body().getData(), ReelCommentActivity.this, response.body().getUserPath()));
+                            } else Toast.makeText(activity, "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -143,9 +183,8 @@ public class ReelCommentActivity extends AppCompatActivity {
                                             .into(binding.imageUserProfile)
                                             .onLoadFailed(AppCompatResources.getDrawable(activity, R.drawable.ic_user));
                                 }
-
                                 binding.commentsRecyclerView.setLayoutManager(new LinearLayoutManager(activity));
-                                binding.commentsRecyclerView.setAdapter(new ReelCommentAdapter(activity, response.body().getData()));
+                                binding.commentsRecyclerView.setAdapter(new ReelCommentAdapter(activity, response.body().getData(), ReelCommentActivity.this, response.body().getUserPath()));
                             } else
                                 Toast.makeText(activity, "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
                         } catch (Exception e) {
@@ -159,6 +198,26 @@ public class ReelCommentActivity extends AppCompatActivity {
             public void onFailure(@NonNull Call<ReelCommentModel> call, @NonNull Throwable t) {
                 Log.e(TAG, "" + t.getLocalizedMessage());
             }
+        });
+    }
+
+    @Override
+    public void onReply(String commentId, String name) {
+        binding.commentEdt.requestFocus();
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.showSoftInput(binding.commentEdt, InputMethodManager.SHOW_IMPLICIT);
+
+        commentType = "reply";
+
+        String text = "@" + name.trim().replaceAll(" ", "_") + " ";
+
+        binding.commentEdt.setText(text);
+        binding.commentEdt.setSelection(binding.commentEdt.length());
+
+        binding.commentPost.setOnClickListener(view -> {
+            if (commentType.equalsIgnoreCase("main")) {
+                addComment(binding.commentEdt.getText().toString());
+            } else replyOnReelComment(commentId, binding.commentEdt.getText().toString());
         });
     }
 }

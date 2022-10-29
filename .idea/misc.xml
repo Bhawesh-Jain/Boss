@@ -25,7 +25,7 @@
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/activity_otp_verification.xml" value="0.20925925925925926" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/activity_post_video.xml" value="0.2" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/activity_privacy_policy.xml" value="0.25" />
-        <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/activity_reel_comment.xml" value="0.25" />
+        <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/activity_reel_comment.xml" value="0.2" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/activity_relations.xml" value="0.25" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/activity_setting.xml" value="0.176" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/activity_sign_up.xml" value="0.176" />
@@ -51,7 +51,8 @@
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/fragment_video_reel.xml" value="0.4" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/image_select_mode_dialog_layout.xml" value="0.25" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/item_banner.xml" value="0.25" />
-        <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/item_comments.xml" value="0.128" />
+        <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/item_comments.xml" value="0.2" />
+        <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/item_comments_reply.xml" value="0.152" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/item_notification.xml" value="0.25" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/popular_creator_item.xml" value="0.25" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/progress_dialog.xml" value="0.25" />
@@ -60,6 +61,7 @@
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/text_item_lay.xml" value="0.25" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/tiktok_layout.xml" value="0.25" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/video_post_bottom_sheet.xml" value="0.22592592592592592" />
+        <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.137" />
       </map>
     </option>
   </component>

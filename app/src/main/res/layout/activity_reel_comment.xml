@@ -36,13 +36,14 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:visibility="gone"
         android:id="@+id/parent_user_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tool_bar"
         android:background="@color/white"
         android:paddingTop="@dimen/_10sdp"
-        android:paddingBottom="@dimen/_10sdp">
+        android:paddingBottom="@dimen/_5sdp">
 
         <RelativeLayout
             android:id="@+id/relative_user_lay"

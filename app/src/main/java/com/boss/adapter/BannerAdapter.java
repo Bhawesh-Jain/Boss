@@ -63,9 +63,6 @@ public class BannerAdapter extends RecyclerView.Adapter<BannerAdapter.MyViewHold
         public MyViewHolder(@NonNull ItemBannerBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
-
         }
-
     }
-
 }

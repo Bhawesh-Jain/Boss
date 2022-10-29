@@ -1,8 +1,11 @@
 package com.boss.view.fragment;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 
@@ -23,7 +26,7 @@ public class UserProfilePostFragment extends Fragment {
     ArrayList<String> list = new ArrayList<>();
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentUserProfilePostBinding.inflate(inflater, container, false);
         activity = requireActivity();
@@ -39,4 +42,6 @@ public class UserProfilePostFragment extends Fragment {
         binding.rvVideo.setAdapter(new PostAdapter(activity, list));
         return binding.getRoot();
     }
+
+
 }
