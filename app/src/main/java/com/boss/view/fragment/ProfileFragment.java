@@ -74,8 +74,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         binding.followersLay.setOnClickListener(this);
         binding.followingLay.setOnClickListener(this);
 
-        ProfileViewPagerAdapter profileViewPagerAdapter = new ProfileViewPagerAdapter(getActivity());
-        binding.ViewPager.setAdapter(profileViewPagerAdapter);
+        if (getActivity() != null) {
+            ProfileViewPagerAdapter profileViewPagerAdapter = new ProfileViewPagerAdapter(getActivity());
+            binding.ViewPager.setAdapter(profileViewPagerAdapter);
+        }
         ArrayList<Integer> integers = new ArrayList<>();
         integers.add(R.drawable.ic_instagram_reel);
         integers.add(R.drawable.ic_at);
@@ -106,6 +108,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                             binding.tvAboutBusiness.setText(data.getAbout());
                             binding.tvFollowers.setText(String.valueOf(data.getTotalFollower()));
                             binding.tvFollowing.setText(String.valueOf(data.getTotalFollowing()));
+                            binding.tvPosts.setText(String.valueOf(data.getTotalPost()));
 
                             if (data.getImage().length() != 0) {
                                 session.setValue(Constants.Key.user_img, response.body().getPath() + data.getImage());

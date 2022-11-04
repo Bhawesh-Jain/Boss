@@ -22,7 +22,7 @@ public class BaseUrl {
     public static String count_like = "count_like";
 
 
-    // Apis
+    // Auth & Profile
     public static final String login = "login";
     public static final String signup = "signup";
     public static final String google_login = "google_login";
@@ -30,7 +30,6 @@ public class BaseUrl {
     public static final String verify_otp = "verify_otp";
     public static final String resend_otp = "resend_otp";
     public static final String logout = "logout";
-
 
     public static final String get_profile = "get_profile";
     public static final String update_profile = "update_profile";
@@ -53,7 +52,6 @@ public class BaseUrl {
     public static final String like_unlike_reel_reply_comment = "like_unlike_reel_main_comment";
     public static final String reply_on_reel_comment = "reply_on_reel_comment";
 
-
     public static final String get_category = "get_category";
     public static final String get_faq = "get_faq";
     public static final String get_about_us = "get_about_us";
@@ -62,4 +60,11 @@ public class BaseUrl {
     public static final String get_banner = "get_banner";
     public static final String get_popular_creator = "get_popular_creator";
 
+    public static final String reel_report = "reel_report";
+    public static final String get_my_view_reels = "get_my_view_reels";
+    public static final String get_my_like_reels = "get_my_like_reels";
+    public static final String get_i_like_reel = "get_i_like_reel";
+    public static final String delete_post = "delete_post";
+    public static final String delete_account = "delete_account";
+    public static final String admin_notification = "admin_notification";
 }

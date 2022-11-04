@@ -105,7 +105,7 @@ public class SignUpActivity extends AppCompatActivity {
         Window window = dialog.getWindow();
         window.setLayout(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 
-        LinearLayout camera = popupView.findViewById(R.id.selectImage_dialog_camera);
+        LinearLayout camera = popupView.findViewById(R.id.select_Image_dialog_camera);
         LinearLayout gallery = popupView.findViewById(R.id.selectImage_dialog_gallery);
 
         camera.setOnClickListener(view -> {

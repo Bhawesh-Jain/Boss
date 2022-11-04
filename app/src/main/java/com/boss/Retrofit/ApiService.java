@@ -1,12 +1,14 @@
 package com.boss.Retrofit;
 
 import com.boss.model.Response_Models.AboutUsModel;
+import com.boss.model.Response_Models.AdminNotiResModel;
 import com.boss.model.Response_Models.BannerResModel;
 import com.boss.model.Response_Models.CommonResModel;
 import com.boss.model.Response_Models.FaqModel;
 import com.boss.model.Response_Models.HomeReelModel;
 import com.boss.model.Response_Models.LikeUnlikeResModel;
 import com.boss.model.Response_Models.LoginModel;
+import com.boss.model.Response_Models.MyViewsReelModel;
 import com.boss.model.Response_Models.OtpResModel;
 import com.boss.model.Response_Models.PopularCreatorResModel;
 import com.boss.model.Response_Models.PrivacyPolModel;
@@ -34,8 +36,15 @@ public interface ApiService {
     Call<CommonResModel> logout(@Field("user_id") String user_id);
 
     @FormUrlEncoded
+    @POST(BaseUrl.delete_account)
+    Call<CommonResModel> deleteAccount(@Field("user_id") String user_id);
+
+    @FormUrlEncoded
     @POST(BaseUrl.get_popular_creator)
     Call<PopularCreatorResModel> getPopularCreator(@Field("user_id") String user_id);
+
+    @POST(BaseUrl.admin_notification)
+    Call<AdminNotiResModel> getAdminNotification();
 
     @FormUrlEncoded
     @POST(BaseUrl.verify_otp)
@@ -116,6 +125,10 @@ public interface ApiService {
     @FormUrlEncoded
     @POST(BaseUrl.get_folloing_userslist)
     Call<RelationUserModel> getFollowingList(@Field("user_id") String user_id);
+
+    @FormUrlEncoded
+    @POST(BaseUrl.get_my_view_reels)
+    Call<MyViewsReelModel> getMyViewReels(@Field("user_id") String user_id);
 
     @FormUrlEncoded
     @POST(BaseUrl.get_follower_userslist)

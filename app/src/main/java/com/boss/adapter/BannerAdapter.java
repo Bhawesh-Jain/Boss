@@ -20,7 +20,6 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class BannerAdapter extends RecyclerView.Adapter<BannerAdapter.MyViewHolder> {
     Context context;
     List<BannerResModel.Datum> list;

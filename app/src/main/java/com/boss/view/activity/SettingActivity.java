@@ -39,10 +39,39 @@ public class SettingActivity extends AppCompatActivity {
 
         binding.ivBack.setOnClickListener(view -> onBackPressed());
         binding.logoutLay.setOnClickListener(v -> logout());
+        binding.ivDelete.setOnClickListener(v -> deleteAccount());
         binding.aboutUsLay.setOnClickListener(v -> startActivity(new Intent(activity, AboutUsActivity.class)));
         binding.privacyPolLay.setOnClickListener(v -> startActivity(new Intent(activity, PrivacyPolicyActivity.class)));
         binding.termsConditionLay.setOnClickListener(v -> startActivity(new Intent(activity, TermsConditionActivity.class)));
         binding.faqLay.setOnClickListener(v -> startActivity(new Intent(activity, FaqActivity.class)));
+    }
+
+    private void deleteAccount() {
+        ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.show();
+        ApiService apiService = RetrofitClient.getClient(activity);
+
+        apiService.deleteAccount(session.getUser_Id()).enqueue(new Callback<CommonResModel>() {
+            @Override
+            public void onResponse(@NonNull Call<CommonResModel> call, @NonNull Response<CommonResModel> response) {
+                progressDialog.dismiss();
+                if (response.code() == 200) {
+                    if (response.body() != null){
+                        if (response.body().getResult().equalsIgnoreCase("true")){
+                            Toast.makeText(activity, ""+response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                            session.logout();
+                            finish();
+                        } else Toast.makeText(activity, ""+response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<CommonResModel> call, @NonNull Throwable t) {
+                progressDialog.dismiss();
+                Log.e(TAG, "" + t.getLocalizedMessage());
+            }
+        });
     }
 
     private void logout() {

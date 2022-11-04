@@ -131,6 +131,7 @@ public class UserProfileActivity extends AppCompatActivity implements View.OnCli
                             binding.tvCompanyName.setText(data.getCompany());
                             binding.tvFollowers.setText(String.valueOf(data.getTotalFollower()));
                             binding.tvFollowing.setText(String.valueOf(data.getTotalFollowing()));
+                            binding.tvPosts.setText(String.valueOf(data.getTotalPost()));
 
                             if (data.getiFollowed() == 0)
                                     binding.tvFollow.setText(R.string.follow);

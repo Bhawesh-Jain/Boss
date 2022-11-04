@@ -14,7 +14,7 @@
         android:orientation="vertical"
         android:layout_marginHorizontal="@dimen/_10sdp"
         android:gravity="center_horizontal"
-        android:id="@+id/selectImage_dialog_camera">
+        android:id="@+id/select_Image_dialog_camera">
 
         <ImageView
             android:layout_width="@dimen/_40sdp"
@@ -39,7 +39,7 @@
         android:orientation="vertical"
         android:gravity="center_horizontal"
         android:id="@+id/selectImage_dialog_gallery"
-        android:layout_toEndOf="@id/selectImage_dialog_camera">
+        android:layout_toEndOf="@id/select_Image_dialog_camera">
 
         <ImageView
             android:layout_width="@dimen/_40sdp"

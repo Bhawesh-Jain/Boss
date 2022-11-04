@@ -10,10 +10,15 @@
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/drawable/ic_arrow_up.xml" value="0.152" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/drawable/ic_camera.xml" value="0.136" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/drawable/ic_circle.xml" value="0.1455" />
+        <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/drawable/ic_explosive.xml" value="0.1435" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/drawable/ic_feedback.xml" value="0.1235" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/drawable/ic_heart.xml" value="0.121" />
+        <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1435" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/drawable/ic_likes.xml" value="0.152" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/drawable/ic_likes_selected.xml" value="0.152" />
+        <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/drawable/ic_message_text.xml" value="0.122" />
+        <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/drawable/ic_misc4.xml" value="0.1435" />
+        <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/drawable/ic_more.xml" value="0.1435" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/drawable/selected_dot.xml" value="0.152" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout-v28/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout-v28/activity_user_profile.xml" value="0.25" />
@@ -35,6 +40,7 @@
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/activity_user_profile.xml" value="0.22685185185185186" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/activity_video_edit.xml" value="0.25" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/add_bottom_sheet.xml" value="0.25" />
+        <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/admin_notification_item_layout.xml" value="0.23125" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/custom_progress_dialog.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/dialog_three_dots.xml" value="0.25" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/faq_list_item.xml" value="0.25" />
@@ -44,6 +50,7 @@
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/fragment_all_following.xml" value="0.25" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/fragment_discovery.xml" value="0.2388888888888889" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/fragment_home.xml" value="0.176" />
+        <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/fragment_notifications.xml" value="0.22314814814814815" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/fragment_photo_reel.xml" value="0.2359375" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/fragment_profile.xml" value="0.176" />
         <entry key="..\:/Users/Divyendu Jain/AndroidStudioProjects/Boss/app/src/main/res/layout/fragment_text_reel.xml" value="0.152" />

@@ -186,6 +186,17 @@ public class ProfileModel {
         @SerializedName("i_followed")
         @Expose
         private int iFollowed;
+        @SerializedName("total_post")
+        @Expose
+        private int totalPost;
+
+        public int getTotalPost() {
+            return totalPost;
+        }
+
+        public void setTotalPost(int totalPost) {
+            this.totalPost = totalPost;
+        }
 
         public String getId() {
             return id;

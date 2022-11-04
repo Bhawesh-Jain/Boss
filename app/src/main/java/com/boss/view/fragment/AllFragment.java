@@ -48,9 +48,9 @@ public class AllFragment extends Fragment {
         strings.add("1");
 
 
-        binding.rvNotification.setLayoutManager(new LinearLayoutManager(activity,LinearLayoutManager.HORIZONTAL,true));
-        binding.rvNotification.setAdapter(new NotificationAdapter(activity,strings));
-        binding.rvNotification.setHasFixedSize(true);
+//        binding.rvNotification.setLayoutManager(new LinearLayoutManager(activity,LinearLayoutManager.HORIZONTAL,true));
+//        binding.rvNotification.setAdapter(new NotificationAdapter(activity,strings));
+//        binding.rvNotification.setHasFixedSize(true);
 
         GridLayoutManager gridLayout = new GridLayoutManager(activity, 2);
         binding.rvVideo.setLayoutManager(gridLayout);

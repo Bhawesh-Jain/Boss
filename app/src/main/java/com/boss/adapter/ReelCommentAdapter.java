@@ -115,7 +115,6 @@ public class ReelCommentAdapter extends RecyclerView.Adapter<ReelCommentAdapter.
                                 if (response.body().getMsg().equalsIgnoreCase("Liked")) {
                                     imageLike.setImageResource(R.drawable.ic_heart_filled);
                                 } else imageLike.setImageResource(R.drawable.ic_heart);
-
                                 textCommentLikeCount.setText(String.valueOf(response.body().getData()));
                             } else Toast.makeText(context, "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
                         } catch (Exception e) {
@@ -150,9 +149,8 @@ public class ReelCommentAdapter extends RecyclerView.Adapter<ReelCommentAdapter.
                             if (response.code() == 200) {
                                 if (response.body() != null) {
                                     try {
-                                        if (response.body().getResult().equalsIgnoreCase("false")) {
+                                        if (response.body().getResult().equalsIgnoreCase("false"))
                                             Toast.makeText(context, "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
-                                        }
                                     } catch (Exception e) {
                                         e.printStackTrace();
                                     }
