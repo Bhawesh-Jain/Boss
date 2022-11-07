@@ -98,12 +98,17 @@
     <string name="like_amp_unlike"><![CDATA[Like & Unlike]]></string>
     <string name="banner_image">Banner Image</string>
     <color name="gray_light">#BDB9B9</color>
-    <string name="facebook_app_id">1168267117070490</string>
-    <string name="facebook_client_token">d3196831f19fd045f55ba9faecd9c99b</string>
     <string name="start">Start</string>
     <string name="stop">Stop</string>
     <string name="app_record">Start</string>
     <string name="view_count">%1$i Views</string>
     <string name="upload_fab">Upload Fab</string>
     <string name="description">Description</string>
+
+
+    <string name="facebook_app_id">631244981816934</string>
+    <string name="facebook_client_token">fc4529aa32e0f6c605df2f34673c4021</string>
+
+    <!--    <string name="facebook_app_id">1168267117070490</string>
+        <string name="facebook_client_token">d3196831f19fd045f55ba9faecd9c99b</string>-->
 </resources>

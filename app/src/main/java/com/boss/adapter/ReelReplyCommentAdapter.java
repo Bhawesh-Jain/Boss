@@ -98,11 +98,9 @@ public class ReelReplyCommentAdapter extends RecyclerView.Adapter<ReelReplyComme
 
         holder.binding.imageLike.setOnClickListener(view -> {
                     likeUnlikeComments(session.getUser_Id(), currentModel.getId(), holder.binding.imageLike, holder.binding.textCommentLikeCount);
-                    if (holder.binding.imageLike.getDrawable() == AppCompatResources.getDrawable(context, R.drawable.ic_heart_filled)) {
+                    if (holder.binding.imageLike.getDrawable() == AppCompatResources.getDrawable(context, R.drawable.ic_heart_filled))
                         holder.binding.imageLike.setImageResource(R.drawable.ic_heart);
-                    } else {
-                        holder.binding.imageLike.setImageResource(R.drawable.ic_heart_filled);
-                    }
+                    else holder.binding.imageLike.setImageResource(R.drawable.ic_heart_filled);
                 }
         );
     }

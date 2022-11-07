@@ -1,4 +1,4 @@
-package com.boss.view.fragment;
+package com.boss.view.ui.profile_fragments;
 
 import static com.google.android.exoplayer2.ExoPlayerLibraryInfo.TAG;
 

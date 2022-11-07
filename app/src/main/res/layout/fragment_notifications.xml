@@ -2,11 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
     tools:ignore="SpUsage"
-    tools:context=".view.fragment.NotificationsFragment">
+    tools:context=".view.ui.NotificationsFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -31,16 +31,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingLeft="@dimen/_10sdpq"
-            android:paddingRight="@dimen/_10sdpq">
+            android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvNotification"
                 android:layout_width="match_parent"
-                android:layout_marginHorizontal="@dimen/_10sdp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdpq" />
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 

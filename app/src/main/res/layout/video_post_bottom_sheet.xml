@@ -47,27 +47,57 @@
 
         </LinearLayout>
 
-        <soup.neumorphism.NeumorphCardView
-            style="@style/Widget.Neumorph.Button"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_55sdp"
-            android:layout_marginTop="@dimen/_5sdp">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
 
-            <TextView
-                android:id="@+id/text_add_reel"
+            <soup.neumorphism.NeumorphCardView
+                android:layout_weight="1"
+                style="@style/Widget.Neumorph.Button"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:background="@drawable/gradient_background"
-                android:fontFamily="@font/texgyreadventor_regular"
-                android:gravity="center"
-                android:text="Add Reel"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_16sdpq"
-                android:textStyle="bold" />
+                android:layout_height="@dimen/_55sdp"
+                android:layout_marginTop="@dimen/_5sdp">
 
+                <TextView
+                    android:id="@+id/text_add_reel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/gradient_background"
+                    android:fontFamily="@font/texgyreadventor_regular"
+                    android:gravity="center"
+                    android:text="Add Reel"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdpq"
+                    android:textStyle="bold" />
 
-        </soup.neumorphism.NeumorphCardView>
+            </soup.neumorphism.NeumorphCardView>
+
+            <soup.neumorphism.NeumorphCardView
+                android:layout_weight="1"
+                style="@style/Widget.Neumorph.Button"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_marginTop="@dimen/_5sdp">
+
+                <TextView
+                    android:id="@+id/text_save_draft"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/gradient_background"
+                    android:fontFamily="@font/texgyreadventor_regular"
+                    android:gravity="center"
+                    android:text="Save to Draft"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdpq"
+                    android:textStyle="bold" />
+
+            </soup.neumorphism.NeumorphCardView>
+
+        </LinearLayout>
 
     </LinearLayout>
 

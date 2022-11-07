@@ -38,6 +38,10 @@
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:fontFamily="@font/roboto_regular"
+                    android:paddingTop="@dimen/_5sdpq"
+                    android:paddingEnd="@dimen/_5sdpq"
+                    android:paddingStart="@dimen/_5sdpq"
+                    android:paddingBottom="@dimen/_5sdpq"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_16sdpq" />
 
@@ -59,25 +63,25 @@
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_180sdpq"
+            android:layout_height="@dimen/_150sdp"
             android:scaleType="center"
-            android:layout_marginTop="@dimen/_10sdpq"
+            android:layout_marginTop="@dimen/_3sdp"
             android:id="@+id/image_notificationIc"
             android:src="@drawable/loading"
-            app:cardCornerRadius="@dimen/_10sdpq"/>
+            app:riv_corner_radius="@dimen/_10sdp"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/_10sdp"
+            android:layout_marginVertical="@dimen/_5sdp"
             android:orientation="horizontal">
 
             <TextView
+                android:layout_marginTop="@dimen/_3sdp"
                 android:id="@+id/text_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_regular"
-                android:text="@string/back_button"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_12sdp" />
 

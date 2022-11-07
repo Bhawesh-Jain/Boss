@@ -7,7 +7,7 @@
     android:background="@color/white"
     android:clickable="true"
     android:focusable="true"
-    tools:context=".view.fragment.ProfileFragment">
+    tools:context=".view.ui.profile_fragments.ProfileFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"

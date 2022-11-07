@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.media.MediaMetadataRetriever;
 import android.net.Uri;
 import android.opengl.GLException;
 import android.os.CountDownTimer;
@@ -31,6 +32,7 @@ import com.daasuu.gpuv.camerarecorder.GPUCameraRecorder;
 import com.daasuu.gpuv.camerarecorder.GPUCameraRecorderBuilder;
 import com.daasuu.gpuv.camerarecorder.LensFacing;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -55,6 +57,7 @@ public class BaseCameraActivity extends AppCompatActivity implements BaseCameraI
     private String filepath;
     private TextView recordBtn;
     private boolean toggleClick = false;
+    private File video, thumbnail;
 
     private ListView lv;
     private CountDownTimer timer;
@@ -71,7 +74,7 @@ public class BaseCameraActivity extends AppCompatActivity implements BaseCameraI
 
     @SuppressLint("SimpleDateFormat")
     public static String getVideoFilePath() {
-        return getAndroidMoviesFolder().getAbsolutePath() + "/" + new SimpleDateFormat("yyyyMM_dd-HH:mm:ss").format(new Date()) + "GPUCameraRecorder.mp4";
+        return getAndroidMoviesFolder().getAbsolutePath() + "/" + new SimpleDateFormat("yyyyMM_dd-HH:mm:ss").format(new Date()) + "BossReel.mp4";
     }
 
     public static File getAndroidMoviesFolder() {
@@ -93,6 +96,48 @@ public class BaseCameraActivity extends AppCompatActivity implements BaseCameraI
 
     public static File getAndroidImageFolder() {
         return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+    }
+
+    public static File bitmapToFile(Context mContext, Bitmap bitmap) {
+        try {
+            String name = System.currentTimeMillis() + ".png";
+            File file = new File(mContext.getCacheDir(), name);
+
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 60, bos);
+
+            byte[] bArr = bos.toByteArray();
+            bos.flush();
+            bos.close();
+            FileOutputStream fos = new FileOutputStream(file);
+            fos.write(bArr);
+            fos.flush();
+            fos.close();
+
+            return file;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static Bitmap retrieveVideoFrameFromVideo(String p_videoPath) throws Throwable {
+        Bitmap m_bitmap;
+        MediaMetadataRetriever m_mediaMetadataRetriever = null;
+        try {
+            m_mediaMetadataRetriever = new MediaMetadataRetriever();
+            m_mediaMetadataRetriever.setDataSource(p_videoPath);
+            m_bitmap = m_mediaMetadataRetriever.getFrameAtTime();
+        } catch (Exception m_e) {
+            throw new Throwable(
+                    "Exception in retrieveVideoFrameFromVideo(String p_videoPath) "
+                            + m_e.getMessage() + "\nFile Path - " + p_videoPath);
+        } finally {
+            if (m_mediaMetadataRetriever != null) {
+                m_mediaMetadataRetriever.release();
+            }
+        }
+        return m_bitmap;
     }
 
     protected void onCreateActivity() {
@@ -196,7 +241,7 @@ public class BaseCameraActivity extends AppCompatActivity implements BaseCameraI
         timer = new CountDownTimer(120000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                Log.e(TAG, "onTick: currentMillis --->"+millisUntilFinished);
+                Log.e(TAG, "onTick: currentMillis --->" + millisUntilFinished);
             }
 
             @Override

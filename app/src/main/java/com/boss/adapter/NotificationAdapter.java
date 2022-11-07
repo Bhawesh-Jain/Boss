@@ -14,7 +14,13 @@ import com.boss.databinding.AdminNotificationItemLayoutBinding;
 import com.boss.model.Response_Models.AdminNotiResModel;
 import com.bumptech.glide.Glide;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 
 public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapter.MyViewHolder> {
@@ -56,7 +62,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        AdminNotificationItemLayoutBinding binding;
+        public AdminNotificationItemLayoutBinding binding;
 
         public MyViewHolder(@NonNull AdminNotificationItemLayoutBinding binding) {
             super(binding.getRoot());

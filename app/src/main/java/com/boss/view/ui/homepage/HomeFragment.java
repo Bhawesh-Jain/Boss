@@ -1,37 +1,25 @@
-package com.boss.view.homepage;
+package com.boss.view.ui.homepage;
 
 import static com.google.android.exoplayer2.ExoPlayerLibraryInfo.TAG;
 
 import android.app.Activity;
-import android.app.Dialog;
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager2.widget.ViewPager2;
 
-import com.boss.R;
 import com.boss.Retrofit.ApiService;
 import com.boss.Retrofit.RetrofitClient;
 import com.boss.adapter.HomeReelAdapter;
-import com.boss.adapter.VideoViewAdapter;
 import com.boss.databinding.FragmentHomeBinding;
-import com.boss.model.HomePostModel;
 import com.boss.model.Response_Models.HomeReelModel;
-import com.boss.model.Response_Models.ProfileModel;
-import com.boss.util.Constants;
 import com.boss.util.ProgressDialog;
 import com.boss.util.Session;
-import com.bumptech.glide.Glide;
-
-import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,13 +32,14 @@ public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
     private Activity activity;
     private ProgressDialog progressDialog;
+
     public HomeFragment() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        activity = getActivity();
+        activity = requireActivity();
         progressDialog = new ProgressDialog(activity);
         progressDialog.show();
 

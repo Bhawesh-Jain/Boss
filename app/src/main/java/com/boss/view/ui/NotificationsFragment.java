@@ -1,4 +1,4 @@
-package com.boss.view.fragment;
+package com.boss.view.ui;
 
 import static com.google.android.exoplayer2.ExoPlayerLibraryInfo.TAG;
 
@@ -44,7 +44,7 @@ public class NotificationsFragment extends Fragment {
 
     private void getAdminNotification() {
         ProgressDialog progressDialog = new ProgressDialog(activity);
-        progressDialog.show();
+//        progressDialog.show();
         ApiService apiService = RetrofitClient.getClient(activity);
 
         apiService.getAdminNotification().enqueue(new Callback<AdminNotiResModel>() {

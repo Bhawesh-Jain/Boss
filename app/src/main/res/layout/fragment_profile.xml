@@ -8,7 +8,7 @@
     android:clickable="true"
     android:focusable="true"
     android:orientation="vertical"
-    tools:context=".view.fragment.ProfileFragment">
+    tools:context=".view.ui.profile_fragments.ProfileFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -42,8 +42,8 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/ic_profile_img"
                 android:layout_width="@dimen/_130sdpq"
-                android:paddingHorizontal="@dimen/_20sdpq"
                 android:layout_height="@dimen/_90sdpq"
+                android:paddingHorizontal="@dimen/_20sdpq"
                 android:src="@drawable/ic_user"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.05"
@@ -53,7 +53,6 @@
             <TextView
                 android:id="@+id/tv_user_name"
                 android:layout_width="0dp"
-                app:layout_constraintWidth_default="wrap"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ic_profile_img"
                 android:layout_toEndOf="@+id/ic_profile_img"
@@ -65,12 +64,12 @@
                 app:layout_constrainedWidth="true"
                 app:layout_constraintEnd_toEndOf="@+id/ic_profile_img"
                 app:layout_constraintStart_toStartOf="@+id/ic_profile_img"
-                app:layout_constraintTop_toBottomOf="@+id/ic_profile_img" />
+                app:layout_constraintTop_toBottomOf="@+id/ic_profile_img"
+                app:layout_constraintWidth_default="wrap" />
 
             <TextView
                 android:id="@+id/tv_company_name"
                 android:layout_width="0dp"
-                app:layout_constraintWidth_default="wrap"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="@dimen/_10sdp"
@@ -81,7 +80,8 @@
                 app:layout_constrainedWidth="true"
                 app:layout_constraintEnd_toEndOf="@+id/ic_profile_img"
                 app:layout_constraintStart_toStartOf="@+id/ic_profile_img"
-                app:layout_constraintTop_toBottomOf="@+id/tv_user_name" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_user_name"
+                app:layout_constraintWidth_default="wrap" />
 
             <TextView
                 android:id="@+id/edit_Profile_tv"

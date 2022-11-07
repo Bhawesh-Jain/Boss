@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/transparent"
+    android:background="@color/black"
     android:id="@+id/parent"
-    tools:context=".view.homepage.VideoReelFragment"
+    tools:context=".view.ui.homepage.VideoReelFragment"
     tools:ignore="UseCompoundDrawables">
 
 
@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:use_artwork="true"
-
+        android:background="@color/black"
         app:controller_display_mode="bottom|bottom_landscape"
         app:use_controller="true" />
 

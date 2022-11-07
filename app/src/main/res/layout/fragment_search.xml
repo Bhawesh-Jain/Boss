@@ -7,7 +7,7 @@
     android:clickable="true"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".view.fragment.SearchFragment">
+    tools:context=".view.ui.SearchFragment">
 
 
     <com.google.android.material.card.MaterialCardView

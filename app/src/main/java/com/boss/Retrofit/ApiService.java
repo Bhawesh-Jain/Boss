@@ -5,6 +5,8 @@ import com.boss.model.Response_Models.AdminNotiResModel;
 import com.boss.model.Response_Models.BannerResModel;
 import com.boss.model.Response_Models.CommonResModel;
 import com.boss.model.Response_Models.FaqModel;
+import com.boss.model.Response_Models.ILikeReelModel;
+import com.boss.model.Response_Models.MyLikeReelModel;
 import com.boss.model.Response_Models.HomeReelModel;
 import com.boss.model.Response_Models.LikeUnlikeResModel;
 import com.boss.model.Response_Models.LoginModel;
@@ -129,6 +131,14 @@ public interface ApiService {
     @FormUrlEncoded
     @POST(BaseUrl.get_my_view_reels)
     Call<MyViewsReelModel> getMyViewReels(@Field("user_id") String user_id);
+
+    @FormUrlEncoded
+    @POST(BaseUrl.get_my_like_reels)
+    Call<MyLikeReelModel> getMyLikeReels(@Field("user_id") String user_id);
+
+    @FormUrlEncoded
+    @POST(BaseUrl.get_i_like_reel)
+    Call<ILikeReelModel> getILikeReels(@Field("user_id") String user_id);
 
     @FormUrlEncoded
     @POST(BaseUrl.get_follower_userslist)

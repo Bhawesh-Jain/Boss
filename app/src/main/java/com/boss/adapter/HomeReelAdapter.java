@@ -6,9 +6,9 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.boss.model.Response_Models.HomeReelModel;
-import com.boss.view.homepage.PhotoReelFragment;
-import com.boss.view.homepage.TextReelFragment;
-import com.boss.view.homepage.VideoReelFragment;
+import com.boss.view.ui.homepage.PhotoReelFragment;
+import com.boss.view.ui.homepage.TextReelFragment;
+import com.boss.view.ui.homepage.VideoReelFragment;
 
 public class HomeReelAdapter extends FragmentStateAdapter {
     private final HomeReelModel homeReelModel;

@@ -8,7 +8,6 @@
     android:orientation="vertical"
     tools:context=".view.fragment.VideoFragment">
 
-<!--
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,7 +23,7 @@
         android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="There are no post, starta posting to see them here"/>
+        android:text="There are no post, start a posting to see them here"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/mcvPost"
@@ -47,7 +46,6 @@
             android:textColor="@color/white"
             android:textSize="@dimen/_14sdp" />
     </com.google.android.material.card.MaterialCardView>
--->
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

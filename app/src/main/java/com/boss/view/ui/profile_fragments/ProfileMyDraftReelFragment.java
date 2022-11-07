@@ -1,4 +1,4 @@
-package com.boss.view.fragment;
+package com.boss.view.ui.profile_fragments;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,19 +10,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.boss.databinding.FragmentPostBinding;
+import com.boss.databinding.FragmentDraftBinding;
 
-public class PostFragment extends Fragment implements View.OnClickListener{
 
-    FragmentPostBinding binding;
+public class ProfileMyDraftReelFragment extends Fragment implements View.OnClickListener{
+
+    FragmentDraftBinding binding;
     Activity activity;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding= FragmentPostBinding.inflate(inflater, container, false);
-       activity=requireActivity();
-       binding.mcvPost.setOnClickListener(this);
+        binding=FragmentDraftBinding.inflate(inflater, container, false);
+        activity=requireActivity();
+        binding.mcvPost.setOnClickListener(this);
         return binding.getRoot();
     }
 

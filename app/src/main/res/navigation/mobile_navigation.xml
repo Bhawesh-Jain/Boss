@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.boss.view.homepage.HomeFragment"
+        android:name="com.boss.view.ui.homepage.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
@@ -15,7 +15,7 @@
 
     <fragment
         android:id="@+id/navigation_search"
-        android:name="com.boss.view.fragment.SearchFragment"
+        android:name="com.boss.view.ui.SearchFragment"
         android:label="@string/title_search"
         tools:layout="@layout/fragment_search" />
 
@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.boss.view.fragment.NotificationsFragment"
+        android:name="com.boss.view.ui.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 
@@ -40,7 +40,7 @@
 
     <fragment
         android:id="@+id/profile"
-        android:name="com.boss.view.fragment.ProfileFragment"
+        android:name="com.boss.view.ui.profile_fragments.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
 

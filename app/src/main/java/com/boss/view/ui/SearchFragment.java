@@ -1,4 +1,4 @@
-package com.boss.view.fragment;
+package com.boss.view.ui;
 
 import static com.google.android.exoplayer2.ExoPlayerLibraryInfo.TAG;
 

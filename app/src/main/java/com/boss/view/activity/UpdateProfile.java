@@ -76,7 +76,7 @@ public class UpdateProfile extends AppCompatActivity implements View.OnClickList
 
         binding.icBack.setOnClickListener(this);
         binding.tvMale.setOnClickListener(this);
-        binding.tvFeMale.setOnClickListener(this);
+        binding.tvFemale.setOnClickListener(this);
         binding.tvOthers.setOnClickListener(this);
         binding.tvChangePhoto.setOnClickListener(this);
         binding.tvSave.setOnClickListener(this);
@@ -88,15 +88,15 @@ public class UpdateProfile extends AppCompatActivity implements View.OnClickList
             onBackPressed();
         } else if (view == binding.tvMale) {
             binding.tvMale.setBackgroundResource(R.drawable.curve_background_theme);
-            binding.tvFeMale.setBackgroundResource(R.drawable.curve_background);
+            binding.tvFemale.setBackgroundResource(R.drawable.curve_background);
             binding.tvOthers.setBackgroundResource(R.drawable.curve_background);
-        } else if (view == binding.tvFeMale) {
+        } else if (view == binding.tvFemale) {
             binding.tvMale.setBackgroundResource(R.drawable.curve_background);
-            binding.tvFeMale.setBackgroundResource(R.drawable.curve_background_theme);
+            binding.tvFemale.setBackgroundResource(R.drawable.curve_background_theme);
             binding.tvOthers.setBackgroundResource(R.drawable.curve_background);
         } else if (view == binding.tvOthers) {
             binding.tvMale.setBackgroundResource(R.drawable.curve_background);
-            binding.tvFeMale.setBackgroundResource(R.drawable.curve_background);
+            binding.tvFemale.setBackgroundResource(R.drawable.curve_background);
             binding.tvOthers.setBackgroundResource(R.drawable.curve_background_theme);
         } else if (view == binding.tvSave) {
             String name = binding.edtUsername.getText().toString();

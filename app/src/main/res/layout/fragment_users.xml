@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".view.fragment.UsersFragment">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,20 +19,20 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="@dimen/_60sdpq"
                 android:layout_height="@dimen/_60sdpq"
-                app:cardCornerRadius="@dimen/_30sdpq"
-                app:cardElevation="@dimen/_5sdpq"
-                android:layout_margin="@dimen/_2sdpq"
                 android:layout_gravity="center_vertical"
-                >
+                android:layout_margin="@dimen/_2sdpq"
+                app:cardCornerRadius="@dimen/_30sdpq"
+                app:cardElevation="@dimen/_5sdpq">
+
                 <ImageView
                     android:id="@+id/ivUserImage"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/welcome_screen"
-                    />
+                    android:background="@drawable/welcome_screen" />
             </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout
@@ -107,9 +108,9 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="@dimen/_10sdpq"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdpq"
         android:orientation="horizontal"
         android:weightSum="1">
 
@@ -118,19 +119,19 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="@dimen/_60sdpq"
                 android:layout_height="@dimen/_60sdpq"
-                app:cardCornerRadius="@dimen/_30sdpq"
-                app:cardElevation="@dimen/_5sdpq"
-                android:layout_margin="@dimen/_2sdpq"
                 android:layout_gravity="center_vertical"
-                >
+                android:layout_margin="@dimen/_2sdpq"
+                app:cardCornerRadius="@dimen/_30sdpq"
+                app:cardElevation="@dimen/_5sdpq">
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/welcome_screen"
-                    />
+                    android:background="@drawable/welcome_screen" />
             </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout
@@ -200,10 +201,11 @@
                 android:textSize="@dimen/_14sdpq" />
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
+
     <LinearLayout
-        android:layout_marginTop="@dimen/_10sdpq"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdpq"
         android:orientation="horizontal"
         android:weightSum="1">
 
@@ -212,19 +214,19 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="@dimen/_60sdpq"
                 android:layout_height="@dimen/_60sdpq"
-                app:cardCornerRadius="@dimen/_30sdpq"
-                app:cardElevation="@dimen/_5sdpq"
-                android:layout_margin="@dimen/_2sdpq"
                 android:layout_gravity="center_vertical"
-                >
+                android:layout_margin="@dimen/_2sdpq"
+                app:cardCornerRadius="@dimen/_30sdpq"
+                app:cardElevation="@dimen/_5sdpq">
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/welcome_screen"
-                    />
+                    android:background="@drawable/welcome_screen" />
             </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout
@@ -294,10 +296,11 @@
                 android:textSize="@dimen/_14sdpq" />
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
+
     <LinearLayout
-        android:layout_marginTop="@dimen/_10sdpq"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdpq"
         android:orientation="horizontal"
         android:weightSum="1">
 
@@ -306,19 +309,19 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="@dimen/_60sdpq"
                 android:layout_height="@dimen/_60sdpq"
-                app:cardCornerRadius="@dimen/_30sdpq"
-                app:cardElevation="@dimen/_5sdpq"
-                android:layout_margin="@dimen/_2sdpq"
                 android:layout_gravity="center_vertical"
-                >
+                android:layout_margin="@dimen/_2sdpq"
+                app:cardCornerRadius="@dimen/_30sdpq"
+                app:cardElevation="@dimen/_5sdpq">
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/welcome_screen"
-                    />
+                    android:background="@drawable/welcome_screen" />
             </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout
@@ -388,10 +391,11 @@
                 android:textSize="@dimen/_14sdpq" />
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
+
     <LinearLayout
-        android:layout_marginTop="@dimen/_10sdpq"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdpq"
         android:orientation="horizontal"
         android:weightSum="1">
 
@@ -400,19 +404,19 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="@dimen/_60sdpq"
                 android:layout_height="@dimen/_60sdpq"
-                app:cardCornerRadius="@dimen/_30sdpq"
-                app:cardElevation="@dimen/_5sdpq"
-                android:layout_margin="@dimen/_2sdpq"
                 android:layout_gravity="center_vertical"
-                >
+                android:layout_margin="@dimen/_2sdpq"
+                app:cardCornerRadius="@dimen/_30sdpq"
+                app:cardElevation="@dimen/_5sdpq">
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/welcome_screen"
-                    />
+                    android:background="@drawable/welcome_screen" />
             </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout
@@ -482,10 +486,11 @@
                 android:textSize="@dimen/_14sdpq" />
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
+
     <LinearLayout
-        android:layout_marginTop="@dimen/_10sdpq"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdpq"
         android:orientation="horizontal"
         android:weightSum="1">
 
@@ -494,19 +499,19 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="@dimen/_60sdpq"
                 android:layout_height="@dimen/_60sdpq"
-                app:cardCornerRadius="@dimen/_30sdpq"
-                app:cardElevation="@dimen/_5sdpq"
-                android:layout_margin="@dimen/_2sdpq"
                 android:layout_gravity="center_vertical"
-                >
+                android:layout_margin="@dimen/_2sdpq"
+                app:cardCornerRadius="@dimen/_30sdpq"
+                app:cardElevation="@dimen/_5sdpq">
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/welcome_screen"
-                    />
+                    android:background="@drawable/welcome_screen" />
             </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout
@@ -576,10 +581,11 @@
                 android:textSize="@dimen/_14sdpq" />
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
+
     <LinearLayout
-        android:layout_marginTop="@dimen/_10sdpq"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdpq"
         android:orientation="horizontal"
         android:weightSum="1">
 
@@ -588,19 +594,19 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="@dimen/_60sdpq"
                 android:layout_height="@dimen/_60sdpq"
-                app:cardCornerRadius="@dimen/_30sdpq"
-                app:cardElevation="@dimen/_5sdpq"
-                android:layout_margin="@dimen/_2sdpq"
                 android:layout_gravity="center_vertical"
-                >
+                android:layout_margin="@dimen/_2sdpq"
+                app:cardCornerRadius="@dimen/_30sdpq"
+                app:cardElevation="@dimen/_5sdpq">
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/welcome_screen"
-                    />
+                    android:background="@drawable/welcome_screen" />
             </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout
@@ -670,10 +676,11 @@
                 android:textSize="@dimen/_14sdpq" />
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
+
     <LinearLayout
-        android:layout_marginTop="@dimen/_10sdpq"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdpq"
         android:orientation="horizontal"
         android:weightSum="1">
 
@@ -682,19 +689,19 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="@dimen/_60sdpq"
                 android:layout_height="@dimen/_60sdpq"
-                app:cardCornerRadius="@dimen/_30sdpq"
-                app:cardElevation="@dimen/_5sdpq"
-                android:layout_margin="@dimen/_2sdpq"
                 android:layout_gravity="center_vertical"
-                >
+                android:layout_margin="@dimen/_2sdpq"
+                app:cardCornerRadius="@dimen/_30sdpq"
+                app:cardElevation="@dimen/_5sdpq">
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/welcome_screen"
-                    />
+                    android:background="@drawable/welcome_screen" />
             </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout
@@ -764,10 +771,11 @@
                 android:textSize="@dimen/_14sdpq" />
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
+
     <LinearLayout
-        android:layout_marginTop="@dimen/_10sdpq"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdpq"
         android:orientation="horizontal"
         android:weightSum="1">
 
@@ -776,19 +784,19 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="horizontal">
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="@dimen/_60sdpq"
                 android:layout_height="@dimen/_60sdpq"
-                app:cardCornerRadius="@dimen/_30sdpq"
-                app:cardElevation="@dimen/_5sdpq"
-                android:layout_margin="@dimen/_2sdpq"
                 android:layout_gravity="center_vertical"
-                >
+                android:layout_margin="@dimen/_2sdpq"
+                app:cardCornerRadius="@dimen/_30sdpq"
+                app:cardElevation="@dimen/_5sdpq">
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/welcome_screen"
-                    />
+                    android:background="@drawable/welcome_screen" />
             </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout

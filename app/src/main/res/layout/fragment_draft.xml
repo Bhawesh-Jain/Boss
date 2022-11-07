@@ -15,6 +15,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/_15sdpq"
         />
+
     <TextView
         android:layout_gravity="center_horizontal"
         android:fontFamily="@font/roboto_bold"
@@ -23,7 +24,7 @@
         android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="There are no post, starta posting to see them here"/>
+        android:text="There are no Draft, start a post to see them here"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/mcvPost"

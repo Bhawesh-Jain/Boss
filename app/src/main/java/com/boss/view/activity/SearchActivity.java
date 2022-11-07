@@ -13,24 +13,24 @@ import com.google.android.material.tabs.TabLayoutMediator;
 public class SearchActivity extends AppCompatActivity implements View.OnClickListener {
 
     ActivitySearchBinding binding;
-    Activity activity = SearchActivity.this;
+    Activity activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySearchBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        activity = SearchActivity.this;
+
         init();
     }
 
     private void init() {
         String[] title = new String[]{"All", "Videos", "Users", "Photos", "Hashtags"};
-        TabLayoutSearchAdapter tabLayoutAdapterSecond = new TabLayoutSearchAdapter(this);
-        binding.vpLaunchId.setAdapter(tabLayoutAdapterSecond);
+        TabLayoutSearchAdapter searchTabAdapter = new TabLayoutSearchAdapter(this);
+        binding.vpLaunchId.setAdapter(searchTabAdapter);
 
-        new TabLayoutMediator(binding.tabLayout, binding.vpLaunchId, (tab, position) -> {
-            tab.setText(title[position]);
-        }).attach();
+        new TabLayoutMediator(binding.tabLayout, binding.vpLaunchId, (tab, position) -> tab.setText(title[position])).attach();
     }
 
     @Override

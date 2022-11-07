@@ -18,6 +18,12 @@ import com.boss.databinding.ActivitySettingBinding;
 import com.boss.model.Response_Models.CommonResModel;
 import com.boss.util.ProgressDialog;
 import com.boss.util.Session;
+import com.facebook.login.LoginManager;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,9 +31,9 @@ import retrofit2.Response;
 
 public class SettingActivity extends AppCompatActivity {
 
+    private final Activity activity = SettingActivity.this;
     private ActivitySettingBinding binding;
     private Session session;
-    private final Activity activity = SettingActivity.this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,12 +62,13 @@ public class SettingActivity extends AppCompatActivity {
             public void onResponse(@NonNull Call<CommonResModel> call, @NonNull Response<CommonResModel> response) {
                 progressDialog.dismiss();
                 if (response.code() == 200) {
-                    if (response.body() != null){
-                        if (response.body().getResult().equalsIgnoreCase("true")){
-                            Toast.makeText(activity, ""+response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                    if (response.body() != null) {
+                        if (response.body().getResult().equalsIgnoreCase("true")) {
+                            Toast.makeText(activity, "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
                             session.logout();
                             finish();
-                        } else Toast.makeText(activity, ""+response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                        } else
+                            Toast.makeText(activity, "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -80,6 +87,24 @@ public class SettingActivity extends AppCompatActivity {
                 .setMessage("Are you sure you want to log out?")
                 .setNegativeButton("Cancel", null)
                 .setPositiveButton("Yes", (dialogInterface, i) -> {
+
+                    FirebaseAuth auth = FirebaseAuth.getInstance();
+                    FirebaseUser user = auth.getCurrentUser();
+
+                    if (user != null) {
+                        auth.signOut();
+                    }
+
+                    // LoginManager.getInstance().logOut();
+
+                    GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                            .requestEmail()
+                            .build();
+                    GoogleSignInClient mGoogleSignInClient = GoogleSignIn.getClient(getApplicationContext(), gso);
+
+                    mGoogleSignInClient.signOut();
+
+
                     ProgressDialog progressDialog = new ProgressDialog(this);
                     progressDialog.show();
                     ApiService apiService = RetrofitClient.getClient(activity);
@@ -89,12 +114,13 @@ public class SettingActivity extends AppCompatActivity {
                         public void onResponse(@NonNull Call<CommonResModel> call, @NonNull Response<CommonResModel> response) {
                             progressDialog.dismiss();
                             if (response.code() == 200) {
-                                if (response.body() != null){
-                                    if (response.body().getResult().equalsIgnoreCase("true")){
-                                        Toast.makeText(activity, ""+response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                                if (response.body() != null) {
+                                    if (response.body().getResult().equalsIgnoreCase("true")) {
+                                        Toast.makeText(activity, "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
                                         session.logout();
                                         finish();
-                                    } else Toast.makeText(activity, ""+response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                                    } else
+                                        Toast.makeText(activity, "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
                                 }
                             }
                         }

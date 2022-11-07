@@ -5,11 +5,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.boss.view.fragment.DraftFragment;
-import com.boss.view.fragment.HastagFragment;
-import com.boss.view.fragment.LikeFragment;
-import com.boss.view.fragment.PostFragment;
+import com.boss.view.ui.profile_fragments.ProfileMyDraftReelFragment;
+import com.boss.view.ui.profile_fragments.ProfileMyHashtagsFragment;
+import com.boss.view.ui.profile_fragments.ProfileMyLikedReelFragment;
+import com.boss.view.ui.profile_fragments.ProfileMyLikeReelFragment;
 import com.boss.view.fragment.VideoFragment;
+import com.boss.view.ui.profile_fragments.ProfileMyViewReelFragment;
 
 public class ProfileViewPagerAdapter extends FragmentStateAdapter {
 
@@ -22,19 +23,19 @@ public class ProfileViewPagerAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
 
         if (position == 0) {
-            return new VideoFragment();
+            return new ProfileMyViewReelFragment();
         }
         if (position == 1) {
-            return new PostFragment();
+            return new ProfileMyLikedReelFragment();
         }
         if (position == 2) {
-            return new HastagFragment();
+            return new ProfileMyHashtagsFragment();
         }
         if (position == 3) {
-            return new LikeFragment();
+            return new ProfileMyLikeReelFragment();
         }
         if (position == 4) {
-            return new DraftFragment();
+            return new ProfileMyDraftReelFragment();
         }
         return new VideoFragment();
     }

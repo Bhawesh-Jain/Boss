@@ -3,7 +3,6 @@ package com.boss.adapter;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,12 +11,10 @@ import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.ViewPager2;
 
 import com.boss.R;
 import com.boss.UtilityTools.Utils;
 import com.boss.view.activity.UserProfileActivity;
-import com.boss.view.homepage.HomeFragment;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.jarvanmo.exoplayerview.media.SimpleMediaSource;
 import com.jarvanmo.exoplayerview.ui.ExoVideoView;

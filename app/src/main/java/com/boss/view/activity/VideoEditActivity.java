@@ -1,9 +1,12 @@
 package com.boss.view.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaMetadataRetriever;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,6 +21,7 @@ import com.androidnetworking.common.ANRequest;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.boss.R;
+import com.boss.UtilityTools.FileUtils;
 import com.boss.databinding.ActivityVideoEditBinding;
 import com.boss.util.BaseUrl;
 import com.boss.util.ProgressDialog;
@@ -28,18 +32,21 @@ import com.jarvanmo.exoplayerview.media.SimpleMediaSource;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class VideoEditActivity extends AppCompatActivity {
 
     private final String TAG = "VideoEditActivity";
-    File video_file, video_gif, thumbnail;
+    private File video_file, video_gif, thumbnail;
     private ActivityVideoEditBinding binding;
     private boolean isPlaying;
     private Activity activity;
     private Session session;
     private String videoUri;
-    ProgressDialog progressDialog;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +61,7 @@ public class VideoEditActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(activity);
 
         SimpleMediaSource mediaSource = new SimpleMediaSource(videoUri);
+
         Log.e(TAG, "onBindViewHolder: Uri" + videoUri);
         binding.videoPlayer.hideController();
         binding.videoPlayer.setControllerAutoShow(true);
@@ -96,7 +104,7 @@ public class VideoEditActivity extends AppCompatActivity {
             video_file = new File(videoUri);
             Log.d(TAG, "add_reel() called videoFile-->" + video_file);
             addReel(description.getText().toString());
-//                convert_to_file(videoUri, description.getText().toString());
+//            convert_to_file(videoUri, description.getText().toString());
         });
 
         mBottomSheetDialog.show();

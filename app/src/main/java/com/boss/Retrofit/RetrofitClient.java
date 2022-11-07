@@ -21,7 +21,7 @@ public class RetrofitClient {
     public static ApiService getClient(Context context) {
 
         try {
-            boolean connected = false;
+            boolean connected;
             ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
             //we are connected to a network
             connected = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
@@ -39,7 +39,7 @@ public class RetrofitClient {
                 .connectTimeout(2, TimeUnit.MINUTES)
                 .readTimeout(2, TimeUnit.MINUTES);
 
-        if (BaseUrl.Development.equals(Constants.Key.Debug)) {
+        if (BaseUrl.Development.equalsIgnoreCase(Constants.Key.Debug)) {
             client.addInterceptor(interceptor);
         }
 
@@ -50,11 +50,4 @@ public class RetrofitClient {
                 .build();
         return retrofit.create(ApiService.class);
     }
-
-    public static boolean isInternetConnection(Context context) {
-        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        return connectivityManager.getActiveNetworkInfo().isConnectedOrConnecting();
-    }
-
-
 }

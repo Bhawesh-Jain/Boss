@@ -1,8 +1,7 @@
-package com.boss.view.homepage;
+package com.boss.view.ui.homepage;
 
 import static com.google.android.exoplayer2.ExoPlayerLibraryInfo.TAG;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
