@@ -60,7 +60,7 @@ public class PhotoReelFragment extends Fragment {
         String text = reelModel.getTotal_views()+ " Views";
         binding.tvViews.setText(text);
 
-        if (!reelModel.getUserImage().isEmpty())
+        if (reelModel.getUserImage() != null && !reelModel.getUserImage().isEmpty())
             Glide.with(getContext())
                     .load(reelModel.getUserPath() + reelModel.getUserImage())
                     .error(R.drawable.ic_user)

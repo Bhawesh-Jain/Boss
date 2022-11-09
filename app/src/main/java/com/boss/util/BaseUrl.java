@@ -37,6 +37,8 @@ public class BaseUrl {
     public static final String get_follower_userslist = "get_follower_userslist";
     public static final String get_folloing_userslist = "get_folloing_userslist";
 
+    public static final String get_users_new = "get_users_new";
+
     // Reel
     public static final String like_reel = "like_reel";
     public static final String add_reels = "add_reels";

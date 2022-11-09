@@ -98,7 +98,7 @@ public class TextReelFragment extends Fragment {
         binding.tvViews.setText(text);
 
 
-        if (!model.getUserImage().isEmpty())
+        if (model.getUserImage() != null && !model.getUserImage().isEmpty())
             if (getContext() != null)
             Glide.with(getContext())
                     .load(model.getUserPath() + model.getUserImage())

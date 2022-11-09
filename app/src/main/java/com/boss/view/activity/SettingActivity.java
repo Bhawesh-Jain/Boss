@@ -18,7 +18,6 @@ import com.boss.databinding.ActivitySettingBinding;
 import com.boss.model.Response_Models.CommonResModel;
 import com.boss.util.ProgressDialog;
 import com.boss.util.Session;
-import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -43,9 +42,9 @@ public class SettingActivity extends AppCompatActivity {
 
         session = new Session(this);
 
-        binding.ivBack.setOnClickListener(view -> onBackPressed());
+        binding.ivBack.setOnClickListener(v -> onBackPressed());
         binding.logoutLay.setOnClickListener(v -> logout());
-        binding.ivDelete.setOnClickListener(v -> deleteAccount());
+        binding.deleteLay.setOnClickListener(v -> deleteAccount());
         binding.aboutUsLay.setOnClickListener(v -> startActivity(new Intent(activity, AboutUsActivity.class)));
         binding.privacyPolLay.setOnClickListener(v -> startActivity(new Intent(activity, PrivacyPolicyActivity.class)));
         binding.termsConditionLay.setOnClickListener(v -> startActivity(new Intent(activity, TermsConditionActivity.class)));
@@ -53,32 +52,55 @@ public class SettingActivity extends AppCompatActivity {
     }
 
     private void deleteAccount() {
-        ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.show();
-        ApiService apiService = RetrofitClient.getClient(activity);
+        new AlertDialog.Builder(this)
+                .setTitle("Delete Account")
+                .setMessage("Are you sure you want to delete this Account?")
+                .setNegativeButton("Cancel", null)
+                .setPositiveButton("Yes", (dialogInterface, i) -> {
+                    ProgressDialog progressDialog = new ProgressDialog(this);
+                    progressDialog.show();
+                    ApiService apiService = RetrofitClient.getClient(activity);
 
-        apiService.deleteAccount(session.getUser_Id()).enqueue(new Callback<CommonResModel>() {
-            @Override
-            public void onResponse(@NonNull Call<CommonResModel> call, @NonNull Response<CommonResModel> response) {
-                progressDialog.dismiss();
-                if (response.code() == 200) {
-                    if (response.body() != null) {
-                        if (response.body().getResult().equalsIgnoreCase("true")) {
-                            Toast.makeText(activity, "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
-                            session.logout();
-                            finish();
-                        } else
-                            Toast.makeText(activity, "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
-                    }
-                }
-            }
+                    apiService.deleteAccount(session.getUser_Id()).enqueue(new Callback<CommonResModel>() {
+                        @Override
+                        public void onResponse(@NonNull Call<CommonResModel> call, @NonNull Response<CommonResModel> response) {
+                            progressDialog.dismiss();
+                            if (response.code() == 200) {
+                                if (response.body() != null) {
+                                    if (response.body().getResult().equalsIgnoreCase("true")) {
+                                        Toast.makeText(activity, "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                                        session.logout();
 
-            @Override
-            public void onFailure(@NonNull Call<CommonResModel> call, @NonNull Throwable t) {
-                progressDialog.dismiss();
-                Log.e(TAG, "" + t.getLocalizedMessage());
-            }
-        });
+                                        FirebaseAuth auth = FirebaseAuth.getInstance();
+                                        FirebaseUser user = auth.getCurrentUser();
+
+                                        if (user != null) {
+                                            auth.signOut();
+                                        }
+
+                                        // LoginManager.getInstance().logOut();
+
+                                        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                                                .requestEmail()
+                                                .build();
+                                        GoogleSignInClient mGoogleSignInClient = GoogleSignIn.getClient(getApplicationContext(), gso);
+
+                                        mGoogleSignInClient.signOut();
+
+                                        finish();
+                                    } else
+                                        Toast.makeText(activity, "" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(@NonNull Call<CommonResModel> call, @NonNull Throwable t) {
+                            progressDialog.dismiss();
+                            Log.e(TAG, "" + t.getLocalizedMessage());
+                        }
+                    });
+                }).show();
     }
 
     private void logout() {

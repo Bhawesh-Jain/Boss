@@ -3,17 +3,70 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
     android:layout_marginHorizontal="@dimen/_15sdpq"
     android:layout_marginTop="@dimen/_10sdpq"
+    android:background="@color/white"
     android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/progress_bar" />
+
+    <LinearLayout
+        android:id="@+id/ll_body"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rvVideo"
-        />
+        android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:src="@drawable/ic_data_not_found" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="There are no post, start a posting to see them here"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcvPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:cardBackgroundColor="#eb4e61"
+            app:cardCornerRadius="@dimen/_2sdp"
+            app:cardElevation="0dp"
+            app:contentPadding="@dimen/_3sdp">
+
+            <TextView
+                android:id="@+id/mcvFollow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Create Post "
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 
 </LinearLayout>

@@ -5,6 +5,7 @@ import com.boss.model.Response_Models.AdminNotiResModel;
 import com.boss.model.Response_Models.BannerResModel;
 import com.boss.model.Response_Models.CommonResModel;
 import com.boss.model.Response_Models.FaqModel;
+import com.boss.model.Response_Models.AllUsersModel;
 import com.boss.model.Response_Models.ILikeReelModel;
 import com.boss.model.Response_Models.MyLikeReelModel;
 import com.boss.model.Response_Models.HomeReelModel;
@@ -44,6 +45,10 @@ public interface ApiService {
     @FormUrlEncoded
     @POST(BaseUrl.get_popular_creator)
     Call<PopularCreatorResModel> getPopularCreator(@Field("user_id") String user_id);
+
+    @FormUrlEncoded
+    @POST(BaseUrl.get_users_new)
+    Call<AllUsersModel> getUsers(@Field("own_id") String user_id);
 
     @POST(BaseUrl.admin_notification)
     Call<AdminNotiResModel> getAdminNotification();

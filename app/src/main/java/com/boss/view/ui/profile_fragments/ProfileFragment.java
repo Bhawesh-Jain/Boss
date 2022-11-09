@@ -138,6 +138,5 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         else if (view == binding.icSettings) Utils.I(activity, SettingActivity.class, null);
         else if (view == binding.followersLay) startActivity(new Intent(activity, RelationsActivity.class).putExtra("type", 1).putExtra("user_id", session.getUser_Id()));
         else if (view == binding.followingLay) startActivity(new Intent(activity, RelationsActivity.class).putExtra("type", 0).putExtra("user_id", session.getUser_Id()));
-
     }
 }

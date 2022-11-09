@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.boss.R;
 import com.boss.databinding.ItemMyLikeReelProfileBinding;
+import com.boss.model.Response_Models.HomeReelModel;
 import com.boss.model.Response_Models.MyLikeReelModel;
 import com.bumptech.glide.Glide;
 
@@ -16,10 +17,10 @@ import java.util.List;
 
 public class SearchPhotoReelAdapter extends RecyclerView.Adapter<SearchPhotoReelAdapter.ViewHolder> {
     private final Context context;
-    private final List<MyLikeReelModel.Datum> data;
+    private final List<HomeReelModel.Datum> data;
     private final String path;
 
-    public SearchPhotoReelAdapter(Context context, List<MyLikeReelModel.Datum> data, String path) {
+    public SearchPhotoReelAdapter(Context context, List<HomeReelModel.Datum> data, String path) {
         this.context = context;
         this.data = data;
         this.path = path;
@@ -34,11 +35,11 @@ public class SearchPhotoReelAdapter extends RecyclerView.Adapter<SearchPhotoReel
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         if (data.get(position) != null) {
-            MyLikeReelModel.Datum current = data.get(position);
+            HomeReelModel.Datum current = data.get(position);
 
-            Glide.with(context).load(path + current.getThumbnail()).error(R.color.black).into(holder.binding.imageThumbnail);
+            Glide.with(context).load(path + current.getFile()).error(R.color.black).into(holder.binding.imageThumbnail);
 
-            holder.binding.textCount.setText(String.valueOf(current.getLikedCount()));
+            holder.binding.textCount.setText(String.valueOf(current.getLikeCount()));
         }
     }
 

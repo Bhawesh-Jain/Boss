@@ -1,55 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".view.fragment.VideoFragment">
 
-    <ImageView
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/progress_bar" />
+
+    <LinearLayout
+        android:id="@+id/ll_body"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_data_not_found"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/_15sdp"
-        />
-    <TextView
-        android:layout_gravity="center_horizontal"
-        android:fontFamily="@font/roboto_bold"
-        android:textSize="@dimen/_12sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:textColor="@color/black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="There are no post, start a posting to see them here"/>
+        android:orientation="vertical">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/mcvPost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        app:cardBackgroundColor="#eb4e61"
-        app:cardCornerRadius="@dimen/_2sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        app:cardElevation="0dp"
-        app:contentPadding="@dimen/_3sdp">
-
-        <TextView
-            android:id="@+id/mcvFollow"
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_5sdp"
-            android:fontFamily="@font/roboto_medium"
-            android:text="Create Post "
-            android:textColor="@color/white"
-            android:textSize="@dimen/_14sdp" />
-    </com.google.android.material.card.MaterialCardView>
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:src="@drawable/ic_data_not_found" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="There are no post, start a posting to see them here"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcvPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:cardBackgroundColor="#eb4e61"
+            app:cardCornerRadius="@dimen/_2sdp"
+            app:cardElevation="0dp"
+            app:contentPadding="@dimen/_3sdp">
+
+            <TextView
+                android:id="@+id/mcvFollow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Create Post "
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp" />
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/rvVideo"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

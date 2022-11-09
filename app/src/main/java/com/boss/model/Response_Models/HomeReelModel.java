@@ -1,8 +1,9 @@
 package com.boss.model.Response_Models;
 
-import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class HomeReelModel {
 
@@ -61,27 +62,11 @@ public class HomeReelModel {
     public void setData(List<Datum> data) {
         this.data = data;
     }
+
     public static class Datum {
 
         private String reelPath;
         private String userPath;
-
-        public String getReelPath() {
-            return reelPath;
-        }
-
-        public void setReelPath(String reelPath) {
-            this.reelPath = reelPath;
-        }
-
-        public String getUserPath() {
-            return userPath;
-        }
-
-        public void setUserPath(String userPath) {
-            this.userPath = userPath;
-        }
-
         @SerializedName("id")
         @Expose
         private String id;
@@ -157,6 +142,22 @@ public class HomeReelModel {
         @SerializedName("total_views")
         @Expose
         private int total_views;
+
+        public String getReelPath() {
+            return reelPath;
+        }
+
+        public void setReelPath(String reelPath) {
+            this.reelPath = reelPath;
+        }
+
+        public String getUserPath() {
+            return userPath;
+        }
+
+        public void setUserPath(String userPath) {
+            this.userPath = userPath;
+        }
 
         public int getTotal_views() {
             return total_views;
